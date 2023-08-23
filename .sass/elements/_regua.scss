@@ -1,0 +1,28 @@
+.regua-container {
+    background-color: #1F2228;
+    padding: 8px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+    font-size: 0.75rem;
+    
+    span:nth-child(1), span:nth-child(3) {
+       display: none;
+   }
+}
+
+@media(min-width:480px) {
+    .regua-container {
+        span:nth-child(1) {
+            display: block;
+        }    
+    }
+}
+@media(min-width:720px) {
+    .regua-container {
+        span:nth-child(3) {
+            display: block;
+        }    
+    }
+}

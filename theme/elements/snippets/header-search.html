@@ -1,0 +1,20 @@
+<form class="header-search" action="{{ links.search }}" method="get" data-search="suggestion">
+    <input type="hidden" name="loja" value="{{ store.id }}" />
+    <input
+        class="search-input"
+        placeholder="O que voc&ecirc precisa?"
+        spellcheck="false"
+        autocomplete="off"
+        data-input="suggestion"
+        type="text"
+        name="palavra_busca"
+    />
+    <button class="search-button" title="Buscar" aria-label="Buscar">
+        <!--<span class="icon-search" aria-hidden="true"></span> -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" fill="none">
+            <path d="M18.3225 27.1435C23.2317 27.1435 27.2113 23.1638 27.2113 18.2546C27.2113 13.3454 23.2317 9.36572 18.3225 9.36572C13.4133 9.36572 9.43359 13.3454 9.43359 18.2546C9.43359 23.1638 13.4133 27.1435 18.3225 27.1435Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M29.4337 29.3656L24.6003 24.5322" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+    </button>
+    <div class="search-suggestion is-hidden" data-container="suggestion"></div>
+</form>
