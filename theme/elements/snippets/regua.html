@@ -1,5 +1,12 @@
+{% if regua_topo %}
+    <div class="regua-container">
+        <span>Favoritos</span>
+        <span>Rastrear Pedido</span>
+        <span>(00) 00000-0000</span>
+
+    </div>
+{% else %}
 <div class="regua-container">
-    <span>Favoritos</span>
-    <span>Rastrear Pedido</span>
-    <span>(00) 00000-0000</span>
+    <span>{{ text }}</span>
 </div>
+{% endif %}

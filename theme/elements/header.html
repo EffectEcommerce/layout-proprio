@@ -1,5 +1,8 @@
 <header data-header="scroll" class="header">
-    {% element 'snippets/regua' %}
+    {%  element 'snippets/regua' {
+        'regua_topo': true,
+        'text': "esse texto aqui"
+    }%}
     <div class="header-top">
         <div class="header-content">
             <button class="header-button mobile" data-toggle="closed" data-target="#menu-mobile" title="Abrir Menu" aria-label="Abrir o menu">

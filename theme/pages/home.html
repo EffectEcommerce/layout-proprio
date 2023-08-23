@@ -1,11 +1,16 @@
+{% element 'snippets/regua' {
+    'text': "FRETE GRÁTIS - Acima de R$ 100,00"
+} %}
 {% element 'snippets/banner-line' { 'banner_id': 'home', 'banner_type': 'slides' } %} 
+<div class="section">
+    {% element 'snippets/top-categorias' %}
+</div>
 
 {% element 'home-showcase' { 
     'rand' : settings.showcase_rand_products, 
     'type' : settings.showcase_type_1, 
     'quantity' : settings.showcase_quantity_1 
 } %} 
-
 {% element 'snippets/brands-list' %} 
 
 {% element 'home-showcase' { 

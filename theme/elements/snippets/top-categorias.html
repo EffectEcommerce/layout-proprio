@@ -1,0 +1,167 @@
+
+{% set listCat = [] %}
+{% for i in 1..6 %}
+    {% set position = attribute(settings, 'category_'~i~'_position') %}
+    {% set id = attribute(settings, 'category_'~i~'_id') %}
+    {% set img = attribute(settings, 'category_'~i~'_image') %}
+    {% if id %}
+        {% set listCat = listCat|merge([{ "position": position, "id": id, "img": img }]) %}
+    {% endif %}
+{% endfor %}
+
+{% if listCat|length and settings.text_category_home %}
+    <div class="cat-vitrine-container">
+        <h2 class="title-categorias">{{ settings.text_category_home ? settings.text_category_home : 'Navegue por nossas categorias' }}</h2>
+        <div class="cat-vitrine swiper-container">
+    <div class="swiper-wrapper">
+    {% for i in 1..6 %}
+
+        {% set loopParent = loop.index %}
+
+        {% for list in listCat %}
+
+            {% if list.position == loopParent %}
+                {% set categoryGet = Categories( { "id": list.id } ) %}
+                <div class="swiper-slide">
+                    <a href="{{ categoryGet.link }}" class="category-link">
+                <div class="category-card">
+                <div class="category-image">
+                    <img class="lazyload" src="{{ themePath ~ list.img }}?{{ utils.assets_version }}" alt="{{ categoryGet.name }}" id="image-{{ categoryGet.id }}">
+                </div>
+                </div>
+                <div class="category-title">
+                    <p>{{ categoryGet.name }}</p>
+                </div>
+                </a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+    </div>
+    <span></span>
+    </div>
+    </div>
+{% endif %}
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        var swiper = new Swiper('.cat-vitrine.swiper-container', {
+            slidesPerView: 'auto',
+            spaceBetween: 10,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            loop: true,
+        });
+    });
+</script>
+
+<style>
+    .cat-vitrine-container{
+        margin-top:40px;
+        overflow: hidden;
+    }
+    .cat-vitrine{
+        margin-top:40px;
+    }
+    .category-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 164px;
+        height: 164px;
+        border: 2px solid #2F455C;
+        border-radius: 50%;
+        margin: 10px;
+        box-sizing: border-box;
+    }
+    .title-categorias {
+        text-align: center;
+        font-family: 'Playfair Display';
+    }
+    .category-image {
+        width: 148px;
+        height: 148px;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+
+    .category-image img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .category-title {
+        text-align: center;
+        padding-top: 10px;
+        color: #000;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .swiper-slide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    @media (min-width: 1378px) {
+        .cat-vitrine .swiper-slide {
+            width: calc((100% - 40px) / 6); /* Ajuste o valor "40px" se tiver espaço ao redor do swiper-container */
+        }
+    }
+    @media (max-width: 1378px) {
+        .cat-vitrine .swiper-slide {
+            width: calc((100% - 20px) / 6); /* Ajuste o valor "40px" se tiver espaço ao redor do swiper-container */
+        }
+    }
+    @media (max-width: 1100px) {
+        .cat-vitrine .swiper-slide {
+            width: calc((100% - 20px) / 5.5); /* Ajuste o valor "40px" se tiver espaço ao redor do swiper-container */
+        }
+    }
+    @media (max-width: 950px) {
+        .cat-vitrine .swiper-slide {
+            width: calc((100% - 20px) / 4.5); /* Ajuste o valor "40px" se tiver espaço ao redor do swiper-container */
+        }
+    }
+    @media (max-width: 790px) {
+        .category-card {
+            width: 120px;
+            height: 120px;
+        }
+        .category-image {
+            width: 111px;
+            height: 111px;
+        }    
+        .cat-vitrine .swiper-slide {
+            width: calc((100% - 20px) / 3.5); /* Ajuste o valor "40px" se tiver espaço ao redor do swiper-container */
+        }
+    }              
+    @media (max-width: 450px) {
+        .category-card {
+            width: 116px;
+            height: 116px;
+        }
+        .category-image {
+            width: 107px;
+            height: 107px;
+        } 
+        .cat-vitrine .swiper-slide {
+            width: calc((100vw - 20px) / 3.4); /* Ajuste o valor "20px" se tiver espaço ao redor do swiper-container */
+        }
+    }
+    @media (max-width: 400px) {
+        .cat-vitrine .swiper-slide {
+            width: calc((100vw - 20px) / 3.3); /* Ajuste o valor "40px" se tiver espaço ao redor do swiper-container */
+        }
+    }
+    @media (max-width: 390px) {
+        .cat-vitrine .swiper-slide {
+            width: calc((100vw - 10px) / 2.8); /* Ajuste o valor "40px" se tiver espaço ao redor do swiper-container */
+        }
+    }     
+
+</style>
