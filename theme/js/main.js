@@ -49,23 +49,23 @@
             });
         },
 
-        scrollHidesMenu: function () {
-            const header = $('[data-header="scroll"]');
-            let headerHeight = $('[data-header="scroll"]').outerHeight() + 20;
-            let position = $(window).scrollTop() - 20;
+        // scrollHidesMenu: function () {
+        //     const header = $('[data-header="scroll"]');
+        //     let headerHeight = $('[data-header="scroll"]').outerHeight() + 20;
+        //     let position = $(window).scrollTop() - 20;
 
-            if (position > this.settings.lastScrollPosition && position > headerHeight) {
-                header.addClass('u-effectHeader');
-                header.addClass('u-shadow');
-            } else if (position > headerHeight && position < this.settings.lastScrollPosition) {
-                header.removeClass('u-effectHeader');
-                header.addClass('u-shadow');
-            } else if (position < headerHeight) {
-                header.removeClass('u-shadow');
-            }
+        //     if (position > this.settings.lastScrollPosition && position > headerHeight) {
+        //         header.addClass('u-effectHeader');
+        //         header.addClass('u-shadow');
+        //     } else if (position > headerHeight && position < this.settings.lastScrollPosition) {
+        //         header.removeClass('u-effectHeader');
+        //         header.addClass('u-shadow');
+        //     } else if (position < headerHeight) {
+        //         header.removeClass('u-shadow');
+        //     }
 
-            this.settings.lastScrollPosition = position;
-        },
+        //     this.settings.lastScrollPosition = position;
+        // },
 
         getScroll: function () {
             let internal = this;

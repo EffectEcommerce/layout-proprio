@@ -94,7 +94,7 @@
     &-search {
         @extend %flex-center-center;
         position: relative;
-        margin: 0 4em;
+        margin: 0 1em;
         transition: width 0.3s ease-out;
         max-width: 650px;
         width: 100%;
@@ -346,7 +346,8 @@
         margin-left: 1rem;
         @extend %flex-center-center;
 
-        .icon-cart {
+        .icon-cart_ {
+            position: relative;
             margin-right: 0.3rem;
         }
 
@@ -360,15 +361,25 @@
 
         .cart-quantity {
             @include fontInsert(0.875, 600, var(--c_general_details));
-            display: inline-block;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            line-height: 23px;
+            position: absolute;
+            top: -6px;
+            right: -7px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
             vertical-align: middle;
             background-color: var(--c_header_cart);
+            font-weight: 400;
+            font-size: 0.625rem;
+            background-color: #B40409
         }
+    }
+    .wrapper-login-cart {
+        display: flex;
     }
 
     /// Menu:

@@ -32,32 +32,44 @@
             <nav data-menu="scroll" class="header-menu">{% element 'snippets/menu' %}</nav>
 
             {% element 'snippets/header-search' %}
-
-            <div class="header-account">
-                <span class="icon-account" aria-hidden="true"></span>
-
-                <div class="tray-hide logged" data-logged-user="true">
-                    <span class="account-text">Ol&aacute;, <span data-customer="name"></span></span>
-                    <div class="account-access">
-                        <a class="account-link" href="{{ links.central }}" title="Minha Conta">Minha conta</a>
-                        <span class="account-separator">/</span>
-                        <a class="account-link" href="{{ links.logout }}" title="Sair">Sair</a>
+            <div class="wrapper-login-cart>            
+                <div class="header-account">
+                    <a class="account-link" href="{{ links.central }}" title="Minha Conta">
+                    {# <span class="icon-account" aria-hidden="true"></span> #}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" fill="none">
+                        <path d="M30.3541 31.912L30.354 31.9121L30.3607 31.9231C30.3872 31.9662 30.4048 32.0141 30.4124 32.0641C30.42 32.114 30.4175 32.165 30.405 32.2139C30.3926 32.2629 30.3704 32.309 30.3398 32.3493C30.3092 32.3897 30.2708 32.4236 30.2268 32.449C30.1827 32.4744 30.134 32.4907 30.0835 32.4971C30.0329 32.5034 29.9816 32.4995 29.9326 32.4857C29.8836 32.4719 29.838 32.4485 29.7983 32.4168L29.4865 32.8077L29.7983 32.4168C29.7586 32.3852 29.7257 32.346 29.7015 32.3015L29.7017 32.3014L29.6949 32.2897C27.5336 28.5608 23.7053 26.3264 19.4583 26.3264C15.2113 26.3264 11.383 28.5608 9.2218 32.2897L9.22164 32.2896L9.21516 32.3015C9.19098 32.346 9.1581 32.3852 9.11841 32.4168L9.43017 32.8077L9.11841 32.4168C9.07872 32.4485 9.03303 32.4719 8.98403 32.4857C8.93502 32.4995 8.88373 32.5034 8.8332 32.4971C8.78265 32.4907 8.73393 32.4744 8.6899 32.449C8.64587 32.4236 8.60743 32.3897 8.57683 32.3493C8.54623 32.3089 8.52408 32.2629 8.51163 32.2139C8.49919 32.165 8.4967 32.114 8.5043 32.0641L8.01011 31.9888L8.5043 32.0641C8.51191 32.0141 8.52946 31.9662 8.55595 31.9231L8.5561 31.9231L8.56259 31.9119C10.1783 29.1224 12.6636 27.1289 15.5594 26.1854L16.6081 25.8437L15.6599 25.2802C14.2627 24.4498 13.1773 23.1846 12.5702 21.679C11.9632 20.1734 11.868 18.5106 12.2992 16.9458C12.7305 15.381 13.6643 14.0007 14.9576 13.0168C16.2509 12.0329 17.8321 11.5 19.4583 11.5C21.0846 11.5 22.6657 12.0329 23.959 13.0168C25.2523 14.0007 26.1862 15.381 26.6174 16.9458C27.0487 18.5106 26.9535 20.1734 26.3464 21.679C25.7394 23.1846 24.654 24.4498 23.2568 25.2802L22.309 25.8434L23.3572 26.1853C26.253 27.13 28.7384 29.1235 30.3541 31.912ZM12.7944 18.9147L12.7944 18.9152C12.7963 20.6794 13.4991 22.3706 14.7485 23.6178C15.9977 24.865 17.6914 25.5664 19.4578 25.5682H19.4583C20.7761 25.5682 22.0644 25.1781 23.1603 24.4471C24.2562 23.7161 25.1104 22.677 25.6149 21.4612C26.1194 20.2453 26.2514 18.9073 25.9942 17.6165C25.737 16.3257 25.1022 15.1401 24.1701 14.2096C23.2381 13.2792 22.0508 12.6456 20.7582 12.389C19.4657 12.1323 18.126 12.264 16.9084 12.7675C15.6909 13.271 14.65 14.1237 13.9177 15.2179C13.1854 16.3121 12.7944 17.5986 12.7944 18.9147Z" fill="black" stroke="black"/>
+                    </svg>
+                    <div class="tray-hide logged" data-logged-user="true">
+                        {# <span class="account-text">Ol&aacute;, <span data-customer="name"></span></span> #}
+                        <div class="account-access">
+                            </a>
+                            {# <span class="account-separator">/</span> #}
+                            {# <a class="account-link" href="{{ links.logout }}" title="Sair">Sair</a> #}
+                        </div>
+                    </div>
+                    <div class="tray-hide loggedout" data-logged-user="false">
+                        {# <span class="account-text">Minha Conta</span> #}
+                        <div class="account-access">
+                            <a class="account-link" href="{{ links.login }}" title="Entrar"></a>
+                            {# <span class="account-separator">/</span> #}
+                            {# <a class="account-link" href="{{ links.register }}" title="Cadastrar">Cadastrar</a> #}
+                        </div>
                     </div>
                 </div>
-                <div class="tray-hide loggedout" data-logged-user="false">
-                    <span class="account-text">Minha Conta</span>
-                    <div class="account-access">
-                        <a class="account-link" href="{{ links.login }}" title="Entrar">Entrar</a>
-                        <span class="account-separator">/</span>
-                        <a class="account-link" href="{{ links.register }}" title="Cadastrar">Cadastrar</a>
-                    </div>
-                </div>
+
+                <a class="header-cart" href="{{ links.cart }}" title="Carrinho">
+                    <div class="icon-cart_" aria-hidden="true">
+
+                        <svg  xmlns="http://www.w3.org/2000/svg" width="23" height="24" viewBox="0 0 23 24" fill="none">
+                            <path d="M6.91232 23.9998C6.32653 23.9998 5.82861 23.7976 5.41856 23.3932C5.0085 22.9889 4.80348 22.4979 4.80348 21.9203C4.80348 21.3426 5.0085 20.8516 5.41856 20.4473C5.82861 20.0429 6.32653 19.8407 6.91232 19.8407C7.49811 19.8407 7.99603 20.0429 8.40608 20.4473C8.81614 20.8516 9.02116 21.3426 9.02116 21.9203C9.02116 22.4979 8.81614 22.9889 8.40608 23.3932C7.99603 23.7976 7.49811 23.9998 6.91232 23.9998ZM18.6281 23.9998C18.0423 23.9998 17.5444 23.7976 17.1344 23.3932C16.7243 22.9889 16.5193 22.4979 16.5193 21.9203C16.5193 21.3426 16.7243 20.8516 17.1344 20.4473C17.5444 20.0429 18.0423 19.8407 18.6281 19.8407C19.2139 19.8407 19.7118 20.0429 20.1219 20.4473C20.5319 20.8516 20.737 21.3426 20.737 21.9203C20.737 22.4979 20.5319 22.9889 20.1219 23.3932C19.7118 23.7976 19.2139 23.9998 18.6281 23.9998ZM5.38927 4.93749L8.61111 11.5226H17.0465L20.7077 4.93749H5.38927ZM4.51058 3.20455H21.7621C22.2112 3.20455 22.5529 3.40673 22.7872 3.81108C23.0215 4.21543 23.0215 4.61978 22.7872 5.02413L18.8331 12.0425C18.6184 12.4084 18.3401 12.702 17.9984 12.9234C17.6567 13.1449 17.2808 13.2556 16.8707 13.2556H7.99603L6.35582 16.2593H20.737V17.9923H6.61943C5.79932 17.9923 5.20865 17.7227 4.84741 17.1836C4.48617 16.6444 4.49106 16.0379 4.86206 15.364L6.73658 11.9559L2.28458 2.65579H0V0.922852H3.42687L4.51058 3.20455Z" fill="black"/>
+                        </svg>
+                        {# <span class="icon-cart" aria-hidden="true"> #}
+                            <span class="cart-quantity" data-cart="amount">0</span>
+                        </div>
+
+                    </span>
+                </a>
             </div>
-
-            <a class="header-cart" href="{{ links.cart }}" title="Carrinho">
-                <span class="icon-cart" aria-hidden="true"></span>
-                <span class="cart-quantity" data-cart="amount">0</span>
-            </a>
         </div>
     </div>
 
