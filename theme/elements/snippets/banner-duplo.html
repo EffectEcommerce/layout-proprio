@@ -1,0 +1,30 @@
+{% if banners.extra5 and banners.extra6 %}
+<div class="banner-duplo">
+    <div class="container-txt-img">
+        <div class="content-txt">
+            <span>Lançamento de Nova Coleção</span>
+            <strong>Vestuário de Treino</strong>
+            <span>Confira novos estilos e cores, legging, top, sapato e muito mais os para seus treinos!</span>
+            <button>Comprar Agora</button>
+        </div>
+        <div class="content-img">
+            {% if banners.extra5.link %}
+                <a href="{{ banners.extra5.link }}">
+                    <img loading="lazy" src="{{ banners.extra5.src }}" alt="{{ banners.extra5.img_alt }}">
+                </a>
+            {% else %}
+                <img loading="lazy" src="{{ banners.extra5.src }}" alt="{{ banners.extra5.img_alt }}">
+            {% endif %}
+        </div>
+    </div>
+    <div class="container-img">
+        {% if banners.extra6.link %}
+            <a href="{{ banners.extra6.link }}">
+                <img loading="lazy" src="{{ banners.extra6.src }}" alt="{{ banners.extra6.img_alt }}">
+            </a>
+        {% else %}
+            <img loading="lazy" src="{{ banners.extra6.src }}" alt="{{ banners.extra6.img_alt }}">
+        {% endif %}
+    </div>
+</div>
+{% endif %}

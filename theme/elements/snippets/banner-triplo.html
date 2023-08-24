@@ -1,0 +1,30 @@
+{% if banners.extra2 and banners.extra3 and banners.extra4 %}
+    <div class="banner-triplo">
+        <div class="container-top">
+            {% if banners.extra2.link %}
+                <a src="{{ banners.extra2.link }}" alt="">
+                    <img src="{{ banners.extra2.src }}" alt="">
+                </a>
+            {% else %}
+                <img src="{{ banners.extra2.src }}" alt="">
+            {% endif %}
+            {% if banners.extra3.link %}
+                <a src="{{ banners.extra3.link }}" alt="">
+                    <img src="{{ banners.extra3.src }}" alt="">
+                </a>
+            {% else %}
+                <img src="{{ banners.extra3.src }}" alt="">
+            {% endif %}
+        </div>
+        <div class="container-bottom">
+            {% if banners.extra4.link %}
+                <a src="{{ banners.extra4.link }}" alt="">
+                    <img src="{{ banners.extra4.src }}" alt="">
+                </a>
+            {% else %}
+                <img src="{{ banners.extra4.src }}" alt="">
+            {% endif %}
+
+        </div>
+    </div>
+{% endif %}

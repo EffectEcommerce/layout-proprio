@@ -1,0 +1,32 @@
+.banner-triplo {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: white;
+    max-width: 1920px;
+    margin: 48px auto 0;
+    
+}
+
+.container-top {
+    display: flex;
+    gap: 16px;
+    a {
+        width: 100%;
+    }
+    a img {
+        width: 100%;
+        overflow: hidden;
+    }
+}
+
+.container-bottom img {
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .container-top {
+        display: flex;
+        flex-direction: column;
+    }
+}

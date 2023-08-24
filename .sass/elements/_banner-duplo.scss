@@ -1,0 +1,60 @@
+.banner-duplo {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 16px;
+    
+    img {
+        width: 100%;
+    }
+}
+
+.content-txt {
+    display: flex;
+    flex-direction: column;
+
+    span {
+        font-size: 0.875rem;
+    }
+    
+    strong {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    button {
+        display: flex;
+        padding: 18px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 2px;
+        background: #1F2228;
+        color: #fff;
+        max-width: 57%;
+        margin: 32px 0;
+        font-weight: 400;
+    }
+}
+
+@media (min-width: 748px) {
+    .banner-duplo {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+    }
+
+    .container-txt-img {
+        display: flex;
+        align-items: flex-end;
+
+    }
+
+    .content-txt {
+        padding-bottom: 88px;
+        padding-bottom: 88px;
+        width: 25vw;
+        margin-right: 12px;
+
+    }
+}
