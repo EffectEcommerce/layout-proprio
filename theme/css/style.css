@@ -3183,12 +3183,13 @@ div.Seguro {
   border-radius: 2px;
   background: #1F2228;
   color: #fff;
-  max-width: 57%;
+  max-width: 55%;
   margin: 32px 0;
   font-weight: 400;
+  font-size: 1rem;
 }
 
-@media (min-width: 748px) {
+@media (min-width: 790px) {
   .banner-duplo {
     display: flex;
     flex-direction: row;
@@ -3201,10 +3202,28 @@ div.Seguro {
   }
 
   .content-txt {
-    padding-bottom: 88px;
-    padding-bottom: 88px;
+    padding-bottom: 44px;
     width: 25vw;
     margin-right: 12px;
+  }
+  .content-txt button {
+    max-width: 90%;
+  }
+}
+@media (min-width: 936px) {
+  .content-txt button {
+    max-width: 65%;
+  }
+}
+@media (min-width: 1024px) {
+  .content-txt span {
+    font-size: 1.125rem;
+  }
+  .content-txt strong {
+    font-size: 1.875rem;
+  }
+  .content-txt button {
+    max-width: 65%;
   }
 }
 .footer {
