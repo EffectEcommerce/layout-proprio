@@ -2416,6 +2416,24 @@ body.overflowed {
   color: #fff;
 }
 
+.buttonSend {
+  color: var(--c_general_main);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  background: #1F2228;
+  padding: 0 10px;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.buttonSend:hover, .buttonSend:focus, .buttonSend:active {
+  background-color: #1F2228;
+  color: #fff;
+}
+
 span.error-block {
   color: var(--c_alert_error);
   font-weight: 600;
@@ -3252,11 +3270,14 @@ div.Seguro {
 }
 .footer .footer-newsletter {
   max-width: 1210px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  gap: 16px;
 }
 @media (max-width: 768px) {
   .footer .footer-newsletter {
     flex-wrap: wrap;
-    padding: 0;
     margin: 2.5rem 1.2rem 0 1.2rem;
     border-bottom: 1px solid var(--c_general_main);
   }
@@ -3264,14 +3285,12 @@ div.Seguro {
 @media (min-width: 768.1px) and (max-width: 1280px) {
   .footer .footer-newsletter {
     margin: 0 auto;
-    padding: 2.2rem 2rem;
     border-bottom: 1px solid var(--c_general_main);
   }
 }
 @media (min-width: 1280.1px) {
   .footer .footer-newsletter {
     margin: 0 auto;
-    padding: 2.2rem 2rem;
     border-bottom: 1px solid var(--c_general_main);
   }
 }
@@ -3281,22 +3300,17 @@ div.Seguro {
 @media (max-width: 768px) {
   .footer .footer-newsletter .newsletter-text {
     padding-bottom: 2rem;
-    text-align: center;
     width: 100%;
   }
 }
 @media (min-width: 768.1px) and (max-width: 1280px) {
   .footer .footer-newsletter .newsletter-text {
     padding-bottom: 0;
-    text-align: center;
-    width: 40%;
   }
 }
 @media (min-width: 1280.1px) {
   .footer .footer-newsletter .newsletter-text {
     padding-bottom: 0;
-    text-align: center;
-    width: 40%;
   }
 }
 .footer .footer-newsletter .newsletter-text .text-emphasis {
@@ -3305,11 +3319,14 @@ div.Seguro {
   color: var(--c_footer_title);
 }
 .footer .footer-newsletter .newsletter-text .text-paragraph {
-  font-weight: 600;
+  font-size: 16px;
   color: var(--c_general_text1);
 }
 .footer .footer-newsletter .newsletter-email {
   position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 @media (max-width: 768px) {
   .footer .footer-newsletter .newsletter-email {
@@ -3320,36 +3337,32 @@ div.Seguro {
 }
 @media (min-width: 768.1px) and (max-width: 1280px) {
   .footer .footer-newsletter .newsletter-email {
-    padding-left: 1.25em;
-    width: 60%;
+    width: 100%;
   }
 }
 @media (min-width: 1280.1px) {
   .footer .footer-newsletter .newsletter-email {
-    padding-left: 1.25em;
-    width: 60%;
+    width: 100%;
   }
 }
 .footer .footer-newsletter .newsletter-email .email-field {
-  height: 2em;
-  background-color: var(--c_footer_details_bg);
-  color: var(--c_footer_text);
   font-weight: 600;
-  padding: 1em 1em;
-  border-radius: 4px;
   font-size: 0.875rem;
 }
 .footer .footer-newsletter .newsletter-email .email-field:focus {
   box-shadow: inset 0 0 4px var(--c_footer_text);
 }
 .footer .footer-newsletter .newsletter-email .email-field::-moz-placeholder {
-  color: var(--c_footer_text);
+  color: #848484;
+  font-weight: 400;
 }
 .footer .footer-newsletter .newsletter-email .email-field:-ms-input-placeholder {
-  color: var(--c_footer_text);
+  color: #848484;
+  font-weight: 400;
 }
 .footer .footer-newsletter .newsletter-email .email-field::placeholder {
-  color: var(--c_footer_text);
+  color: #848484;
+  font-weight: 400;
 }
 @media (max-width: 768px) {
   .footer .footer-newsletter .newsletter-email .email-field {
@@ -3368,25 +3381,15 @@ div.Seguro {
 }
 @media (min-width: 1280.1px) {
   .footer .footer-newsletter .newsletter-email .email-field {
-    max-width: 420px;
     margin-right: 1em;
-    width: 50%;
   }
 }
-.footer .footer-newsletter .newsletter-email .button1.newsletter-button, .footer .footer-newsletter .newsletter-email .page-lista .lista-produtos form .lista-produto-comprar > input[type=image] + .newsletter-button.lista-produto-check::before, .page-lista .lista-produtos form .footer .footer-newsletter .newsletter-email .lista-produto-comprar > input[type=image] + .newsletter-button.lista-produto-check::before,
-.footer .footer-newsletter .newsletter-email .page-print_lista .lista-produtos form .lista-produto-comprar > input[type=image] + .newsletter-button.lista-produto-check::before,
-.page-print_lista .lista-produtos form .footer .footer-newsletter .newsletter-email .lista-produto-comprar > input[type=image] + .newsletter-button.lista-produto-check::before, .footer .footer-newsletter .newsletter-email .pageProduct-buyTogether .buyTogether .newsletter-button.botao-compre-junto:not(.botao-sob-consulta), .pageProduct-buyTogether .buyTogether .footer .footer-newsletter .newsletter-email .newsletter-button.botao-compre-junto:not(.botao-sob-consulta), .footer .footer-newsletter .newsletter-email .pageProduct-outOfStock .produto-preco .newsletter-button.botao_tire_duvidas, .pageProduct-outOfStock .produto-preco .footer .footer-newsletter .newsletter-email .newsletter-button.botao_tire_duvidas, .footer .footer-newsletter .newsletter-email .pageProduct-buy .newsletter-button#button-buy, .pageProduct-buy .footer .footer-newsletter .newsletter-email .newsletter-button#button-buy, .footer .footer-newsletter .newsletter-email .page-comparador .comparator ul li ul .comparsionFoto div a.newsletter-button[alt=Comprar], .page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[alt=Comprar],
-.footer .footer-newsletter .newsletter-email .page-comparador .comparator ul li ul .comparsionFoto div a.newsletter-button[title=Escolher],
-.page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[title=Escolher], .footer .footer-newsletter .newsletter-email .modal .botao-prosseguir-compra .newsletter-button.botao-commerce-img, .modal .botao-prosseguir-compra .footer .footer-newsletter .newsletter-email .newsletter-button.botao-commerce-img, .footer .footer-newsletter .newsletter-email .modal .detalhesBrinde .newsletter-button.botao, .modal .detalhesBrinde .footer .footer-newsletter .newsletter-email .newsletter-button.botao {
-  min-height: 56px;
+.footer .footer-newsletter .newsletter-email .buttonSend.newsletter-button {
+  min-height: 32px;
   flex-shrink: 0;
 }
 @media (max-width: 768px) {
-  .footer .footer-newsletter .newsletter-email .button1.newsletter-button, .footer .footer-newsletter .newsletter-email .page-lista .lista-produtos form .lista-produto-comprar > input[type=image] + .newsletter-button.lista-produto-check::before, .page-lista .lista-produtos form .footer .footer-newsletter .newsletter-email .lista-produto-comprar > input[type=image] + .newsletter-button.lista-produto-check::before,
-.footer .footer-newsletter .newsletter-email .page-print_lista .lista-produtos form .lista-produto-comprar > input[type=image] + .newsletter-button.lista-produto-check::before,
-.page-print_lista .lista-produtos form .footer .footer-newsletter .newsletter-email .lista-produto-comprar > input[type=image] + .newsletter-button.lista-produto-check::before, .footer .footer-newsletter .newsletter-email .pageProduct-buyTogether .buyTogether .newsletter-button.botao-compre-junto:not(.botao-sob-consulta), .pageProduct-buyTogether .buyTogether .footer .footer-newsletter .newsletter-email .newsletter-button.botao-compre-junto:not(.botao-sob-consulta), .footer .footer-newsletter .newsletter-email .pageProduct-outOfStock .produto-preco .newsletter-button.botao_tire_duvidas, .pageProduct-outOfStock .produto-preco .footer .footer-newsletter .newsletter-email .newsletter-button.botao_tire_duvidas, .footer .footer-newsletter .newsletter-email .pageProduct-buy .newsletter-button#button-buy, .pageProduct-buy .footer .footer-newsletter .newsletter-email .newsletter-button#button-buy, .footer .footer-newsletter .newsletter-email .page-comparador .comparator ul li ul .comparsionFoto div a.newsletter-button[alt=Comprar], .page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[alt=Comprar],
-.footer .footer-newsletter .newsletter-email .page-comparador .comparator ul li ul .comparsionFoto div a.newsletter-button[title=Escolher],
-.page-comparador .comparator ul li ul .comparsionFoto div .footer .footer-newsletter .newsletter-email a.newsletter-button[title=Escolher], .footer .footer-newsletter .newsletter-email .modal .botao-prosseguir-compra .newsletter-button.botao-commerce-img, .modal .botao-prosseguir-compra .footer .footer-newsletter .newsletter-email .newsletter-button.botao-commerce-img, .footer .footer-newsletter .newsletter-email .modal .detalhesBrinde .newsletter-button.botao, .modal .detalhesBrinde .footer .footer-newsletter .newsletter-email .newsletter-button.botao {
+  .footer .footer-newsletter .newsletter-email .buttonSend.newsletter-button {
     width: 100%;
     margin-bottom: 2.5rem;
   }
@@ -3435,8 +3438,9 @@ div.Seguro {
   grid-area: security;
 }
 .footer .footer-info .info-contact {
-  border: 2px solid var(--c_general_main);
-  border-radius: 0.5rem;
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
 }
 @media (max-width: 768px) {
   .footer .footer-info .info-contact {

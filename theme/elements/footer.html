@@ -6,39 +6,65 @@
 <footer class="footer">
     {% element 'snippets/banner-line' { 'banner_id': 'footer', 'banner_type': 'full' } %}
     
-    {% if settings.newsletter_active %}
-        <div class="footer-newsletter">
-            <div class="newsletter-text">
-                <div class="text">
-                    <p class="text-emphasis">
-                        Aproveite nossas promo&ccedil;&otilde;es!
-                    </p>
-                    <p class="text-paragraph">
-                        Cadastre seu e-mail e receba ofertas exclusivas.
-                    </p>
-                </div>
-            </div>
 
-            <form class="newsletter-email" action="/mvc/store/newsletter/" method="post">
-                <input type="hidden" name="loja" value="{{ store.id }}" />
-                <input
-                    class="email-field"
-                    type="email"
-                    name="email"
-                    placeholder="{{ settings.newsletter_placeholder ? settings.newsletter_placeholder : 'Digite seu e-mail' }}"
-                    required
-                    spellcheck="false"
-                    autocomplete="off"
-                />
-                <button type="submit" class="newsletter-button button1" >
-                    Cadastrar
-                </button>
-            </form>
-        </div>
-    {% endif %}
 
     <div class="footer-info">
         <div class="info-contact">
+            {% if settings.logo %}
+                <img class="footer-logo-image" src="{{ asset(settings.logo) }}"
+                    alt="{{ store.name }}"
+                    width="131" height="22"
+                />
+            {% endif %}
+            {% if settings.newsletter_active %}
+            <div class="footer-newsletter">
+                <div class="newsletter-text">
+                    <div class="text">
+                        {# <p class="text-emphasis">
+                            Aproveite nossas promo&ccedil;&otilde;es!
+                        </p> #}
+                        <p class="text-paragraph">
+                            Cadastre-se e fique por dentro de nossas
+                            Novidades e Ofertas!                        </p>
+                    </div>
+                </div>
+    
+                <form class="newsletter-email" action="/mvc/store/newsletter/" method="post">
+                    <input type="hidden" name="loja" value="{{ store.id }}" />
+                    <input
+                        class="email-field"
+                        type="email"
+                        name="email"
+                        placeholder="{{ settings.newsletter_placeholder ? settings.newsletter_placeholder : 'Digite seu melhor e-mail' }}"
+                        required
+                        spellcheck="false"
+                        autocomplete="off"
+                    />
+                    <button type="submit" class="newsletter-button buttonSend" >
+                        &rarr;
+                    </button>
+                </form>
+            </div>
+        {% endif %}
+       
+            <div class="info-media">{% element 'snippets/media-icons' %}</div>
+    </div>
+
+        <div class="info-pages">
+            <div class="info-title title--border">Institucional {{ icon }}</div>
+            <ul class="info-list">
+                {% for custom in pages.custom %}
+                    <li>
+                        <a class="info-link" href="{{ custom.url }}" title="{{ custom.name }}">{{ custom.name }}</a>
+                    </li>
+                {% endfor %}
+                <li>
+                    <a class="info-link" href="{{ links.contact }}" title="Fale Conosco">Fale Conosco</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="contact-wrapper">
             <div class="info-title">Atendimento {{ icon }}</div>
             <ul class="info-list">
                 {% if phone %} 
@@ -83,28 +109,6 @@
                     </li>
                 {% endif %}
             </ul>
-            <div class="info-media">{% element 'snippets/media-icons' %}</div>
-        </div>
-
-        <div class="info-pages">
-            <div class="info-title title--border">Institucional {{ icon }}</div>
-            <ul class="info-list">
-                {% for custom in pages.custom %}
-                    <li>
-                        <a class="info-link" href="{{ custom.url }}" title="{{ custom.name }}">{{ custom.name }}</a>
-                    </li>
-                {% endfor %}
-                <li>
-                    <a class="info-link" href="{{ links.contact }}" title="Fale Conosco">Fale Conosco</a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="info-payment">
-            {% if paymentMethods.order or paymentMethods.credit %}
-                <div class="info-title title--border">Pagamento {{ icon }}</div>
-                {% element 'snippets/payment-list' %} 
-            {% endif %}
         </div>
 
         <div class="info-security">
@@ -129,6 +133,13 @@
                 {% endif %}
             </ul>
         </div>
+    </div>
+
+    <div class="info-payment">
+        {% if paymentMethods.order or paymentMethods.credit %}
+            <div class="info-title title--border">Pagamento {{ icon }}</div>
+            {% element 'snippets/payment-list' %} 
+        {% endif %}
     </div>
 
     <div class="footer-credits">

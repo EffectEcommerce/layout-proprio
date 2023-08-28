@@ -733,6 +733,23 @@ body.overflowed {
     }
 }
 
+.buttonSend {
+    @include fontInsert($fs_button, 400, var(--c_general_main));
+    background: #1F2228;
+    padding: 0 10px;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: #1F2228;
+        color: #fff;
+    }
+
+}
+
 
 span.error-block {
     color: var(--c_alert_error);
