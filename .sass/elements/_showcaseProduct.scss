@@ -16,12 +16,12 @@
             }
 
             @include medium {
-                padding: 0 0.625rem;
+                padding: 0 0.425rem;
                 width: calc(100% / 3);
             }
 
             @include large {
-                padding: 0 0.625rem;
+                padding: 0 0.425rem;
                 width: calc(100% / 4);
             }
         }
@@ -96,7 +96,15 @@
     &-image {
         position: relative;
         overflow: hidden;
+        
+        &:hover {
+            .product-button {
+                transition: .3s ease-in-out;
+                opacity: 1;
+            }
+        }
     }
+    
 
     &-link {
         display: block;
@@ -119,16 +127,18 @@
     }
 
     &-info {
-        @extend %flex-colun-betw;
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
         flex-grow: 1;
         @include small {
-            margin: 0.5rem 0.5rem 0.4rem;
+            margin: 0rem 0.5rem 0.4rem;
         }
         @include medium {
-            margin: 1rem 1.25rem 0.5rem;
+            margin: 0rem 1.25rem 0.5rem;
         }
         @include large {
-            margin: 1rem 1.25rem 0.5rem;
+            margin: 0rem 1.25rem 0.5rem;
         }
     }
 
@@ -164,63 +174,64 @@
 
             &:hover {
                 opacity: 0.6;
+                
             }
         }
     }
 
     /// Product-price
     &-price {
-        @extend %flex-center-colun;
+        // @extend %flex-center-colun;
+        display: flex;
         width: inherit;
-        text-align: center;
-
+        align-content: flex-start;
         .price {
-            text-align: center;
+            // text-align: center;
             width: 100%;
 
             @include small {
                 &-titleStarting {
-                    @include fontInsert(0.9, 400, var(--c_general_text2));
+                    @include fontInsert(0.9, 500, var(--c_general_text2));
                 }
 
                 &-old,
                 &-current,
                 &-installments {
-                    @include fontInsert(0.87, 400, var(--c_general_text2));
+                    @include fontInsert(0.87, 500, var(--c_general_text2));
                 }
 
                 &-current .value {
-                    @include fontInsert(1, 700, var(--c_general_main));
+                    @include fontInsert(0.75, 500, var(--c_general_main));
                 }
             }
             @include medium {
                 &-titleStarting {
-                    @include fontInsert(0.95, 400, var(--c_general_text2));
+                    @include fontInsert(0.95, 500, var(--c_general_text2));
                 }
 
                 &-old,
                 &-current,
                 &-installments {
-                    @include fontInsert(0.95, 400, var(--c_general_text2));
+                    @include fontInsert(0.95, 500, var(--c_general_text2));
                 }
 
                 &-current .value {
-                    @include fontInsert(1.2, 700, var(--c_general_main));
+                    @include fontInsert(.9, 500, var(--c_general_main));
                 }
             }
             @include large {
                 &-titleStarting {
-                    @include fontInsert(0.95, 400, var(--c_general_text2));
+                    @include fontInsert(0.95, 500, var(--c_general_text2));
                 }
 
                 &-old,
                 &-current,
                 &-installments {
-                    @include fontInsert(0.95, 400, var(--c_general_text2));
+                    @include fontInsert(0.95, 500, var(--c_general_text2));
                 }
 
                 &-current .value {
-                    @include fontInsert(1.2, 700, var(--c_general_main));
+                    @include fontInsert(1, 500, var(--c_general_main));
                 }
             }
 
@@ -395,6 +406,12 @@
     }
 
     &-button {
+        position: absolute;
+        top: 75%;
+        left: 0;
+        right: 0;
+        opacity: 0;
+
         @include small {
             margin: 1.4rem 0.5rem 0.5rem;
             .button2 {

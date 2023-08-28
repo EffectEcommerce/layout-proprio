@@ -5,13 +5,17 @@
 {% endif %}
 
 <div class="price display-cash">
-    {% if old_price %}
+    {% if old_price and settings.show_old_price %}
         <p class="price-old">de: {{ settings.currency }} {{ old_price | currency }}</p>
+        <p class="price-current">
+            {{ old_price ? 'por:' }} <em class="value"> {{ settings.currency }} {{ current_price | currency }} </em>
+        </p>
+    {% else %}
+            <p class="price-current">
+                <em class="value"> {{ settings.currency }} {{ current_price | currency }} </em>
+            </p>
     {% endif %}
-
-    <p class="price-current">
-        {{ old_price ? 'por:' }} <em class="value"> {{ settings.currency }} {{ current_price | currency }} </em>
-    </p>
-
-    <p class="price-installments">{{ product.payment }}</p>
+    {% if settings.show_installment_price %}
+        <p class="price-installments">{{ product.payment }}</p>
+    {% endif %}
 </div>

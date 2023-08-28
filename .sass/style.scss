@@ -716,6 +716,24 @@ body.overflowed {
     }
 }
 
+.buttonCTA {
+    @include fontInsert($fs_button, 400, var(--c_general_main));
+    background-color:#fff;
+    border-radius: 2px;
+    display: block;
+    padding: 8px 53px;
+    opacity: 1;
+    transition: $transit_default;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: #1F2228;
+        color: #fff;
+    }
+}
+
+
 span.error-block {
     color: var(--c_alert_error);
     font-weight: 600;

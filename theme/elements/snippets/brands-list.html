@@ -1,16 +1,39 @@
 {% set brands = Brands() %}
+
+{% set listCat = [] %}
+{% for i in 1..6 %}
+    {% set position = attribute(settings, 'marca_'~i~'_position') %}
+    {% set id = attribute(settings, 'marca_'~i~'_id') %}
+    {% set img = attribute(settings, 'marca_'~i~'_image') %}
+    {% if id %}
+        {% set listCat = listCat|merge([{ "position": position, "id": id, "img": img }]) %}
+    {% endif %}
+{% endfor %}
+
 <section class="section brands" data-slides="brands">
+    <div class="titulo">
+        <span >Nossas Marcas</span>
+
+    </div>
     <div class="brands-content swiper">
         <div class="brands-list swiper-wrapper">
             {% for brand in brands %}
-                <div class="brands-item swiper-slide">
-                    <div class="brands-title swiper-slide">
-                        <span class="icon-tag" aria-hidden="true"></span>
-                        {{ brand.name }}
-                    </div>
-                </div>
+                {% for i in 1..6 %}
+                    {% set loopParent = loop.index %}
+                    {% for list in listCat %}
+                        {% if list.position == loopParent %} 
+                        {% set marcaGet = Brands( { "id": list.id } ) %}  
+                            <div class="brands-item swiper-slide">
+                                <div class="brands-title swiper-slide">
+                                    <a href="{{ marcaGet.slug }}">
+                                        <img class="lazyload img-marca" src="{{ themePath ~ list.img }}?{{ utils.assets_version }}" alt="{{ marcaGet.name }}" id="image-{{ marcaGet.id }}">
+                                    </a>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
             {% endfor %}
         </div>
-        <div class="swiper-pagination"></div>
     </div>
 </section>

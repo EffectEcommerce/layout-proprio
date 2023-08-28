@@ -22,7 +22,9 @@
     {% endif %}
 
     <div class="product-image">
+        
         <a href="{{ product.link }}" class="product-link">
+
             <img
                 class="product-img lazyload"
                 src="{{ asset('img/empty.png') }}"
@@ -31,12 +33,55 @@
                 width="450"
                 height="450"
             />
+            {% if settings.show_button_product %} 
+            <button
+                class="product-button {{ not product.available and not (product.stock > 0 or settings.without_stock_sale) and product.upon_request or product.stock
+                <= 0 or product.upon_request ? 'u-marginNone' }}"
+                type="button" aria-label="Ver Produto"
+            >
+                {% if product.available and (product.stock > 0 or settings.without_stock_sale) and not product.upon_request %}
+                    <a class="buttonCTA" href="{{ product.link }}"> Ver produto </a>
+                {% endif %}
+            </button>
+        {% endif %}
         </a>
 
         {% element 'snippets/product-tags' { 'product': product } %}
     </div>
 
     <a class="product-info" href="{{ product.link }}">
+        {% if pages.current == 'catalog' %}
+            <h2 class="product-name">{{ product.name }}</h2>
+        {% else %}
+            <h4 class="product-name">{{ product.name }}</h4>
+        {% endif %}
+
+        {% if settings.show_star_rating %} 
+            {% element 'snippets/product-rating' { 'review': product.ranking } %}
+        {% endif %} 
+
+        <div class="product-price">
+            {% if product.available and (product.stock > 0 or settings.without_stock_sale) and not product.upon_request %} 
+                {% element 'snippets/product-price' { 
+                    'product': product 
+                } %} 
+            {% elseif product.upon_request %} 
+                {% element 'snippets/product-message' { 
+                    'product_message': 'Produto sob consulta' 
+                } %} 
+            {% elseif product.stock <= 0 %} 
+                {% element 'snippets/product-message' { 
+                    'product_message': 'Produto indisponível' 
+                } %} 
+            {% else %} 
+                {% element 'snippets/product-message' { 
+                    'product_message': 'Produto indisponível, avise-me quando chegar' 
+                } %}
+            {% endif %}
+        </div>
+
+    </a>
+    {# <a class="product-info" href="{{ product.link }}">
         {% if pages.current == 'catalog' %}
             <h2 class="product-name">{{ product.name }}</h2>
         {% else %}
@@ -62,15 +107,6 @@
                 } %}
             {% endif %}
         </div>
-    </a>
+    </a> #}
 
-    <button
-        class="product-button {{ not product.available and not (product.stock > 0 or settings.without_stock_sale) and product.upon_request or product.stock
-        <= 0 or product.upon_request ? 'u-marginNone' }}"
-        type="button" aria-label="Ver Produto"
-    >
-        {% if product.available and (product.stock > 0 or settings.without_stock_sale) and not product.upon_request %}
-            <a class="button2" href="{{ product.link }}"> Ver produto </a>
-        {% endif %}
-    </button>
 </div>

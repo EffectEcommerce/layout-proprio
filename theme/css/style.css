@@ -759,14 +759,14 @@ button.swiper-pagination-bullet {
   align-items: center;
 }
 
-.page-central_listas .container3:not(.central-conteudo) + .board .icoFilho, .pageProduct-buyTogether .buyTogether .compreJunto .fotosCompreJunto, .pageProduct #produto_nao_disp, .page-comparador .comparator ul li ul .comparsionFoto > a, .page-comparador .comparator ul li ul, .news-container, .reviews-container .dep_dados, .reviews-container, .loader:not(img), .product .tag-floating, .product-price, .menuMobile {
+.page-central_listas .container3:not(.central-conteudo) + .board .icoFilho, .pageProduct-buyTogether .buyTogether .compreJunto .fotosCompreJunto, .pageProduct #produto_nao_disp, .page-comparador .comparator ul li ul .comparsionFoto > a, .page-comparador .comparator ul li ul, .news-container, .reviews-container .dep_dados, .reviews-container, .loader:not(img), .product .tag-floating, .menuMobile {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.page-comparador .comparator ul li ul .comparsionFoto, .product-info {
+.page-comparador .comparator ul li ul .comparsionFoto {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -2397,6 +2397,25 @@ body.overflowed {
   background-color: var(--c_general_main);
 }
 
+.buttonCTA {
+  color: var(--c_general_main);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  background-color: #fff;
+  border-radius: 2px;
+  display: block;
+  padding: 8px 53px;
+  opacity: 1;
+  transition: 0.2s ease-out;
+}
+.buttonCTA:hover, .buttonCTA:focus, .buttonCTA:active {
+  background-color: #1F2228;
+  color: #fff;
+}
+
 span.error-block {
   color: var(--c_alert_error);
   font-weight: 600;
@@ -3158,7 +3177,6 @@ div.Seguro {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin: 16px;
 }
 .banner-duplo img {
   width: 100%;
@@ -3594,13 +3612,13 @@ div.Seguro {
 }
 @media (min-width: 768.1px) and (max-width: 1280px) {
   .showcase-listProduct .listProduct-item {
-    padding: 0 0.625rem;
+    padding: 0 0.425rem;
     width: 33.3333333333%;
   }
 }
 @media (min-width: 1280.1px) {
   .showcase-listProduct .listProduct-item {
-    padding: 0 0.625rem;
+    padding: 0 0.425rem;
     width: 25%;
   }
 }
@@ -3677,6 +3695,10 @@ div.Seguro {
   position: relative;
   overflow: hidden;
 }
+.product-image:hover .product-button {
+  transition: 0.3s ease-in-out;
+  opacity: 1;
+}
 .product-link {
   display: block;
   position: relative;
@@ -3697,21 +3719,24 @@ div.Seguro {
   width: inherit;
 }
 .product-info {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
   flex-grow: 1;
 }
 @media (max-width: 768px) {
   .product-info {
-    margin: 0.5rem 0.5rem 0.4rem;
+    margin: 0rem 0.5rem 0.4rem;
   }
 }
 @media (min-width: 768.1px) and (max-width: 1280px) {
   .product-info {
-    margin: 1rem 1.25rem 0.5rem;
+    margin: 0rem 1.25rem 0.5rem;
   }
 }
 @media (min-width: 1280.1px) {
   .product-info {
-    margin: 1rem 1.25rem 0.5rem;
+    margin: 0rem 1.25rem 0.5rem;
   }
 }
 .product-name {
@@ -3749,11 +3774,11 @@ div.Seguro {
   opacity: 0.6;
 }
 .product-price {
+  display: flex;
   width: inherit;
-  text-align: center;
+  align-content: flex-start;
 }
 .product-price .price {
-  text-align: center;
   width: 100%;
 }
 @media (max-width: 768px) {
@@ -3761,7 +3786,7 @@ div.Seguro {
     color: var(--c_general_text2);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 0.9rem;
-    font-weight: 400;
+    font-weight: 500;
     font-variant: normal;
     text-transform: none;
   }
@@ -3769,15 +3794,15 @@ div.Seguro {
     color: var(--c_general_text2);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 0.87rem;
-    font-weight: 400;
+    font-weight: 500;
     font-variant: normal;
     text-transform: none;
   }
   .product-price .price-current .value {
     color: var(--c_general_main);
     font-family: "Source Sans Pro", sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
+    font-size: 0.75rem;
+    font-weight: 500;
     font-variant: normal;
     text-transform: none;
   }
@@ -3787,7 +3812,7 @@ div.Seguro {
     color: var(--c_general_text2);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 0.95rem;
-    font-weight: 400;
+    font-weight: 500;
     font-variant: normal;
     text-transform: none;
   }
@@ -3795,15 +3820,15 @@ div.Seguro {
     color: var(--c_general_text2);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 0.95rem;
-    font-weight: 400;
+    font-weight: 500;
     font-variant: normal;
     text-transform: none;
   }
   .product-price .price-current .value {
     color: var(--c_general_main);
     font-family: "Source Sans Pro", sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-size: 0.9rem;
+    font-weight: 500;
     font-variant: normal;
     text-transform: none;
   }
@@ -3813,7 +3838,7 @@ div.Seguro {
     color: var(--c_general_text2);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 0.95rem;
-    font-weight: 400;
+    font-weight: 500;
     font-variant: normal;
     text-transform: none;
   }
@@ -3821,15 +3846,15 @@ div.Seguro {
     color: var(--c_general_text2);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 0.95rem;
-    font-weight: 400;
+    font-weight: 500;
     font-variant: normal;
     text-transform: none;
   }
   .product-price .price-current .value {
     color: var(--c_general_main);
     font-family: "Source Sans Pro", sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: 500;
     font-variant: normal;
     text-transform: none;
   }
@@ -4019,6 +4044,13 @@ div.Seguro {
     top: 1.25rem;
     left: 1.25rem;
   }
+}
+.product-button {
+  position: absolute;
+  top: 75%;
+  left: 0;
+  right: 0;
+  opacity: 0;
 }
 @media (max-width: 768px) {
   .product-button {
@@ -5131,6 +5163,16 @@ body.modal-open {
 }
 .brands .icon-tag {
   margin-right: 0.6rem;
+}
+
+.brands .img-marca {
+  max-width: 150px;
+}
+
+.brands .titulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .pagination {

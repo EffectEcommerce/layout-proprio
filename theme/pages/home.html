@@ -6,13 +6,17 @@
     {% element 'snippets/top-categorias' %}
 </div>
 {% element 'snippets/banner-triplo' %}
-{% element 'snippets/banner-duplo' %}
+
 
 {% element 'home-showcase' { 
     'rand' : settings.showcase_rand_products, 
     'type' : settings.showcase_type_1, 
     'quantity' : settings.showcase_quantity_1 
 } %} 
+
+<div class="section">
+    {% element 'snippets/banner-duplo' %}
+</div>
 {% element 'snippets/brands-list' %} 
 
 {% element 'home-showcase' { 
