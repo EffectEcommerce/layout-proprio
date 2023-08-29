@@ -3,6 +3,7 @@
     color: var(--c_footer_text);
     margin-top: 3rem;
     padding: 0px 0 28px;
+    border-top: 1px solid #000;
 
     .footer {
         &-newsletter {
@@ -137,6 +138,7 @@
         &-info {
             max-width: $v_width_content_page;
             display: grid;
+            padding-top: 16px;
 
             @include small {
                 margin: 4rem 1.2rem 2rem 1.2rem;
@@ -189,16 +191,16 @@
                     display: flex;
                     flex-direction: column;
 
-                    @include small {
-                        padding: 1.3rem 1.5rem;
-                    }
-                    @include medium {
-                        padding: 1.3rem 1.5rem;
-                    }
-                    @include large {
-                        padding: 1.5rem;
+                    // @include small {
+                    //     padding: 1.3rem 1.5rem;
+                    // }
+                    // @include medium {
+                    //     padding: 1.3rem 1.5rem;
+                    // }
+                    // @include large {
+                    //     padding: 1.5rem;
 
-                    }
+                    // }
 
                     .icon.icon-phone,
                     .icon.icon-email {
@@ -216,10 +218,12 @@
 
                 &-list {
                     padding-bottom: 1rem;
-                    word-break: break-word;
+                    // word-break: break-word;
 
                     .contact-item {
-                        @extend %flex-start-center;
+                        font-size: 12px;
+                        font-weight: 400;
+                        line-height: normal;
                         padding-bottom: 0.8rem;
                         opacity: 1;
                         transition: $transit_default;
@@ -228,16 +232,37 @@
                             color: var(--c_footer_title);
                             opacity: 0.8;
                         }
-
+                        
                         .icon-phone,
                         .icon-email,
                         .icon-whatsapp {
-                            margin-right: 0.5rem;
+                            // margin-right: 16px;
                         }
                     }
+                    .wrapper-atendimento {
+                        display: flex;
+                        gap: 16px;
 
+                        svg {
+                            // margin-right: 16px;
+                        }
+
+                        span {
+                            font-size: 12px;
+                            font-weight: 400;
+                            line-height: normal;
+                        }
+
+                        div {
+                            display: flex;
+                            flex-direction: column;
+                        }
+
+                    }
                     .info-link {
-                        @include fontInsert(0.9, 400, var(--c_footer_text));
+                        font-size: 12px;
+                        font-weight: 400;
+                        line-height: normal;
                         padding-bottom: 0.6rem;
                         display: block;
                         opacity: 1;
@@ -250,29 +275,32 @@
                     }
                 }
 
-                &-payment {
-                    .payment {
-                        &-list {
-                            width: 100%;
-                            max-width: 192px;
-                        }
-                        &-text {
-                            @include fontInsert(0.9, 400, var(--c_footer_text));
-                            padding-bottom: 0.5rem;
-                        }
+                // &-payment {
 
-                        &-debt,
-                        &-credit {
-                            @extend %flex-start-center;
-                            flex-wrap: wrap;
-                            margin-bottom: 0.9rem;
-                        }
+                //     .payment {
+                //         display: flex;        
+                //         &-list {
+                //             width: 100%;
+                //             max-width: 192px;
+                //         }
+                //         &-text {
+                //             @include fontInsert(0.9, 400, var(--c_footer_text));
+                //             padding-bottom: 0.5rem;
+                //         }
 
-                        &-item {
-                            margin: 0 0.3rem 0.3rem 0;
-                        }
-                    }
-                }
+                //         &-debt,
+                //         &-credit {
+                //             @extend %flex-start-center;
+                //             flex-wrap: wrap;
+                //             margin-bottom: 0.9rem;
+                //         }
+
+                //         &-item {
+                //             margin: 0 0.3rem 0.3rem 0;
+                //         }
+                //     }
+                // }
+
 
                 &-media {
                     display: flex;
@@ -353,4 +381,13 @@
             display: none;
         }
     }
+}
+
+.payment-ul {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding-bottom: 32px;
+
+    border-bottom: 1px solid #000;
 }

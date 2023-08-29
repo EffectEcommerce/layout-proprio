@@ -3,7 +3,7 @@
 {% set phone = Translation('ag_telefone_1') %} 
 {% set phone2 = Translation('ag_telefone_2') %}
 
-<footer class="footer">
+<footer class="footer section">
     {% element 'snippets/banner-line' { 'banner_id': 'footer', 'banner_type': 'full' } %}
     
 
@@ -51,7 +51,8 @@
     </div>
 
         <div class="info-pages">
-            <div class="info-title title--border">Institucional {{ icon }}</div>
+            {# <div class="info-title title--border">Institucional {{ icon }}</div> #}
+            <div class="info-title">Sobre a {{ store.name }} {{ icon }}</div>
             <ul class="info-list">
                 {% for custom in pages.custom %}
                     <li>
@@ -70,16 +71,25 @@
                 {% if phone %} 
                     {% set link = phone | replace({'(': '', ')': '', '-': '', ' ': ''}) %}
                     <li>
-                        <a
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="contact-item"
-                            href="tel:{{ link }}"
-                            title="Telefone: {{ phone }}"
-                        >
-                            <span class="icon-phone" aria-hidden="true"></span>
-                            {{ phone }}
-                        </a>
+                        <div class="wrapper-atendimento">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <path d="M8.45629 19.3062L11.9564 17.8061C12.1059 17.7424 12.272 17.729 12.4299 17.7679C12.5877 17.8068 12.7286 17.8959 12.8314 18.0218L14.3814 19.9155C16.814 18.7686 18.7717 16.8109 19.9187 14.3783L18.0249 12.8282C17.8987 12.7256 17.8095 12.5847 17.7705 12.4268C17.7316 12.269 17.7452 12.1027 17.8093 11.9532L19.3093 8.45316C19.3796 8.29204 19.5039 8.16048 19.6608 8.08119C19.8176 8.00189 19.9973 7.97982 20.1687 8.01878L23.4187 8.76879C23.584 8.80696 23.7314 8.90001 23.837 9.03276C23.9426 9.16551 24 9.33013 24 9.49974C24 17.5155 17.503 24 9.49975 24C9.33008 24.0001 9.16539 23.9427 9.03258 23.8371C8.89976 23.7315 8.80666 23.584 8.76849 23.4187L8.01847 20.1687C7.97976 19.9964 8.0023 19.8161 8.08221 19.6587C8.16212 19.5012 8.2944 19.3766 8.45629 19.3062Z" fill="#1F2228"/>
+                              </svg>
+                              <div>
+                                  <span>DÚVIDAS, LIGUE</span>
+                                  <a
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      class="contact-item"
+                                      href="tel:{{ link }}"
+                                      title="Telefone: {{ phone }}"
+                                  >
+                                      {# <span class="icon-phone" aria-hidden="true"></span> #}
+                                      {{ phone }}
+                                  </a>
+                              </div>
+             
+                        </div>
                     </li>
                 {% endif %} 
                 {% if phone2 %} 
@@ -102,17 +112,44 @@
                 {% endif %} 
                 {% if email %}
                     <li>
-                        <a class="contact-item" href="mailto:{{ email }}" title="Email: {{ email }}">
-                            <span class="icon-email" aria-hidden="true"></span>
-                            {{ email }}
-                        </a>
+                        <div class="wrapper-atendimento">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <path d="M8.30313 13.9625C8.18125 13.8656 8 13.9562 8 14.1094V20.5C8 21.3281 8.67188 22 9.5 22H22.5C23.3281 22 24 21.3281 24 20.5V14.1125C24 13.9563 23.8219 13.8687 23.6969 13.9656C22.9969 14.5094 22.0687 15.2 18.8812 17.5156C18.2219 17.9969 17.1094 19.0094 16 19.0031C14.8844 19.0125 13.75 17.9781 13.1156 17.5156C9.92813 15.2 9.00313 14.5062 8.30313 13.9625ZM16 18C15.275 18.0125 14.2312 17.0875 13.7063 16.7063C9.55938 13.6969 9.24375 13.4344 8.2875 12.6844C8.10625 12.5437 8 12.325 8 12.0938V11.5C8 10.6719 8.67188 10 9.5 10H22.5C23.3281 10 24 10.6719 24 11.5V12.0938C24 12.325 23.8938 12.5406 23.7125 12.6844C22.7563 13.4312 22.4406 13.6969 18.2937 16.7063C17.7687 17.0875 16.725 18.0125 16 18Z" fill="#1F2228"/>
+                            </svg>
+                            <div>
+                                <span>
+                                    ENVIE UM E-MAIL
+                                </span>
+                                <a class="contact-item" href="mailto:{{ email }}" title="Email: {{ email }}">
+                                    {# <span class="icon-email" aria-hidden="true"></span> #}
+                                    {{ email }}
+                                </a>
+                            </div>
+                        </div>
                     </li>
                 {% endif %}
+                <li>
+                    <div class="wrapper-atendimento">
+                        <div>
+
+                            <svg  xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <path d="M16 8C11.5806 8 8 11.5806 8 16C8 20.4194 11.5806 24 16 24C20.4194 24 24 20.4194 24 16C24 11.5806 20.4194 8 16 8ZM17.8419 19.2935L14.9968 17.2258C14.8968 17.1516 14.8387 17.0355 14.8387 16.9129V11.4839C14.8387 11.271 15.0129 11.0968 15.2258 11.0968H16.7742C16.9871 11.0968 17.1613 11.271 17.1613 11.4839V15.9258L19.2097 17.4161C19.3839 17.5419 19.4194 17.7839 19.2935 17.9581L18.3839 19.2097C18.2581 19.3806 18.0161 19.4194 17.8419 19.2935Z" fill="#1F2228"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span>HORÁRIO DE ATENDIMENTO:</span>
+                            <span>
+                                à Sexta, das 8h ÀS 18h
+                                Sábados e Domingo das 12h ÀS 18h
+                            </span>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
 
         <div class="info-security">
-            <div class="info-title title--border">Seguran&ccedil;a {{ icon }}</div>
+            <div class="info-title">Selo de Seguran&ccedil;a {{ icon }}</div>
             <ul class="info-list">
                 <li class="google-seal">
                     <a
@@ -135,16 +172,22 @@
         </div>
     </div>
 
-    <div class="info-payment">
-        {% if paymentMethods.order or paymentMethods.credit %}
-            <div class="info-title title--border">Pagamento {{ icon }}</div>
-            {% element 'snippets/payment-list' %} 
-        {% endif %}
-    </div>
-
+    {% if paymentMethods.order or paymentMethods.credit %}
+        <div class="info-payment">
+            <div class="section">
+                    {% element 'snippets/payment-list' %} 
+                </div>
+            </div>
+    {% endif %}
+        
     <div class="footer-credits">
         <div class="credits">
-            <div class="credits-text">{{ Translation('ag_mensagem_rodape') }}</div>
+            <a class="logo" href="//effectecommerce.com.br" target="_blank" title="Effect E-Commerce - Marketing Digital" rel="noopener noreferrer">
+                <center> <img src="https://images.tcdn.com.br/files/761336/themes/173/img/logo-effect-black.svg?dbac56306b003f34cbb4dcaaa40a8944" alt="Effect E-Commerce"></center><br>
+            </a>
+
+
+
         </div>
 
         <div class="footer-message">
@@ -157,3 +200,5 @@
         </div>
     </div>
 </footer>
+
+

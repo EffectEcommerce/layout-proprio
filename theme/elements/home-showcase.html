@@ -33,6 +33,7 @@
     {% endif %}
 
     {% if products | length > 0 %}
+    <div class="{{ especial ? especial }}">
         <section class="section showcase">
             <h2 class="section-title">
                 {{ title }}
@@ -49,6 +50,7 @@
                 {% endfor %}
             </ul>
         </section>
+    </div>
     {% endif %}
 
 {% endif %}

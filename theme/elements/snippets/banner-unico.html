@@ -1,0 +1,13 @@
+{% if banners.extra7 %}
+<div class="banner-unico">
+    <div class="container-img">
+        {% if banners.extra7.link %}
+            <a href="{{ banners.extra7.link }}">
+                <img loading="lazy" src="{{ banners.extra7.src }}" alt="{{ banners.extra7.img_alt }}">
+            </a>
+        {% else %}
+            <img loading="lazy" src="{{ banners.extra7.src }}" alt="{{ banners.extra7.img_alt }}">
+        {% endif %}
+    </div>
+</div>
+{% endif %}

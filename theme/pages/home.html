@@ -22,7 +22,8 @@
 {% element 'home-showcase' { 
     'rand' : settings.showcase_rand_products, 
     'type' : settings.showcase_type_2, 
-    'quantity' : settings.showcase_quantity_2 
+    'quantity' : settings.showcase_quantity_2 ,
+    'especial' : "vitrine-especial"
 } %} 
 
 {% for pages in pages.custom %} 
@@ -60,8 +61,10 @@
 {% endfor %} 
 
 {% element 'snippets/banner-line' { 'banner_id': 'bottom', 'banner_type': 'container' } %}
+{% element 'snippets/banner-unico' %} 
 {% element 'snippets/brands-list' %} 
-<section class="section tagCloud">
+
+{# <section class="section tagCloud">
     <h2 class="section-title">{{ Translation('tags_mais_buscadas') }}</h2>
     <ul class="tagCloud-list">
         {% for tag in tags %}
@@ -70,4 +73,4 @@
             </li>
         {% endfor %}
     </ul>
-</section>
+</section> #}

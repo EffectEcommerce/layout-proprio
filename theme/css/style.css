@@ -741,7 +741,7 @@ button.swiper-pagination-bullet {
 
 .pageProduct .cor_variacao .lista_cor_variacao,
 .pageProduct .cor_variacao [data-id=lista_cor_variacao],
-.pageProduct .cor_variacao [data-id^=second-dropdown-show], .pageProduct-buy #product-form-box, .page-comparador .comparator ul li ul li:not(.comparsionFoto), .filter-list .filter-checkbox, .breadcrumb, .footer .footer-info .info-payment .payment-debt, .footer .footer-info .info-payment .payment-credit, .footer .footer-info .info-list .contact-item, .menuMobile-account .u-show .account-access, .header-logo {
+.pageProduct .cor_variacao [data-id^=second-dropdown-show], .pageProduct-buy #product-form-box, .page-comparador .comparator ul li ul li:not(.comparsionFoto), .filter-list .filter-checkbox, .breadcrumb, .menuMobile-account .u-show .account-access, .header-logo {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -3262,11 +3262,19 @@ div.Seguro {
     max-width: 65%;
   }
 }
+.banner-unico {
+  display: flex;
+  justify-content: center;
+  max-width: 1512px;
+  margin: auto;
+}
+
 .footer {
   background: var(--c_footer_bg);
   color: var(--c_footer_text);
   margin-top: 3rem;
   padding: 0px 0 28px;
+  border-top: 1px solid #000;
 }
 .footer .footer-newsletter {
   max-width: 1210px;
@@ -3397,6 +3405,7 @@ div.Seguro {
 .footer .footer-info {
   max-width: 1210px;
   display: grid;
+  padding-top: 16px;
 }
 @media (max-width: 768px) {
   .footer .footer-info {
@@ -3442,21 +3451,6 @@ div.Seguro {
   display: flex;
   flex-direction: column;
 }
-@media (max-width: 768px) {
-  .footer .footer-info .info-contact {
-    padding: 1.3rem 1.5rem;
-  }
-}
-@media (min-width: 768.1px) and (max-width: 1280px) {
-  .footer .footer-info .info-contact {
-    padding: 1.3rem 1.5rem;
-  }
-}
-@media (min-width: 1280.1px) {
-  .footer .footer-info .info-contact {
-    padding: 1.5rem;
-  }
-}
 .footer .footer-info .info-contact .icon.icon-phone, .footer .footer-info .info-contact .page-contact .icon.contactUs-phone, .page-contact .footer .footer-info .info-contact .icon.contactUs-phone,
 .footer .footer-info .info-contact .icon.icon-email,
 .footer .footer-info .info-contact .page-contact .icon.contactUs-email,
@@ -3477,9 +3471,11 @@ div.Seguro {
 }
 .footer .footer-info .info-list {
   padding-bottom: 1rem;
-  word-break: break-word;
 }
 .footer .footer-info .info-list .contact-item {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
   padding-bottom: 0.8rem;
   opacity: 1;
   transition: 0.2s ease-out;
@@ -3488,22 +3484,23 @@ div.Seguro {
   color: var(--c_footer_title);
   opacity: 0.8;
 }
-.footer .footer-info .info-list .contact-item .icon-phone, .footer .footer-info .info-list .contact-item .page-contact .contactUs-phone, .page-contact .footer .footer-info .info-list .contact-item .contactUs-phone,
-.footer .footer-info .info-list .contact-item .icon-email,
-.footer .footer-info .info-list .contact-item .page-contact .contactUs-email,
-.page-contact .footer .footer-info .info-list .contact-item .contactUs-email,
-.footer .footer-info .info-list .contact-item .icon-whatsapp,
-.footer .footer-info .info-list .contact-item .page-contact .contactUs-whats,
-.page-contact .footer .footer-info .info-list .contact-item .contactUs-whats {
-  margin-right: 0.5rem;
+.footer .footer-info .info-list .wrapper-atendimento {
+  display: flex;
+  gap: 16px;
+}
+.footer .footer-info .info-list .wrapper-atendimento span {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+}
+.footer .footer-info .info-list .wrapper-atendimento div {
+  display: flex;
+  flex-direction: column;
 }
 .footer .footer-info .info-list .info-link {
-  color: var(--c_footer_text);
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 0.9rem;
+  font-size: 12px;
   font-weight: 400;
-  font-variant: normal;
-  text-transform: none;
+  line-height: normal;
   padding-bottom: 0.6rem;
   display: block;
   opacity: 1;
@@ -3512,26 +3509,6 @@ div.Seguro {
 .footer .footer-info .info-list .info-link:hover {
   color: var(--c_footer_title);
   opacity: 0.8;
-}
-.footer .footer-info .info-payment .payment-list {
-  width: 100%;
-  max-width: 192px;
-}
-.footer .footer-info .info-payment .payment-text {
-  color: var(--c_footer_text);
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 0.9rem;
-  font-weight: 400;
-  font-variant: normal;
-  text-transform: none;
-  padding-bottom: 0.5rem;
-}
-.footer .footer-info .info-payment .payment-debt, .footer .footer-info .info-payment .payment-credit {
-  flex-wrap: wrap;
-  margin-bottom: 0.9rem;
-}
-.footer .footer-info .info-payment .payment-item {
-  margin: 0 0.3rem 0.3rem 0;
 }
 .footer .footer-info .info-media {
   display: flex;
@@ -3597,6 +3574,14 @@ div.Seguro {
 }
 .footer-credits #NavLogoTray .timelogotray {
   display: none;
+}
+
+.payment-ul {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #000;
 }
 
 .showcase-listProduct {
