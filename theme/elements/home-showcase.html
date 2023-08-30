@@ -35,9 +35,12 @@
     {% if products | length > 0 %}
     <div class="{{ especial ? especial }}">
         <section class="section showcase">
-            <h2 class="section-title">
-                {{ title }}
-            </h2>
+            <div class="wrapper-title">
+                <span>Destaque em</span>
+                {# <h2 class="section-title">{{ title }}</h2> #}
+                <h2>{{ title }}</h2>
+
+            </div>
 
             <ul class="showcase-listProduct">
                 {% for item in products %}

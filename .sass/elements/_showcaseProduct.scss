@@ -1,4 +1,21 @@
 .showcase {
+    .wrapper-title {
+        padding: 50px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        span {
+            font-size: 1rem;
+            font-weight: 400
+        }
+        h1 {
+            font-size: 1.375rem;
+            font-weight: 500
+        }
+        
+        
+    }
     &-listProduct {
         @extend %flex-start;
         flex-wrap: wrap;
@@ -36,7 +53,12 @@
     width: 100%;
     height: 100%;
     transition: 0.5s ease-out;
-
+    &:hover {
+        .product-button {
+            transition: .3s ease-in-out;
+            opacity: 1;
+        }
+    }
     &:hover,
     &:active,
     &:focus {
@@ -97,12 +119,6 @@
         position: relative;
         overflow: hidden;
         
-        &:hover {
-            .product-button {
-                transition: .3s ease-in-out;
-                opacity: 1;
-            }
-        }
     }
     
 
@@ -247,7 +263,6 @@
             }
         }
     }
-
     /// Product-Message
     &-message {
         @include fontInsert(1, 600, var(--c_general_main));
@@ -431,4 +446,37 @@
             margin: 0;
         }
     }
+}
+.vitrine-especial {
+    background-color: var(--bg_vitrine_especial);
+    color: var(--c_vitrine_especial);
+}
+
+
+.vitrine-especial .product-price .price-old,
+.vitrine-especial .product .product-price .price-current .value,
+.vitrine-especial .showcase-listProduct .product-name {
+    color: var(--c_vitrine_especial)
+}
+.vitrine-especial .showcase-listProduct .product {
+    background-color: var(--bg_card_vitrine_especial);
+    
+}
+
+.vitrine-especial .showcase-listProduct .product:hover {
+    background-color: var(--bg_card_vitrine_especial_hover);
+}
+.vitrine-especial .product:hover .product-price .price-old,
+.vitrine-especial .product:hover .product-price .price-current .value, 
+.vitrine-especial .showcase-listProduct .product:hover .product-name {
+    color: var(--c_vitrine_especial_hover);
+}
+//parcela
+.vitrine-especial .product-price .price-installments .txt-corparcelas .color,
+.vitrine-especial .product-price .price-installments span.txt-cadaparcela {
+    color: var(--c_parcela_vitrine_especial);
+}
+.vitrine-especial .product:hover .product-price .price-installments .txt-corparcelas .color,
+.vitrine-especial .product:hover .product-price .price-installments span.txt-cadaparcela  {
+    color: var(--c_parcela_vitrine_especial_hover);
 }
