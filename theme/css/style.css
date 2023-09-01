@@ -3751,17 +3751,38 @@ div.Seguro {
   }
 }
 .product-name {
-  /* @include small {
-      @include fontInsert(0.75, 400, var(--c_general_text1));
-  }
-  @include medium {
-      @include fontInsert(0.97, 400, var(--c_general_text1));
-  }
-  @include large {
-      @include fontInsert(1, 400, var(--c_general_text1));
-  }*/
   padding-bottom: 1rem;
   text-align: center;
+}
+@media (max-width: 768px) {
+  .product-name {
+    color: var(--c_vitrine);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 1280px) {
+  .product-name {
+    color: var(--c_vitrine);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 0.97rem;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+  }
+}
+@media (min-width: 1280.1px) {
+  .product-name {
+    color: var(--c_vitrine);
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+  }
 }
 .product-rating {
   margin-bottom: 1rem;
@@ -3794,7 +3815,7 @@ div.Seguro {
 }
 @media (max-width: 768px) {
   .product-price .price-titleStarting {
-    color: var(--c_general_text2);
+    color: var(--c_vitrine);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 0.9rem;
     font-weight: 500;
@@ -3802,7 +3823,7 @@ div.Seguro {
     text-transform: none;
   }
   .product-price .price-old, .product-price .price-current, .product-price .price-installments {
-    color: var(--c_general_text2);
+    color: var(--c_vitrine);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 0.87rem;
     font-weight: 500;
@@ -3810,7 +3831,7 @@ div.Seguro {
     text-transform: none;
   }
   .product-price .price-current .value {
-    color: var(--c_general_main);
+    color: var(--c_vitrine);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 0.75rem;
     font-weight: 500;
@@ -3820,7 +3841,7 @@ div.Seguro {
 }
 @media (min-width: 768.1px) and (max-width: 1280px) {
   .product-price .price-titleStarting {
-    color: var(--c_general_text2);
+    color: var(--c_vitrine);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 0.95rem;
     font-weight: 500;
@@ -3828,7 +3849,7 @@ div.Seguro {
     text-transform: none;
   }
   .product-price .price-old, .product-price .price-current, .product-price .price-installments {
-    color: var(--c_general_text2);
+    color: var(--c_vitrine);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 0.95rem;
     font-weight: 500;
@@ -3836,7 +3857,7 @@ div.Seguro {
     text-transform: none;
   }
   .product-price .price-current .value {
-    color: var(--c_general_main);
+    color: var(--c_vitrine);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 0.9rem;
     font-weight: 500;
@@ -3854,7 +3875,7 @@ div.Seguro {
     text-transform: none;
   }
   .product-price .price-old, .product-price .price-current, .product-price .price-installments {
-    color: var(--c_general_text2);
+    color: var(--c_vitrine);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 0.95rem;
     font-weight: 500;
@@ -3862,7 +3883,7 @@ div.Seguro {
     text-transform: none;
   }
   .product-price .price-current .value {
-    color: var(--c_general_main);
+    color: var(--c_vitrine);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 1rem;
     font-weight: 500;

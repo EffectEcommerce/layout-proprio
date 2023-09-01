@@ -166,15 +166,15 @@
     }
 
     &-name {
-        /* @include small {
-            @include fontInsert(0.75, 400, var(--c_general_text1));
+        @include small {
+            @include fontInsert(0.75, 400, var(--c_vitrine));
         }
         @include medium {
-            @include fontInsert(0.97, 400, var(--c_general_text1));
+            @include fontInsert(0.97, 400, var(--c_vitrine));
         }
         @include large {
-            @include fontInsert(1, 400, var(--c_general_text1));
-        }*/
+            @include fontInsert(1, 400, var(--c_vitrine));
+        }
         padding-bottom: 1rem;
         text-align: center;
     }
@@ -214,32 +214,32 @@
 
             @include small {
                 &-titleStarting {
-                    @include fontInsert(0.9, 500, var(--c_general_text2));
+                    @include fontInsert(0.9, 500, var(--c_vitrine));
                 }
 
                 &-old,
                 &-current,
                 &-installments {
-                    @include fontInsert(0.87, 500, var(--c_general_text2));
+                    @include fontInsert(0.87, 500, var(--c_vitrine));
                 }
 
                 &-current .value {
-                    @include fontInsert(0.75, 500, var(--c_general_main));
+                    @include fontInsert(0.75, 500, var(--c_vitrine));
                 }
             }
             @include medium {
                 &-titleStarting {
-                    @include fontInsert(0.95, 500, var(--c_general_text2));
+                    @include fontInsert(0.95, 500, var(--c_vitrine));
                 }
 
                 &-old,
                 &-current,
                 &-installments {
-                    @include fontInsert(0.95, 500, var(--c_general_text2));
+                    @include fontInsert(0.95, 500, var(--c_vitrine));
                 }
 
                 &-current .value {
-                    @include fontInsert(.9, 500, var(--c_general_main));
+                    @include fontInsert(.9, 500, var(--c_vitrine));
                 }
             }
             @include large {
@@ -250,11 +250,11 @@
                 &-old,
                 &-current,
                 &-installments {
-                    @include fontInsert(0.95, 500, var(--c_general_text2));
+                    @include fontInsert(0.95, 500, var(--c_vitrine));
                 }
 
                 &-current .value {
-                    @include fontInsert(1, 500, var(--c_general_main));
+                    @include fontInsert(1, 500, var(--c_vitrine));
                 }
             }
 
