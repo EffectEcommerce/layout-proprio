@@ -25,6 +25,11 @@
     'quantity' : settings.showcase_quantity_2 ,
     'especial' : "vitrine-especial"
 } %} 
+{% element 'home-showcase' { 
+    'rand' : settings.showcase_rand_products, 
+    'type' : settings.showcase_type_1, 
+    'quantity' : settings.showcase_quantity_1 
+} %} 
 
 {% for pages in pages.custom %} 
     {% if pages.info == "depoimentos_de_clientes" and settings.show_reviews %}
