@@ -3595,9 +3595,16 @@ div.Seguro {
   font-size: 1rem;
   font-weight: 400;
 }
-.showcase .wrapper-title h1 {
+.showcase .wrapper-title .title-showcase {
   font-size: 1.375rem;
   font-weight: 500;
+}
+.showcase .wrapper-title::after {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: var(--bg_card_vitrine_especial_hover);
+  margin-top: 10px;
 }
 .showcase-listProduct {
   flex-wrap: wrap;
@@ -3839,7 +3846,7 @@ div.Seguro {
 }
 @media (min-width: 1280.1px) {
   .product-price .price-titleStarting {
-    color: var(--c_general_text2);
+    color: var(--c_vitrine);
     font-family: "Source Sans Pro", sans-serif;
     font-size: 0.95rem;
     font-weight: 500;
@@ -4098,6 +4105,8 @@ div.Seguro {
   color: var(--c_vitrine_especial);
 }
 
+.vitrine-especial .product-price .price-current,
+.vitrine-especial .product-price .price-installments,
 .vitrine-especial .product-price .price-old,
 .vitrine-especial .product .product-price .price-current .value,
 .vitrine-especial .showcase-listProduct .product-name {
@@ -4112,6 +4121,8 @@ div.Seguro {
   background-color: var(--bg_card_vitrine_especial_hover);
 }
 
+.vitrine-especial .product:hover .product-price .price-current,
+.vitrine-especial .product:hover .product-price .price-installments,
 .vitrine-especial .product:hover .product-price .price-old,
 .vitrine-especial .product:hover .product-price .price-current .value,
 .vitrine-especial .showcase-listProduct .product:hover .product-name {
