@@ -3270,7 +3270,7 @@ div.Seguro {
 }
 
 .footer {
-  background: var(--c_footer_bg);
+  background: transparent;
   color: var(--c_footer_text);
   margin-top: 3rem;
   padding: 0px 0 28px;
@@ -3603,7 +3603,7 @@ div.Seguro {
   content: "";
   width: 60px;
   height: 2px;
-  background: var(--bg_card_vitrine_especial_hover);
+  background: var(--c_vitrine);
   margin-top: 10px;
 }
 .showcase-listProduct {
@@ -5231,6 +5231,12 @@ body.modal-open {
   line-height: 0.9;
   word-break: break-word;
   width: 100%;
+}
+.brands-titulo {
+  font-size: 1.375rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
 }
 .brands .icon-tag {
   margin-right: 0.6rem;

@@ -16,6 +16,13 @@
         width: 100%;
     }
 
+    &-titulo {
+        font-size: 1.375rem;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+    }
+
     .icon-tag {
         @extend %flex-center-center;
         margin-right: 0.6rem;
