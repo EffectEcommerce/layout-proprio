@@ -3265,8 +3265,12 @@ div.Seguro {
 .banner-unico {
   display: flex;
   justify-content: center;
-  max-width: 1512px;
+  max-width: 1920px;
   margin: 4rem auto 0;
+}
+
+.banner-unico .container-img, .banner-unico img {
+  width: 100%;
 }
 
 .footer {
@@ -4158,6 +4162,14 @@ div.Seguro {
 .vitrine-especial .product:hover .product-price .price-installments .txt-corparcelas .color,
 .vitrine-especial .product:hover .product-price .price-installments span.txt-cadaparcela {
   color: var(--c_parcela_vitrine_especial_hover);
+}
+
+.vitrine-especial .wrapper-title::after {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: var(--c_vitrine_especial);
+  margin-top: 10px;
 }
 
 .banner {

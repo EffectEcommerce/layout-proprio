@@ -1,6 +1,9 @@
     .banner-unico {
         display: flex;
         justify-content: center;
-        max-width: 1512px;
+        max-width: 1920px;
         margin: 4rem auto 0;
+    }
+    .banner-unico .container-img, .banner-unico img {
+        width: 100%;
     }
