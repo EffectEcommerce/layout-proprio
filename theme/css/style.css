@@ -3266,7 +3266,7 @@ div.Seguro {
   display: flex;
   justify-content: center;
   max-width: 1512px;
-  margin: auto;
+  margin: 4rem auto 0;
 }
 
 .footer {
