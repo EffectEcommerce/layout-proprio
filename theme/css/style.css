@@ -6681,7 +6681,6 @@ span.mensagensErro {
 }
 .pageProduct-gallery {
   flex-direction: column;
-  max-height: 700px;
   position: relative;
   height: 100%;
 }

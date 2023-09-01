@@ -9,23 +9,22 @@
 {% endif %}
 {% element 'snippets/breadcrumb' %} 
 {% element 'schema' { 'product' : product } %}
-{#  #}
 
 <div class="pageProduct" id="page-product">
     <div class="pageProduct-main">
         {% set discount = product.price_offer > 0 ? (100 - (product.price_offer / product.price) * 100) : false %}
         <div class="pageProduct-gallery" data-gallery="product">
 
-            {% if product.video %}
+{#             {% if product.video %}
                 <button class="gallery-video" type="button" data-toggle="closed" data-target="#modals-video" data-button="video" data-url="{{ product.video }}" aria-label="Ver V&iacute;deo">
                     <span class="icon-youtube-simple">
                         <span class="path1"></span>
                         <span class="path2"></span>
                     </span>
                 </button>
-            {% endif %}
+            {% endif %} #}
 
-            <div class="gallery-images swiper" data-slides="gallery">
+            {# <div class="gallery-images swiper" data-slides="gallery">
                 <div class="swiper-wrapper" data-gallery="box-images">
                     {% for images in product.images %} 
                         {% set lazyIndex = loop.index == 1 ? false : true %}
@@ -34,9 +33,25 @@
                         </div>
                     {% endfor %}
                 </div>
+            </div> #}
+{# 
+            <div style="display: flex">
+            {% for images in product.images %}
+                    <img src="{{ images.full}}" alt="">
+                </div>
+            {% endfor %} #}
+            <div class="gallery-images " data-slides="gallery">
+                <div class="swiper-wrappeoor" data-gallery="box-images" style="display: flex; flex-direction: row-reverse; flex-wrap: wrap; gap: 8px;">
+                    {% for images in product.images %} 
+                        {% set lazyIndex = loop.index == 1 ? false : true %}
+                        <div class="swiper-slidee gallery-image" data-gallery="image">
+                            <img class="gallery-img" src="{{ images.full }}"  alt="{{ product.name }} "/>
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
             {% set quantityImages = product.images | length %}
-            <div class="gallery-thumbs{{ quantityImages > 4 ? ' u-show' }} swiper" data-slides="gallery-thumbs" data-qtd="{{ quantityImages }}">
+            {# <div class="gallery-thumbs{{ quantityImages > 4 ? ' u-show' }} swiper" data-slides="gallery-thumbs" data-qtd="{{ quantityImages }}">
                 <div class="swiper-wrapper" data-gallery="box-thumbs">
                     {% if product.images | length > 1 %} 
                         {% for images in product.images %}
@@ -48,7 +63,7 @@
                 </div>
                 <div class="slides-buttonPrev--gallery icon-arrow-simple{{ quantityImages > 4 ? ' u-show' }}"></div>
                 <div class="slides-buttonNext--gallery icon-arrow-simple{{ quantityImages > 4 ? ' u-show' }}"></div>
-            </div>
+            </div> #}
             {% if productHelper.social() and settings.social_position == 0 and (product.stock > 0 or
             settings.without_stock_sale) %}
                 <div class="pageProduct-socialMedia">
