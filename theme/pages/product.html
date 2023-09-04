@@ -129,6 +129,10 @@
             <div class="pageProduct-nameAndInformation {{ batch_promotion ? 'u-width' }}">
                 <h1 class="pageProduct-name">{{ product.name }}</h1>
 
+                {% if settings.show_product_review %} 
+                    {% element 'snippets/product-rating' { 'review': product.ranking, 'total' : true } %} 
+                {% endif %} 
+
                 {% if (product.reference and settings.show_reference) or (settings.show_product_brand and product.brand) %}
                     <div class="pageProduct-subtitle">
                         {% if product.reference and settings.show_reference %}
@@ -145,10 +149,6 @@
                         {% endif %}
                     </div>
                 {% endif %}
-
-                {% if settings.show_product_review %} 
-                    {% element 'snippets/product-rating' { 'review': product.ranking, 'total' : true } %} 
-                {% endif %} 
 
                 {% if product.available and (product.stock > 0 or settings.without_stock_sale) and not product.upon_request %} 
                     {% set form_classes = [] %}

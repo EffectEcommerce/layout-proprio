@@ -9151,6 +9151,17 @@ span.mensagensErro {
   margin: 0 2rem 2rem 2rem;
 }
 
+.color_variant {
+  border-radius: 50% !important;
+  padding: 2px !important;
+  max-width: 20px;
+  max-height: 20px;
+}
+
+.pageProduct .cor_variacao .lista_cor_variacao li img.cor_selecionada {
+  border-color: #1F2228;
+}
+
 .modals {
   display: none;
   position: fixed;
