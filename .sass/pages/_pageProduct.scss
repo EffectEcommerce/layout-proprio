@@ -231,10 +231,10 @@
         }
 
         .tag {
-            @include fontInsert(0.9, 700, var(--c_general_text_inverted));
+            @include fontInsert(0.75, 500, var(--c_general_text_inverted));
             @extend %flex-center-center;
             margin-right: 0.19rem;
-            margin-bottom: 0.19rem;
+            //margin-bottom: 0.19rem;
             position: relative;
             overflow: hidden;
             text-align: center;
@@ -260,12 +260,71 @@
                 max-width: 100%;
                 width: auto;
             }
+            &-destaque {
+                display: flex;
+                justify-content: center;
+                align-items: center;
 
+                background-color: var(--bg_selo_destaque);
+                color: #fff;
+                border-radius: 2px;
+                padding: 6px 10px;
+                font-size: 0.75rem;
+                font-weight: 500;
+
+                @include small-p {
+                    font-size: 79.6%;
+                }
+                @include medium-p {
+                    font-size: 79.6%;
+                }
+
+            }
+
+            &-frete-gratis {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                background-color: var(--bg_selo_destaque);
+                color: #fff;
+                border-radius: 2px;
+                padding: 6px 10px;
+                font-size: 0.75rem;
+                font-weight: 500;
+
+                @include small-p {
+                    font-size: 79.6%;
+                }
+                @include medium-p {
+                    font-size: 79.6%;
+                }
+            }
+
+            &-lancamento {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                background-color: var(--bg_selo_destaque);
+                color: #fff;
+                border-radius: 2px;
+                padding: 6px 10px;
+                font-size: 0.75rem;
+                font-weight: 500;
+
+                @include small-p {
+                    font-size: 79.6%;
+                }
+                @include medium-p {
+                    font-size: 79.6%;
+                }
+            }
             &-percentageDiscount {
                 background-color: var(--c_general_secondary);
-                border-radius: 1px;
+                border-radius: 2px;
                 line-height: 1;
-                padding: 0.3rem;
+                padding: 6px 10px;
                 min-width: 7.4rem;
                 height: auto;
                 width: fit-content;

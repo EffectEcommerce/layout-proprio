@@ -6898,12 +6898,11 @@ span.mensagensErro {
 .pageProduct-tags .tag {
   color: var(--c_general_text_inverted);
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 0.9rem;
-  font-weight: 700;
+  font-size: 0.75rem;
+  font-weight: 500;
   font-variant: normal;
   text-transform: none;
   margin-right: 0.19rem;
-  margin-bottom: 0.19rem;
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -6930,11 +6929,74 @@ span.mensagensErro {
   max-width: 100%;
   width: auto;
 }
+.pageProduct-tags .tag-destaque {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg_selo_destaque);
+  color: #fff;
+  border-radius: 2px;
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+@media (max-width: 470px) {
+  .pageProduct-tags .tag-destaque {
+    font-size: 79.6%;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 900px) {
+  .pageProduct-tags .tag-destaque {
+    font-size: 79.6%;
+  }
+}
+.pageProduct-tags .tag-frete-gratis {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg_selo_destaque);
+  color: #fff;
+  border-radius: 2px;
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+@media (max-width: 470px) {
+  .pageProduct-tags .tag-frete-gratis {
+    font-size: 79.6%;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 900px) {
+  .pageProduct-tags .tag-frete-gratis {
+    font-size: 79.6%;
+  }
+}
+.pageProduct-tags .tag-lancamento {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg_selo_destaque);
+  color: #fff;
+  border-radius: 2px;
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+@media (max-width: 470px) {
+  .pageProduct-tags .tag-lancamento {
+    font-size: 79.6%;
+  }
+}
+@media (min-width: 768.1px) and (max-width: 900px) {
+  .pageProduct-tags .tag-lancamento {
+    font-size: 79.6%;
+  }
+}
 .pageProduct-tags .tag-percentageDiscount {
   background-color: var(--c_general_secondary);
-  border-radius: 1px;
+  border-radius: 2px;
   line-height: 1;
-  padding: 0.3rem;
+  padding: 6px 10px;
   min-width: 7.4rem;
   height: auto;
   width: -webkit-fit-content;

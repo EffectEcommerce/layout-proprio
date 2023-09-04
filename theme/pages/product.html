@@ -88,16 +88,31 @@
                         <div class="tag-percentageDiscount tag">
                             {{ discount | number_format }}% OFF
                         </div>
+                    {% endif %}
+                    {% if product.featured %}
+                        {% if product.featured and Image('featured') %}
+                            <div class="tag-featured tag">{{ Image('featured') | replace(replaceTags) }}</div>
+                        {% else %}
+                            <div class="tag-destaque tag">DESTAQUE</div>
+                        {% endif %} 
                     {% endif %} 
-                    {% if product.featured and Image('featured') %}
-                        <div class="tag-featured tag">{{ Image('featured') | replace(replaceTags) }}</div>
+
+                    {% if product.free_shipping %}
+                        {% if product.free_shipping and Image('free_shipping') %}
+                            <div class="tag-freeShipping tag">{{ Image('free_shipping') | replace(replaceTags) }}</div>
+                            {% else %}
+                            <div class="tag-frete-gratis tag">FRETE GRATIS</div>
+                            {% endif %} 
                     {% endif %} 
-                    {% if product.free_shipping and Image('free_shipping') %}
-                        <div class="tag-freeShipping tag">{{ Image('free_shipping') | replace(replaceTags) }}</div>
-                    {% endif %} 
-                    {% if product.new and Image('new') %}
-                        <div class="tag-new tag">{{ Image('new') | replace(replaceTags) }}</div>
-                    {% endif %} 
+
+                    {% if product.new %}
+                        {% if product.new and Image('new') %}
+                            <div class="tag-new tag">{{ Image('new') | replace(replaceTags) }}</div>
+                            {% else %}
+                            <div class="tag-lancamento tag">LAN&CcedilAMENTO</div>
+                        {% endif %} 
+                    {% endif %}
+
                     {% if Image('additional_button') %}
                         <div class="tag-extra tag">{{ Image('additional_button') | replace(replaceTags) }}</div>
                     {% endif %}
@@ -330,3 +345,31 @@
         </div>
     </section>
 {% endif %}
+
+<script type="text/javascript">  
+    var productId = "293";
+
+    fetch("https://demoeffect.commercesuite.com.br/web_api/products/" + productId)
+        .then(response => {
+            if (!response.ok) {
+                // Se a resposta não foi bem-sucedida, lançamos um erro para ser pego no catch()
+                throw response;
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("DEU CERTOOOO", data);
+        })
+        .catch(error => {
+            // O erro pode ser devido a uma falha na rede ou a uma resposta não bem-sucedida.
+            // Aqui tratamos ambos os casos.
+            if (error.json) {
+                error.json().then(data => {
+                    console.log(data);
+                });
+            } else {
+                console.log("Erro na requisição:", error);
+            }
+        });
+    
+</script>
