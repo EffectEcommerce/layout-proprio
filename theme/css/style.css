@@ -3137,6 +3137,11 @@ div.Seguro {
     opacity: 0.6;
   }
 }
+.header-menu .menu-secondLevel {
+  top: calc(100% - 13px);
+  background-color: var(--c_header_bg);
+}
+
 .regua-container {
   background-color: #1F2228;
   padding: 8px;

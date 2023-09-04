@@ -725,3 +725,9 @@
         }
     }
 }
+
+.header-menu .menu-secondLevel {
+    top: calc(100% - 13px);
+    background-color: var(--c_header_bg);
+
+}
