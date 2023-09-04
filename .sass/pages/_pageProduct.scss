@@ -2496,3 +2496,10 @@
 .pageProduct .cor_variacao .lista_cor_variacao li img.cor_selecionada {
     border-color: #1F2228;
 }
+.pageProduct .cor_variacao .lista_cor_variacao li div:before {
+    background-color: #fff;
+}
+.pageProduct .cor_variacao .lista_cor_variacao li div {
+    color: #000;
+
+}
