@@ -223,7 +223,7 @@
 
     &-tags {
         @extend %flex;
-        margin-bottom: 1.5rem;
+        margin-bottom: 12px;
         flex-wrap: wrap;
 
         @include small {
@@ -412,10 +412,10 @@
     }
 
     &-name {
-        @include title-h1(none, 600);
-        line-height: 1.2;
         margin: 0 0 0.7rem 0;
-
+        font-size: 1.25rem;
+        font-family: Besley;
+        font-weight: 500;
         @include small {
             text-align: center;
         }
