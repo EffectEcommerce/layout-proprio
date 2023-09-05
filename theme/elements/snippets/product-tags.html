@@ -41,23 +41,38 @@
     <div class="product-tag" data-tags-count="{{ tags_count }}">
         {% set replaceTags = {'src=': 'width="' ~ v_width ~ '" height="26" alt="Selo do produto" src='} %} 
         
-        {% if product.new and Image('new') %}
+        {% if product.new %}
             {% set position = position + 1 %} 
+            {% if product.new and Image('new') %}
             <div class="tag-new tag{{ show_double_tag == 0 ? ' tag--full' }}{{show_double_tag == 1 and (odd_amount and position == tags_count) ? ' tag--center' }}">
                 {{ Image('new') | replace(replaceTags) }}
             </div>
+            {% else %}
+                <div class="tag-new tag{{ show_double_tag == 0 ? ' tag--full' }}{{show_double_tag == 1 and (odd_amount and position == tags_count) ? ' tag--center' }}">NOVIDADE</div>
+            {% endif %}
         {% endif %} 
-        {% if product.featured and Image('featured') %}
+        {% if product.featured %}
             {% set position = position + 1 %}
-            <div class="tag-featured tag{{ show_double_tag == 0 ? ' tag--full' }}{{show_double_tag == 1 and (odd_amount and position == tags_count) ? ' tag--center' }}">
-                {{ Image('featured') | replace(replaceTags) }}
-            </div>
-        {% endif %} 
-        {% if product.free_shipping and Image('free_shipping') %}
-            {% set position = position + 1 %}
-            <div class="tag-freeShipping tag{{ show_double_tag == 0 ? ' tag--full' }}{{show_double_tag == 1 and (odd_amount and position == tags_count) ? ' tag--center' }}">
-                {{ Image('free_shipping') | replace(replaceTags) }}
-            </div>
+            {% if product.featured and Image('featured') %}
+                <div class="tag-featured tag{{ show_double_tag == 0 ? ' tag--full' }}{{show_double_tag == 1 and (odd_amount and position == tags_count) ? ' tag--center' }}">
+                    {{ Image('featured') | replace(replaceTags) }}
+                </div>
+                {% else %}
+                    <div class="tag-featured tag{{ show_double_tag == 0 ? ' tag--full' }}{{show_double_tag == 1 and (odd_amount and position == tags_count) ? ' tag--center' }}">
+                        DESTAQUE</div>
+                {% endif %} 
+        {% endif %}
+        {% if product.free_shipping %}
+        {% set position = position + 1 %}
+            {% if product.free_shipping and Image('free_shipping') %}
+                <div class="tag-freeShipping tag{{ show_double_tag == 0 ? ' tag--full' }}{{show_double_tag == 1 and (odd_amount and position == tags_count) ? ' tag--center' }}">
+                    {{ Image('free_shipping') | replace(replaceTags) }}
+                </div>
+                {% else %}
+                <div class="tag-featured tag{{ show_double_tag == 0 ? ' tag--full' }}{{show_double_tag == 1 and (odd_amount and position == tags_count) ? ' tag--center' }}">
+                    FRETE GR&#65;TIS
+                </div>
+            {% endif %} 
         {% endif %} 
         {% if product.additional_button and Image('additional_button') %}
             {% set position = position + 1 %}

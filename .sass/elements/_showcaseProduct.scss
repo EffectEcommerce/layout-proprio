@@ -296,21 +296,28 @@
 
     /// Product-Tags
     &-tag {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: 0;
+        right: 0;
         @extend %flex-betw;
         flex-wrap: wrap;
-        @include small {
-            margin: 0.8rem 0 0;
-        }
-        @include medium {
-            margin: 1.25rem 1.25rem 0;
-        }
-        @include large {
-            margin: 1.25rem 1.25rem 0;
-        }
+        margin: 10px;
+        // @include small {
+        //     margin: 0.8rem 0 0;
+        // }
+        // @include medium {
+        //     margin: 1.25rem 1.25rem 0;
+        // }
+        // @include large {
+        //     margin: 1.25rem 1.25rem 0;
+        // }
 
         .tag {
             @extend %flex-center-center;
-            @include fontInsert(0.75, 700, var(--c_general_text_inverted));
+            @include fontInsert(0.75, 500, var(--c_general_text_inverted));
+
             border-radius: 2px;
             text-align: center;
             height: $v_height_tags;
@@ -318,19 +325,19 @@
 
             @include small {
                 margin-bottom: 0.1rem;
-                margin-right: 0.1rem;
-                width: calc(50% - 0.06rem);
+                // margin-right: 0.1rem;
+                // width: calc(50% - 0.06rem);
             }
 
             @include medium {
                 margin-bottom: 0.18rem;
-                margin-right: 0.18rem;
-                width: calc(50% - 0.1rem);
+                // margin-right: 0.18rem;
+                // width: calc(50% - 0.1rem);
             }
             @include large {
                 margin-bottom: 0.25rem;
-                margin-right: 0.25rem;
-                width: calc(50% - 0.13rem);
+                // margin-right: 0.25rem;
+                // width: calc(50% - 0.13rem);
             }
 
             &:nth-child(2n) {
@@ -497,4 +504,18 @@
     height: 2px;
     background: var(--c_vitrine_especial);
     margin-top: 10px;
+}
+
+//TAGS
+.tag-new.tag, .tag-featured.tag {
+
+    border-radius: 4px;
+    line-height: 24px;
+    padding: 0 6px;
+    min-width: 79px;
+    font-size: .625rem;
+    margin-bottom: 6px;
+    background-color: #1F2228;
+    color: #fff;
+    text-transform: uppercase;
 }
