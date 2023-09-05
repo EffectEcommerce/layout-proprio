@@ -7183,6 +7183,7 @@ span.mensagensErro {
   text-transform: none;
   display: flex;
   align-items: center;
+  line-height: 100%;
 }
 .pageProduct-progressiveDiscount .progressiveDiscount-list {
   color: #B40409;
