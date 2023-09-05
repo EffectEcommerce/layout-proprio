@@ -7124,16 +7124,16 @@ span.mensagensErro {
   text-transform: lowercase;
 }
 .pageProduct-bonusScore {
-  color: var(--c_general_text1);
+  color: #000;
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 0.875rem;
+  font-weight: 500;
   font-variant: normal;
   text-transform: none;
-  background-color: var(--c_general_details);
-  border-radius: 0.5rem;
-  margin: 1rem 0;
-  padding: 1.5rem;
+  border: 1px solid #C1C1C1;
+  display: flex;
+  justify-content: center;
+  border-radius: 6px;
 }
 @media (max-width: 768px) {
   .pageProduct-bonusScore {
@@ -7146,17 +7146,14 @@ span.mensagensErro {
   }
 }
 .pageProduct-bonusScore #idBonusVariacao {
-  color: var(--c_general_text_inverted);
+  color: #B40409;
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 0.875rem;
+  font-weight: 500;
   font-variant: normal;
   text-transform: uppercase;
-  background-color: #fbb832;
   border-radius: 5rem;
-  line-height: 0.9;
-  padding: 0.4rem 1rem;
-  text-align: center;
+  padding: 6px 4px;
 }
 @media (max-width: 768px) {
   .pageProduct-bonusScore #idBonusVariacao {

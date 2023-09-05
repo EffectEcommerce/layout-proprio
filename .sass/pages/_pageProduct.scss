@@ -452,11 +452,11 @@
     }
 
     &-bonusScore {
-        @include fontInsert(1, 600, var(--c_general_text1));
-        background-color: var(--c_general_details);
-        border-radius: 0.5rem;
-        margin: 1rem 0;
-        padding: 1.5rem;
+        @include fontInsert(0.875, 500, #000);
+        border: 1px solid #C1C1C1;
+        display: flex;
+        justify-content: center;
+        border-radius: 6px;
 
         @include small {
             font-size: 0.85rem;
@@ -470,12 +470,9 @@
         }
 
         #idBonusVariacao {
-            @include fontInsert(0.9, 600, var(--c_general_text_inverted), uppercase);
-            background-color: #fbb832;
+            @include fontInsert(0.875, 500, #B40409, uppercase);
             border-radius: 5rem;
-            line-height: 0.9;
-            padding: 0.4rem 1rem;
-            text-align: center;
+            padding: 6px 4px;
 
             @include small {
                 font-size: 0.86rem;
