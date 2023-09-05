@@ -7168,26 +7168,30 @@ span.mensagensErro {
 }
 .pageProduct-progressiveDiscount {
   background-color: var(--c_general_details);
-  border-radius: 0.5rem;
+  border-radius: 2px;
   margin-bottom: 1.5rem;
-  padding: 1.5rem;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 .pageProduct-progressiveDiscount .progressiveDiscount-text {
-  color: var(--c_general_text1);
+  color: #000;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-variant: normal;
+  text-transform: none;
+  display: flex;
+  align-items: center;
+}
+.pageProduct-progressiveDiscount .progressiveDiscount-list {
+  color: #B40409;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1rem;
   font-weight: 600;
   font-variant: normal;
   text-transform: none;
-}
-.pageProduct-progressiveDiscount .progressiveDiscount-list {
-  color: var(--c_general_text2);
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 0.88rem;
-  font-weight: 400;
-  font-variant: normal;
-  text-transform: none;
+  padding: 6px 4px;
 }
 .pageProduct-progressiveDiscount .progressiveDiscount-item {
   margin-bottom: 0.5rem;

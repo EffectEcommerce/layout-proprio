@@ -189,24 +189,7 @@
                         {% if productHelper.bonus() and 'idBonusVariacao' in productHelper.bonus() %}
                             <div class="pageProduct-bonusScore">{{ productHelper.bonus() }}</div>
                         {% endif %} 
-                        {% if ProgressiveDiscounts %}
-                            <div class="pageProduct-progressiveDiscount">
-                                <p class="progressiveDiscount-text">Produto com desconto progressivo</p>
-                                <ul class="progressiveDiscount-list">
-                                    {% for discount in ProgressiveDiscounts %}
-                                        <li class="progressiveDiscount-item" data-name="{{ discount.name }}">
-                                            {{ discount.description }}
-                                        </li>
-                                    {% endfor %}
-                                </ul>
-                            {% if ProgressiveDiscounts|length > 1 %}
-                                <p class="progressiveDiscount-alert">
-                                    <b>Atenção!</b> Somente o maior desconto ser&aacute; aplicado na finaliza&ccedil;&atilde;o do
-                                    pedido.
-                                </p>
-                            {% endif %}
-                            </div>
-                        {% endif %} 
+
 
                         {% if product.variants %}
                             <div class="pageProduct-variants" data-has-variations>
@@ -252,6 +235,26 @@
                         {% if product.additional_message %}
                             <p class="pageProduct-additionalMessage">{{ product.additional_message }}</p>
                         {% endif %}
+
+                        {# DESCONTO PROGRESSIVO #}
+                        {% if ProgressiveDiscounts %}
+                        <div class="pageProduct-progressiveDiscount">
+                            <p class="progressiveDiscount-text">Produto com desconto progressivo</p>
+                            <ul class="progressiveDiscount-list">
+                                {% for discount in ProgressiveDiscounts %}
+                                    <li class="progressiveDiscount-item" data-name="{{ discount.name }}">
+                                        {{ discount.description }}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% if ProgressiveDiscounts|length > 1 %}
+                            <p class="progressiveDiscount-alert">
+                                <b>Atenção!</b> Somente o maior desconto ser&aacute; aplicado na finaliza&ccedil;&atilde;o do
+                                pedido.
+                            </p>
+                        {% endif %}
+                        </div>
+                    {% endif %} 
 
                         <div class="pageProduct-buy serverTray-content" data-buy-product="box">
                             <input class="buy-quantityTop" type="button" id="more" value="+" data-quantity />
@@ -300,6 +303,7 @@
                 {% endif %}
         </section>
     </div>
+
 
     {% if productHelper.bundle() %}
         <div class="pageProduct-buyTogether">

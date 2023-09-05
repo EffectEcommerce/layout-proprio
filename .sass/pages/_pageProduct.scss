@@ -490,18 +490,23 @@
 
     &-progressiveDiscount {
         background-color: var(--c_general_details);
-        border-radius: 0.5rem;
+        border-radius: 2px;
         margin-bottom: 1.5rem;
-        padding: 1.5rem;
         text-align: center;
+        display: flex;
+        justify-content: center;
 
         .progressiveDiscount {
             &-text {
-                @include fontInsert(1, 600, var(--c_general_text1));
+                @include fontInsert(0.875, 500, #000);
+                display: flex;
+                align-items: center;
             }
 
             &-list {
-                @include fontInsert(0.88, 400, var(--c_general_text2));
+                @include fontInsert(1, 600, #B40409);
+                padding: 6px 4px;
+
             }
 
             &-item {
