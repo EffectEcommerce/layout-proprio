@@ -60,6 +60,11 @@
         @extend %paragraph-text;
         border-bottom: $v_border_sections;
         padding: 2.5rem 0;
+        width: auto;
+    }
+    &-description img {
+        width: 100%;
+        height: 100%;
     }
 
     &-section {
