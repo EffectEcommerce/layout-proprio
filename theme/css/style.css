@@ -3138,7 +3138,7 @@ div.Seguro {
   }
 }
 .header-menu .menu-secondLevel {
-  top: calc(100% - 13px);
+  top: calc(100% - 39px);
   background-color: var(--c_header_bg);
 }
 
@@ -3949,6 +3949,7 @@ div.Seguro {
   right: 0;
   flex-wrap: wrap;
   margin: 10px;
+  max-width: 80px;
 }
 .product-tag .tag {
   color: var(--c_general_text_inverted);
@@ -5327,7 +5328,7 @@ body.modal-open {
 .breadcrumb {
   flex-wrap: wrap;
   margin: 2rem 0 2.8rem 0;
-  width: 100%;
+  width: 100vw;
 }
 .breadcrumb-item {
   display: contents;

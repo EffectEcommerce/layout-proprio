@@ -304,6 +304,8 @@
         @extend %flex-betw;
         flex-wrap: wrap;
         margin: 10px;
+        max-width: 80px;
+
         // @include small {
         //     margin: 0.8rem 0 0;
         // }
