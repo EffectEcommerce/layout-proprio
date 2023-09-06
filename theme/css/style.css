@@ -5594,6 +5594,28 @@ body.modal-open {
   text-align: center;
 }
 
+.showcase-listProduct.row-visualization {
+  display: flex;
+  flex-direction: row;
+}
+
+.showcase-listProduct.column-visualization {
+  display: flex;
+  flex-direction: column;
+}
+
+.toggle-visualization {
+  cursor: pointer;
+}
+
+.svg-column-vis {
+  display: none;
+}
+
+.svg-row-vis {
+  display: block;
+}
+
 .filter {
   padding-right: 1.5rem;
 }
