@@ -3142,6 +3142,20 @@ div.Seguro {
   background-color: var(--c_header_bg);
 }
 
+ul.menu-thirdLevel.menu-subList::before {
+  content: "";
+  border-radius: 50%;
+  height: 4px;
+  width: 4px;
+  scale: 10px;
+  margin: 10px 8px;
+  background-color: black;
+}
+
+ul.menu-thirdLevel {
+  display: flex;
+}
+
 .regua-container {
   background-color: #1F2228;
   padding: 8px;
@@ -5328,7 +5342,7 @@ body.modal-open {
 .breadcrumb {
   flex-wrap: wrap;
   margin: 2rem 0 2.8rem 0;
-  width: 100vw;
+  width: 80vw;
 }
 .breadcrumb-item {
   display: contents;

@@ -731,3 +731,16 @@
     background-color: var(--c_header_bg);
 
 }
+
+ul.menu-thirdLevel.menu-subList::before {
+    content: "";
+    border-radius: 50%;
+    height: 4px;
+    width: 4px;
+    scale: 10px;
+    margin: 10px 8px;
+    background-color: black;
+}
+ul.menu-thirdLevel {
+    display: flex;
+}

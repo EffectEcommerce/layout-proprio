@@ -301,7 +301,9 @@
                         <div class="socialMedia">{{ productHelper.social() }}</div>
                     </div>
                 {% endif %}
+                {% element 'snippets/product-tabs' { 'product' : product } %}
         </section>
+
     </div>
 
 
@@ -351,29 +353,38 @@
 {% endif %}
 
 <script type="text/javascript">  
-    var productId = "293";
+    const productId = "289";
+    //fetch("https://demoeffect.commercesuite.com.br/web_api/products/" + productId)
 
-    fetch("https://demoeffect.commercesuite.com.br/web_api/products/" + productId)
-        .then(response => {
-            if (!response.ok) {
-                // Se a resposta não foi bem-sucedida, lançamos um erro para ser pego no catch()
-                throw response;
+
+    async function fetchData() {
+        try {
+            const response = await fetch("https://demoeffect.commercesuite.com.br/web_api/search/?category_id=29")
+            if (!response){
+                throw response
             }
-            return response.json();
-        })
-        .then(data => {
-            console.log("DEU CERTOOOO", data);
-        })
-        .catch(error => {
+
+            const data = await response.json();
+            objeto = data;
+            console.log("Deu certo")
+            
+        } catch(error) {
             // O erro pode ser devido a uma falha na rede ou a uma resposta não bem-sucedida.
             // Aqui tratamos ambos os casos.
             if (error.json) {
-                error.json().then(data => {
-                    console.log(data);
-                });
-            } else {
+                const dataError = await error.json();
+                console.log("Erro no dado", dataError)
+
+                } else {
                 console.log("Erro na requisição:", error);
             }
-        });
-    
+        };
+  
+    }
+
+    let objeto;
+    fetchData().then(data =>  {
+        //logica aqui
+        console.log(objeto)
+})
 </script>
