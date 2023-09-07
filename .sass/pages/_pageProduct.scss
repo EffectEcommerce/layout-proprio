@@ -1842,7 +1842,7 @@
     .tabs {
         &-nav {
             border-bottom: 2px solid var(--c_general_main);
-            margin-bottom: 3rem;
+            margin-bottom: 12px;
             overflow-x: auto;
 
             @extend %style-scroll;
@@ -1867,8 +1867,9 @@
                 }
 
                 &-link {
-                    @include fontInsert(0.875, 600, var(--c_general_text1), uppercase);
-                    background-color: var(--c_general_details);
+                    @include fontInsert(0.875, 500, var(--c_general_text1), uppercase);
+                    //background-color: var(--c_general_details);
+                    color: var(--c_general_main);
                     border-radius: 2px 2px 0 0;
                     display: block;
                     padding: 1rem 2.5rem;
@@ -1881,14 +1882,14 @@
                         opacity: 0.6;
                     }
 
-                    &.active {
-                        background-color: var(--c_general_main);
-                        color: var(--c_general_text_inverted);
+                    // &.active {
+                    //     background-color: var(--c_general_main);
+                    //     color: var(--c_general_text_inverted);
 
-                        &:hover {
-                            opacity: 1;
-                        }
-                    }
+                    //     &:hover {
+                    //         opacity: 1;
+                    //     }
+                    // }
                 }
             }
         }
@@ -2514,4 +2515,9 @@
 
 .pageProduct .cor_variacao .lista_cor_variacao li div.cor_selecionada {
     border-color: transparent;
+}
+
+.tabs-content span {
+    font-size: .875rem !important;
+    font-weight: 400;
 }

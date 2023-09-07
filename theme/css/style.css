@@ -8573,7 +8573,7 @@ span.mensagensErro {
 }
 .pageProduct .tabs-nav {
   border-bottom: 2px solid var(--c_general_main);
-  margin-bottom: 3rem;
+  margin-bottom: 12px;
   overflow-x: auto;
 }
 .pageProduct .tabs-nav .nav-list {
@@ -8596,10 +8596,10 @@ span.mensagensErro {
   color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 500;
   font-variant: normal;
   text-transform: uppercase;
-  background-color: var(--c_general_details);
+  color: var(--c_general_main);
   border-radius: 2px 2px 0 0;
   display: block;
   padding: 1rem 2.5rem;
@@ -8610,13 +8610,6 @@ span.mensagensErro {
 }
 .pageProduct .tabs-nav .nav-link:hover {
   opacity: 0.6;
-}
-.pageProduct .tabs-nav .nav-link.active {
-  background-color: var(--c_general_main);
-  color: var(--c_general_text_inverted);
-}
-.pageProduct .tabs-nav .nav-link.active:hover {
-  opacity: 1;
 }
 .pageProduct .tabs-navMobile {
   color: var(--c_general_text1);
@@ -9224,6 +9217,11 @@ span.mensagensErro {
 
 .pageProduct .cor_variacao .lista_cor_variacao li div.cor_selecionada {
   border-color: transparent;
+}
+
+.tabs-content span {
+  font-size: 0.875rem !important;
+  font-weight: 400;
 }
 
 .modals {
