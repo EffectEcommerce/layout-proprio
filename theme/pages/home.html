@@ -13,19 +13,18 @@
             <span class="text-variant-cor">ESCOLHA POR COR</span>
         {% endif %}
     </div>    
-    <div class="wrapper-variant-search">
         {% if settings.show_variation_tamanho %}
-            <div class="container-variant-tamanho-search">
-            </div>
+        <div class="wrapper-variant-search tamanho-variant">
+                <div class="container-variant-tamanho-search"></div>
+        </div>
         {% endif %}
         
         {% if settings.show_variation_cor %}
-            <div class="wrapper-variant-search">
+            <div class="wrapper-variant-search cor-variant">
                 <div class="container-variant-cor-search"></div>
             </div>
         {% endif %}
-    </div>     
-    
+
 </div>
 
 
@@ -221,8 +220,8 @@
 
     const $containerTamanho = document.querySelector(".text-variant-tamanho")
     const $containerCor = document.querySelector(".text-variant-cor")
-    const contentTamanho = document.querySelector(".container-variant-tamanho-search")
-    const contentCor = document.querySelector(".container-variant-cor-search")
+    const contentTamanho = document.querySelector(".wrapper-variant-search.tamanho-variant")
+    const contentCor = document.querySelector(".wrapper-variant-search.cor-variant")
     if((document.querySelector(".text-variant-tamanho")) &&  (document.querySelector(".text-variant-cor"))){
         $containerTamanho.addEventListener('click', ()=> {
             contentTamanho.style.display= "flex";
@@ -250,6 +249,9 @@
 </script>
 
 <style>
+    .wrapper-variant-search.cor-variant {
+        display: none;
+    } 
     .hidden {
         display: none;
     }
