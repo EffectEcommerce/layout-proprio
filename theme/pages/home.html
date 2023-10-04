@@ -4,13 +4,16 @@
 {% element 'snippets/banner-line' { 'banner_id': 'home', 'banner_type': 'slides' } %} 
 
 
-<div class="filter-by-variant {{ settings.show_variation_tamanho and settings.show_variation_cor ? "ambos" : "unico"}}">
-    <div class="titulo">
+
+{% element 'snippets/filter-variant' %}
+<!--
+<div class="filter-by-variant {{ settings.show_variation_tamanho and settings.show_variation_cor ? "ambos" : "unico"}} section">
+    <div class="title-variant-search">
         {% if settings.show_variation_tamanho %}
             <span class="text-variant-tamanho">ESCOLHA POR TAMANHO</span>
         {% endif %}
         {% if settings.show_variation_cor %}
-            <span class="text-variant-cor">ESCOLHA POR COR</span>
+            <span class="text-variant-cor {{ settings.show_variation_tamanho ? "not-active-variant" : "" }} ">ESCOLHA POR COR</span>
         {% endif %}
     </div>    
         {% if settings.show_variation_tamanho %}
@@ -20,13 +23,13 @@
         {% endif %}
         
         {% if settings.show_variation_cor %}
-            <div class="wrapper-variant-search cor-variant">
+            <div class="wrapper-variant-search cor-variant {{ settings.show_variation_tamanho ? "hidden" : "" }}">
                 <div class="container-variant-cor-search"></div>
             </div>
         {% endif %}
 
 </div>
-
+-->
 
 
 
@@ -108,217 +111,4 @@
     </ul>
 </section> #}
 
-<script>
-    function runVariantTamanhoSearch() {
-        if (document.querySelector(".container-variant-tamanho-search")) {
 
-            const $container = document.querySelector(".container-variant-tamanho-search");
-            const variant = "{{ settings.variacao_escolhida_1 }}";
-            const variantsList = variant.split(";");
-            const variantsNorm = normalize(variantsList);
-            generateButton(variantsNorm, $container);
-        }
-        
-    }
-
-    function normalize(items) {
-        if(!items) {
-            console.error(`O valor ${items} não foi encontrado`)
-            return null;
-        }
-        let newItem = items.filter((item) => {
-            return item != ''
-        })
-        return newItem
-    }
-    
-    function generateButton(list, parent) {
-        list.forEach(item => {
-            const aElement = document.createElement('a');
-            console.log(parent)
-            href = `https://demoeffect.commercesuite.com.br/loja/busca.php?loja=1143858&variants%5B%5D=Tamanho%7C%7C${item}`
-            aElement.textContent = item;
-            aElement.classList = "tamanho-botao-variant-search"
-            aElement.setAttribute('href', href)
-            parent.appendChild(aElement);
-        })
-    }
-    
-    runVariantTamanhoSearch()
-
-// --------------------------------------
-
-
-
-    function runVariantCorSearch() {
-        if (document.querySelector(".container-variant-cor-search")) {
-        const $container = document.querySelector(".container-variant-cor-search");
-        const variantColorName = "{{ settings.variacao_nome_cor_escolhida }}";
-        const variantHexColor = "{{ settings.variacao_cor_hex_escolhida }}";
-        const colorsName = variantColorName.split(";")
-        const hexColors = variantHexColor.split(";")
-        const colorsNameNorm = normalize(colorsName);
-        const hexColorsNorm = normalize(hexColors);
-        colors = generateObjColor(colorsNameNorm, hexColorsNorm);
-        generateButtonColors(colors, $container);
-        }
-    }
-
-    function generateObjColor(keys, values) {
-        if (!keys || !values ) {
-            console.error("Os parâmetros não foram encontrados")
-        }
-        if (keys.lenght != values.lenght) {
-            console.error("A quantidade de nomes das cores e hexadecimais não é a mesma");
-        }
-
-        let colors = {}; 
-        keys.forEach((key, index) => {
-            
-            colors[key.trim()] = values[index].trim()
-        })
-        return colors;
-    }
-
-    function normalize(items) {
-        if(!items) {
-            console.error(`O valor ${items} não foi encontrado`)
-            return null;
-        }
-        let newItem = items.filter((item) => {
-            return item != ''
-        })
-
-        return newItem
-    }
-    
-    function generateButtonColors(colors, parent) {
-        if (!colors || typeof(colors) === !"object" || !parent) {
-            console.error("Os parâmetros não foram inseridos de forma correta");
-            return null;
-        }
-        const keys = Object.keys(colors);
-        keys.forEach((nameColor) => {
-            let hex = colors[nameColor];
-            href = `https://demoeffect.commercesuite.com.br/loja/busca.php?loja=1143858&variants%5B%5D=Cor%7C%7C${nameColor}`;
-            console.log(href)
-            const $aElement = document.createElement('a');
-            const $hexElement = document.createElement('span');
-            const $spanTextElement = document.createElement('text');
-            $aElement.classList = "container-color-search";
-            $hexElement.classList = "preview-hex-search";
-            $aElement.setAttribute('href', href);
-            $hexElement.style.backgroundColor = hex;
-            $spanTextElement.textContent = nameColor;
-            $spanTextElement.classList = "text-variant-search";
-            $aElement.append($hexElement, $spanTextElement);
-            parent.appendChild($aElement);
-        })
-    }
-    runVariantCorSearch();
-
-
-    const $containerTamanho = document.querySelector(".text-variant-tamanho")
-    const $containerCor = document.querySelector(".text-variant-cor")
-    const contentTamanho = document.querySelector(".wrapper-variant-search.tamanho-variant")
-    const contentCor = document.querySelector(".wrapper-variant-search.cor-variant")
-    if((document.querySelector(".text-variant-tamanho")) &&  (document.querySelector(".text-variant-cor"))){
-        $containerTamanho.addEventListener('click', ()=> {
-            contentTamanho.style.display= "flex";
-            contentCor.style.display= "none";
-            //$containerTamanho.style.opacity
-        });
-
-        $containerCor.addEventListener('click', ()=> {
-            contentTamanho.style.display= "none";
-            contentCor.style.display= "flex";
-        });
-    }
-
-    /*
-    div1.addEventListener('click', () => {
-    div3.classList.add('block')
-    div4.classList.remove('block')
-    })
-
-    div2.addEventListener('click', () => {
-        div3.classList.remove('block')
-        div4.classList.add('block')
-    })
-    */
-</script>
-
-<style>
-    .wrapper-variant-search.cor-variant {
-        display: none;
-    } 
-    .hidden {
-        display: none;
-    }
-    .filter-by-variant {
-        display: flex;
-        background-color: brown;
-        flex-direction: column;
-        align-items: center;
-    }
-    .wrapper-variant-search {
-        display: flex;
-        align-items: center;
-        gap: 36px;
-        margin: 56px 0;
-
-
-    }
-    .container-color-search {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap : 8px;
-        transition: opacity .2s ease-in-out;
-
-    }
-    .preview-hex-search {
-        height: 80px;
-        width: 80px;
-        border-radius: 50%;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .preview-hex-search::after {
-        content: "";
-        border-radius: 50%;
-        position: absolute;
-        width: 86px;
-
-        height: 86px;
-        border: 1px solid #969696;
-    }
-    .container-variant-cor-search, .container-variant-tamanho-search  {
-        display: flex; 
-        gap: 30px;
-
-    }
-    .text-variant-cor, .text-variant-tamanho {
-        font-size: 1.375rem;
-        font-weight: 300;
-        padding: 10px;
-    }
-    .tamanho-botao-variant-search {
-        border-radius: 4px;
-        background-color: #F4F4F4;
-        display: flex;
-        padding: 24px 32px;
-        justify-content: center;
-        align-items: center;
-        color: #000;
-        font-size: 1.125rem;
-        font-weight: 600;
-        transition: opacity .2s ease-in-out;
-
-    }
-    .container-color-search:hover, .tamanho-botao-variant-search:hover {
-        opacity: 80%;
-    }
-</style>

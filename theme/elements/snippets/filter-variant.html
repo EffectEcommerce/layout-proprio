@@ -1,0 +1,128 @@
+<div class="filter-by-variant {{ settings.show_variation_tamanho and settings.show_variation_cor ? "ambos" : "unico"}} section">
+    <div class="title-variant-search">
+        {% if settings.show_variation_tamanho %}
+            <span class="text-variant-tamanho">ESCOLHA POR TAMANHO</span>
+        {% endif %}
+        {% if settings.show_variation_cor %}
+            <span class="text-variant-cor {{ settings.show_variation_tamanho ? "not-active-variant" : "" }} ">ESCOLHA POR COR</span>
+        {% endif %}
+    </div>    
+        {% if settings.show_variation_tamanho %}
+        <div class="wrapper-variant-search tamanho-variant">
+                <div class="container-variant-tamanho-search"></div>
+        </div>
+        {% endif %}
+        
+        {% if settings.show_variation_cor %}
+            <div class="wrapper-variant-search cor-variant {{ settings.show_variation_tamanho ? "hidden" : "" }}">
+                <div class="container-variant-cor-search"></div>
+            </div>
+        {% endif %}
+
+</div>
+
+
+<style>
+    .title-variant-search {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.not-active-variant {
+    filter: brightness(85%);   
+}
+/*.wrapper-variant-search.cor-variant {*/
+/*    display: none;*/
+/*} */
+.hidden {
+    display: none !important;
+}
+.filter-by-variant {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.wrapper-variant-search {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    padding: 56px 0;
+    background-color: silver;
+    width: 100%;
+    justify-content: center;
+    border-radius: 10px;
+
+
+
+}
+.container-color-search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap : 8px;
+    transition: opacity .2s ease-in-out;
+
+}
+.preview-hex-search {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.preview-hex-search::after {
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    width: 86px;
+
+    height: 86px;
+    border: 1px solid #969696;
+}
+.container-variant-cor-search, .container-variant-tamanho-search  {
+    display: flex; 
+    gap: 30px;
+
+}
+.text-variant-cor, .text-variant-tamanho {
+    font-size: 1.375rem;
+    font-weight: 300;
+    padding: 4px 100px; 
+    background-color: silver;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: center;
+    
+}
+.tamanho-botao-variant-search {
+    border-radius: 4px;
+    background-color: #F4F4F4;
+    display: flex;
+    padding: 24px 32px;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    font-size: 1.125rem;
+    font-weight: 600;
+    transition: opacity .2s ease-in-out;
+
+}
+.container-color-search:hover, .tamanho-botao-variant-search:hover {
+    opacity: 80%;
+}
+</style>
+
+
+<script>
+    const tamanho = "{{ settings.variacao_escolhida_1 }}"
+    const colorName = "{{ settings.variacao_nome_cor_escolhida }}"
+    const colorHex = "{{ settings.variacao_cor_hex_escolhida }}"
+    
+    document.addEventListener("DOMContentLoaded", function (event) {
+        runVariantTamanhoSearch(tamanho);
+        runVariantCorSearch(colorName, colorHex)
+    });
+</script>
