@@ -116,24 +116,35 @@ function generateButtonColors(colors, parent) {
 }
 
 
-const $containerTamanho = document.querySelector(".text-variant-tamanho")
-const $containerCor = document.querySelector(".text-variant-cor")
-const contentTamanho = document.querySelector(".wrapper-variant-search.tamanho-variant")
-const contentCor = document.querySelector(".wrapper-variant-search.cor-variant")
-if((document.querySelector(".text-variant-tamanho")) &&  (document.querySelector(".text-variant-cor"))){
+const $containerTamanho = document.querySelector(".text-variant-tamanho");
+const $containerCor = document.querySelector(".text-variant-cor");
+const contentTamanho = document.querySelector(".wrapper-variant-search.tamanho-variant");
+const contentCor = document.querySelector(".wrapper-variant-search.cor-variant");
+$containerTamanho.classList.add('active-variant-tamanho');
+$containerCor.classList.add('active-variant-cor');
+const afterTamanho = window.getComputedStyle($containerTamanho, "::after");
+const displayValue = afterTamanho.getPropertyValue('display');
+// const afterTamanho = document.querySelector(".span.text-variant-tamanho:first-child::after");
+// const afterCor = document.querySelector(".span.text-variant-tamanho:first-child::after");
+
+if((document.querySelector(".text-variant-tamanho")) && (document.querySelector(".text-variant-cor"))){
     $containerTamanho.addEventListener('click', ()=> {
+      
         contentTamanho.style.display= "flex";
         contentCor.style.display= "none";
-        $containerCor.classList.add('not-active-variant');
-        $containerTamanho.classList.remove('not-active-variant');
+        $containerCor.classList.add('hidde-subline');
+        $containerTamanho.classList.remove('hidde-subline');
+
+        // $containerCor.classList.remove('active-variant-cor');
 
     });
 
     $containerCor.addEventListener('click', ()=> {
+
         contentTamanho.style.display= "none";
         contentCor.style.display= "flex";
-        $containerTamanho.classList.add('not-active-variant');
-        $containerCor.classList.remove('not-active-variant');
+        $containerTamanho.classList.add('hidde-subline');
+        $containerCor.classList.remove('hidde-subline');
         contentCor.classList.remove('hidden');
     });
 }

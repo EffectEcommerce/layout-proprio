@@ -47,7 +47,6 @@
     align-items: center;
     gap: 36px;
     padding: 56px 0;
-    background-color: silver;
     width: 100%;
     justify-content: center;
     border-radius: 10px;
@@ -89,17 +88,17 @@
 .text-variant-cor, .text-variant-tamanho {
     font-size: 1.375rem;
     font-weight: 300;
-    padding: 4px 100px; 
-    background-color: silver;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    padding: 4px 100px;
     display: flex;
     justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
     
 }
 .tamanho-botao-variant-search {
     border-radius: 4px;
-    background-color: #F4F4F4;
     display: flex;
     padding: 24px 32px;
     justify-content: center;
@@ -108,10 +107,63 @@
     font-size: 1.125rem;
     font-weight: 600;
     transition: opacity .2s ease-in-out;
+    background: #F4F4F4;
 
 }
+span.text-variant-tamanho:first-child {
+    border-right: 1px solid #939393
+    }
 .container-color-search:hover, .tamanho-botao-variant-search:hover {
     opacity: 80%;
+}
+/*
+span.active-variant:after {
+    position: relative;
+    content: '';
+    width: 60px;
+    height: 1px;
+    background: var(--c_vitrine);
+    margin-top: 10px;
+    display: block;
+}
+*/
+span.active-variant-tamanho::after {
+    position: relative;
+    content: '';
+    width: 60px;
+    height: 1px;
+    background: var(--c_vitrine);
+    margin-top: 10px;
+    opacity: 1;
+}
+span.active-variant-cor::after {
+    position: relative;
+    content: '';
+    width: 60px;
+    height: 1px;
+    background: var(--c_vitrine);
+    margin-top: 10px;
+    opacity: 1;
+}
+span.active-variant-cor.hidde-subline::after {
+    position: relative;
+    content: '';
+    width: 60px;
+    height: 1px;
+    background: var(--c_vitrine);
+    margin-top: 10px;
+    opacity: 1;
+    opacity: 0;
+}
+span.active-variant-tamanho.hidde-subline::after {
+    position: relative;
+    content: '';
+    width: 60px;
+    height: 1px;
+    background: var(--c_vitrine);
+    margin-top: 10px;
+    opacity: 1;
+    opacity: 0;
 }
 </style>
 
