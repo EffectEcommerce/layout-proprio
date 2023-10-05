@@ -1,5 +1,5 @@
-<div class="filter-by-variant {{ settings.show_variation_tamanho and settings.show_variation_cor ? "ambos" : "unico"}} section">
-    <div class="title-variant-search">
+<div class=" filter-by-variant {{ settings.show_variation_tamanho and settings.show_variation_cor ? "ambos" : "unico"}} section">
+    <div class=" title-variant-search">
         {% if settings.show_variation_tamanho %}
             <span class="text-variant-tamanho" {{ settings.show_variation_cor == false ? "style= 'border: 0'" : "" }}>ESCOLHA POR TAMANHO</span>
         {% endif %}
@@ -8,14 +8,14 @@
         {% endif %}
     </div>    
         {% if settings.show_variation_tamanho %}
-        <div class="wrapper-variant-search tamanho-variant ">
-                <div class="container-variant-tamanho-search"></div>
+        <div class="swipper-variant wrapper-variant-search tamanho-variant ">
+                <div class="swiper-wrapper container-variant-tamanho-search"></div>
         </div>
         {% endif %}
         
         {% if settings.show_variation_cor %}
-            <div class="wrapper-variant-search cor-variant {{ settings.show_variation_tamanho ? "hidden" : "" }}">
-                <div class="container-variant-cor-search "></div>
+            <div class="swipper-variant wrapper-variant-search cor-variant {{ settings.show_variation_tamanho ? "hidden" : "" }}">
+                <div class="swiper-wrapper container-variant-cor-search "></div>
             </div>
         {% endif %}
 
@@ -41,16 +41,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
 }
 .wrapper-variant-search {
-    display: flex;
     align-items: center;
     gap: 36px;
     padding: 56px 0;
     width: 100%;
     justify-content: center;
     border-radius: 10px;
-
+    max-width: 800px;
+    overflow: hidden;
 
 
 }
@@ -98,16 +99,24 @@
     
 }
 .tamanho-botao-variant-search {
-    border-radius: 4px;
-    display: flex;
-    padding: 24px 32px;
-    justify-content: center;
-    align-items: center;
+
+
+
+
+}
+.tamanho-botao-variant-search p {
+    width: 72px;
+    height: 72px;
     color: #000;
+    border-radius: 4px;
     font-size: 1.125rem;
     font-weight: 600;
     transition: opacity .2s ease-in-out;
     background: #F4F4F4;
+    display: flex;
+    /*padding: 24px 32px;*/
+    justify-content: center;
+    align-items: center;
 
 }
 span.text-variant-tamanho:first-child {
@@ -165,10 +174,17 @@ span.active-variant-tamanho.hidde-subline::after {
     opacity: 1;
     opacity: 0;
 }
+
+a.tamanho-botao-variant-search {
+    width: 72.25px;
+}
 </style>
 
 
 <script>
+    
+
+
     const tamanho = "{{ settings.variacao_escolhida_1 }}"
     const colorName = "{{ settings.variacao_nome_cor_escolhida }}"
     const colorHex = "{{ settings.variacao_cor_hex_escolhida }}"

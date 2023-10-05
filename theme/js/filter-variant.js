@@ -35,12 +35,14 @@ function normalizeTamanho(items) {
 function generateButton(list, parent) {
     list.forEach(item => {
         const aElement = document.createElement('a');
-        console.log(parent)
+        const pElement = document.createElement('p');
         href = `https://demoeffect.commercesuite.com.br/loja/busca.php?loja=1143858&variants%5B%5D=Tamanho%7C%7C${item}`
-        aElement.textContent = item;
-        aElement.classList = "tamanho-botao-variant-search"
+        pElement.textContent = item;
+        aElement.classList = "tamanho-botao-variant-search  swiper-slide"
+        //pElement.classList = "swiper-slide"
         aElement.setAttribute('href', href)
         parent.appendChild(aElement);
+        aElement.appendChild(pElement);
     })
 }
 // --------------------------------------
@@ -104,7 +106,7 @@ function generateButtonColors(colors, parent) {
         const $aElement = document.createElement('a');
         const $hexElement = document.createElement('span');
         const $spanTextElement = document.createElement('text');
-        $aElement.classList = "container-color-search";
+        $aElement.classList = "container-color-search swiper-slide";
         $hexElement.classList = "preview-hex-search";
         $aElement.setAttribute('href', href);
         $hexElement.style.backgroundColor = hex;
@@ -121,7 +123,7 @@ const $containerCor = document.querySelector(".text-variant-cor");
 const contentTamanho = document.querySelector(".wrapper-variant-search.tamanho-variant");
 const contentCor = document.querySelector(".wrapper-variant-search.cor-variant");
 $containerTamanho.classList.add('active-variant-tamanho');
-$containerCor.classList.add('active-variant-cor');
+//$containerCor.classList.add('active-variant-cor');
 const afterTamanho = window.getComputedStyle($containerTamanho, "::after");
 const displayValue = afterTamanho.getPropertyValue('display');
 // const afterTamanho = document.querySelector(".span.text-variant-tamanho:first-child::after");
@@ -149,3 +151,26 @@ if((document.querySelector(".text-variant-tamanho")) && (document.querySelector(
         contentCor.classList.remove('hidden');
     });
 }
+document.addEventListener('DOMContentLoaded', (event) => {
+    const swiper = new Swiper('.swipper-variant', {
+        // Optional parameters
+        slidesPerView: 8,
+        loop: true,
+    
+        // If we need pagination
+        pagination: {
+        el: '.swiper-pagination',
+        },
+    
+        // Navigation arrows
+        navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+        },
+    
+        // And if we need scrollbar
+        scrollbar: {
+        el: '.swiper-scrollbar',
+        },
+    });
+});
