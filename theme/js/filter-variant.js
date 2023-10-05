@@ -128,6 +128,7 @@ const displayValue = afterTamanho.getPropertyValue('display');
 // const afterCor = document.querySelector(".span.text-variant-tamanho:first-child::after");
 
 if((document.querySelector(".text-variant-tamanho")) && (document.querySelector(".text-variant-cor"))){
+    $containerCor.classList.add('hidde-subline');
     $containerTamanho.addEventListener('click', ()=> {
       
         contentTamanho.style.display= "flex";

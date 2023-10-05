@@ -1,21 +1,21 @@
 <div class="filter-by-variant {{ settings.show_variation_tamanho and settings.show_variation_cor ? "ambos" : "unico"}} section">
     <div class="title-variant-search">
         {% if settings.show_variation_tamanho %}
-            <span class="text-variant-tamanho">ESCOLHA POR TAMANHO</span>
+            <span class="text-variant-tamanho" {{ settings.show_variation_cor == false ? "style= 'border: 0'" : "" }}>ESCOLHA POR TAMANHO</span>
         {% endif %}
         {% if settings.show_variation_cor %}
-            <span class="text-variant-cor {{ settings.show_variation_tamanho ? "not-active-variant" : "" }} ">ESCOLHA POR COR</span>
+            <span class="text-variant-cor active-variant-cor  {{ settings.show_variation_tamanho ? "not-active-variant" : "" }} ">ESCOLHA POR COR</span>
         {% endif %}
     </div>    
         {% if settings.show_variation_tamanho %}
-        <div class="wrapper-variant-search tamanho-variant">
+        <div class="wrapper-variant-search tamanho-variant ">
                 <div class="container-variant-tamanho-search"></div>
         </div>
         {% endif %}
         
         {% if settings.show_variation_cor %}
             <div class="wrapper-variant-search cor-variant {{ settings.show_variation_tamanho ? "hidden" : "" }}">
-                <div class="container-variant-cor-search"></div>
+                <div class="container-variant-cor-search "></div>
             </div>
         {% endif %}
 
