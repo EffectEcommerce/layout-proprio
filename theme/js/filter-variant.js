@@ -113,7 +113,7 @@ if((document.querySelector(".text-variant-tamanho")) && (document.querySelector(
     $containerCor.classList.add('active-variant-cor');
     $containerCor.classList.add('hidde-subline');
     $containerTamanho.addEventListener('click', ()=> {      
-        contentTamanho.style.display= "flex";
+        contentTamanho.style.display= "block";
         contentCor.style.display= "none";
         $containerCor.classList.add('hidde-subline');
         $containerTamanho.classList.remove('hidde-subline');
@@ -121,7 +121,7 @@ if((document.querySelector(".text-variant-tamanho")) && (document.querySelector(
 
     $containerCor.addEventListener('click', ()=> {
         contentTamanho.style.display= "none";
-        contentCor.style.display= "flex";
+        contentCor.style.display= "block";
         $containerTamanho.classList.add('hidde-subline');
         $containerCor.classList.remove('hidde-subline');
         contentCor.classList.remove('hidden');
