@@ -1,7 +1,7 @@
 <div class=" filter-by-variant {{ settings.show_variation_tamanho and settings.show_variation_cor ? "ambos" : "unico"}} section">
     <div class=" title-variant-search">
         {% if settings.show_variation_tamanho %}
-            <span class="text-variant-tamanho" {{ settings.show_variation_cor == false ? "style= 'border: 0'" : "" }}>ESCOLHA POR TAMANHO</span>
+            <span class="text-variant-tamanho active-variant-tamanho" {{ settings.show_variation_cor == false ? "style= 'border: 0'" : "" }}>ESCOLHA POR TAMANHO</span>
         {% endif %}
         {% if settings.show_variation_cor %}
             <span class="text-variant-cor active-variant-cor  {{ settings.show_variation_tamanho ? "not-active-variant" : "" }} ">ESCOLHA POR COR</span>
@@ -85,9 +85,8 @@
         content: "";
         border-radius: 50%;
         position: absolute;
-        width: 86px;
-
-        height: 86px;
+        width: 88px;
+        height: 88px;
         border: 1px solid #969696;
     }
     .container-variant-cor-search, .container-variant-tamanho-search  {
@@ -104,14 +103,17 @@
         flex-direction: column;
         align-items: center;
         cursor: pointer;
+        text-align: center;
         
     }
-    .tamanho-botao-variant-search {
-
-
-
-
+    @media (max-width: 478px) {
+    .text-variant-cor, .text-variant-tamanho {
+        padding: 4px 60px;
+        }
     }
+    .tamanho-botao-variant-search {
+    }
+
     .tamanho-botao-variant-search p {
         width: 72px;
         height: 72px;

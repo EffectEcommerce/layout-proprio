@@ -9,7 +9,6 @@ const person1 = {
     firstName: "John",
     lastName: "Doe",
     age: 30,
-    createAt: "12"
 };
 // Chama a função para exibir as informações da pessoa
 displayPersonInfo(person1);
