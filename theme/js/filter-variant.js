@@ -122,14 +122,15 @@ const $containerTamanho = document.querySelector(".text-variant-tamanho");
 const $containerCor = document.querySelector(".text-variant-cor");
 const contentTamanho = document.querySelector(".wrapper-variant-search.tamanho-variant");
 const contentCor = document.querySelector(".wrapper-variant-search.cor-variant");
-$containerTamanho.classList.add('active-variant-tamanho');
-//$containerCor.classList.add('active-variant-cor');
-const afterTamanho = window.getComputedStyle($containerTamanho, "::after");
-const displayValue = afterTamanho.getPropertyValue('display');
+
+//const afterTamanho = window.getComputedStyle($containerTamanho, "::after");
+//const displayValue = afterTamanho.getPropertyValue('display');
 // const afterTamanho = document.querySelector(".span.text-variant-tamanho:first-child::after");
 // const afterCor = document.querySelector(".span.text-variant-tamanho:first-child::after");
 
 if((document.querySelector(".text-variant-tamanho")) && (document.querySelector(".text-variant-cor"))){
+    $containerTamanho.classList.add('active-variant-tamanho');
+    $containerCor.classList.add('active-variant-cor');
     $containerCor.classList.add('hidde-subline');
     $containerTamanho.addEventListener('click', ()=> {
       
@@ -155,6 +156,32 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const swiper = new Swiper('.swipper-variant', {
         // Optional parameters
         slidesPerView: 8,
+        loop: true,
+    
+        // If we need pagination
+        pagination: {
+        el: '.swiper-pagination',
+        },
+    
+        // Navigation arrows
+        navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+        },
+    
+        // And if we need scrollbar
+        scrollbar: {
+        el: '.swiper-scrollbar',
+        },
+    });
+
+    
+});
+document.addEventListener('DOMContentLoaded', (event) => {
+    console.log('entrouuuu')
+    const swiper = new Swiper('.swipper-variant-cor', {
+        // Optional parameters
+        slidesPerView: 4,
         loop: true,
     
         // If we need pagination
