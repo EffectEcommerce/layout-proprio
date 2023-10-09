@@ -34,6 +34,8 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    max-width: 800px;
+
 }
     .not-active-variant {
         filter: brightness(85%);   
@@ -96,7 +98,7 @@
     .text-variant-cor, .text-variant-tamanho {
         font-size: 1.375rem;
         font-weight: 300;
-        padding: 4px 100px;
+        padding: 4px 15px;
         display: flex;
         justify-content: center;
         position: relative;
@@ -104,15 +106,14 @@
         align-items: center;
         cursor: pointer;
         text-align: center;
+        width: 50%;
         
     }
-    @media (max-width: 478px) {
+    @media(max-width:600px ) {
     .text-variant-cor, .text-variant-tamanho {
-        padding: 4px 60px;
+            font-size: 1.1rem;
         }
     }
-
-
     .tamanho-botao-variant-search p {
         width: 72px;
         height: 72px;

@@ -3,11 +3,14 @@ interface Person {
     firstName: string;
     lastName: string;
     age: number;
+    peso: number;
   }
   
   // Função para exibir informações de uma pessoa
   function displayPersonInfo(person: Person) {
     console.log(`Name: ${person.firstName} ${person.lastName}`);
+    console.log(`Name: ${person.peso} ${person.lastName}`);
+    console.log(`Name: ${person.peso} ${person.lastName}`);
     console.log(`Age: ${person.age}`);
   }
   
@@ -16,6 +19,7 @@ interface Person {
     firstName: "John",
     lastName: "Doe",
     age: 30,
+    peso: 25
   };
   
   // Chama a função para exibir as informações da pessoa
