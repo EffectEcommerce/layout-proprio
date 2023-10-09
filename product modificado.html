@@ -7,7 +7,6 @@
         {% endfor %}
     </div>
 {% endif %}
-
 {% element 'snippets/breadcrumb' %} 
 {% element 'schema' { 'product' : product } %}
 
@@ -16,25 +15,37 @@
         {% set discount = product.price_offer > 0 ? (100 - (product.price_offer / product.price) * 100) : false %}
         <div class="pageProduct-gallery" data-gallery="product">
 
-            {% if product.video %}
+{#             {% if product.video %}
                 <button class="gallery-video" type="button" data-toggle="closed" data-target="#modals-video" data-button="video" data-url="{{ product.video }}" aria-label="Ver V&iacute;deo">
                     <span class="icon-youtube-simple">
                         <span class="path1"></span>
                         <span class="path2"></span>
                     </span>
                 </button>
-            {% endif %}
-
-
+            {% endif %} #}
 
             <div class="gallery-images swiper" data-slides="gallery">
                 <div class="swiper-wrapper" data-gallery="box-images">
                     {% for images in product.images %} 
                         {% set lazyIndex = loop.index == 1 ? false : true %}
                         <div class="swiper-slide gallery-image" data-gallery="image">
-
                             <img class="gallery-img{{ lazyIndex ? ' swiper-lazy' : ' lazyload'}}" data-src="{{ images.full }}" alt="{{ product.name }}"/>
-  
+                        </div>
+                    {% endfor %}
+                </div>
+            </div> 
+
+            <div style="display: flex">
+            {% for images in product.images %}
+                    <img src="{{ images.full}}" alt="">
+                </div>
+            {% endfor %}
+            <div class="gallery-images " data-slides="gallery">
+                <div class="swiper-wrappeoor" data-gallery="box-images" style="display: flex; flex-direction: row-reverse; flex-wrap: wrap; gap: 8px;">
+                    {% for images in product.images %} 
+                        {% set lazyIndex = loop.index == 1 ? false : true %}
+                        <div class="swiper-slidee gallery-image" data-gallery="image">
+                            <img class="gallery-img" src="{{ images.full }}"  alt="{{ product.name }} "/>
                         </div>
                     {% endfor %}
                 </div>
@@ -54,6 +65,7 @@
                 <div class="slides-buttonPrev--gallery icon-arrow-simple{{ quantityImages > 4 ? ' u-show' }}"></div>
                 <div class="slides-buttonNext--gallery icon-arrow-simple{{ quantityImages > 4 ? ' u-show' }}"></div>
             </div>
+            
             {% if productHelper.social() and settings.social_position == 0 and (product.stock > 0 or
             settings.without_stock_sale) %}
                 <div class="pageProduct-socialMedia">
@@ -78,16 +90,31 @@
                         <div class="tag-percentageDiscount tag">
                             {{ discount | number_format }}% OFF
                         </div>
+                    {% endif %}
+                    {% if product.featured %}
+                        {% if product.featured and Image('featured') %}
+                            <div class="tag-featured tag">{{ Image('featured') | replace(replaceTags) }}</div>
+                        {% else %}
+                            <div class="tag-destaque tag">DESTAQUE</div>
+                        {% endif %} 
                     {% endif %} 
-                    {% if product.featured and Image('featured') %}
-                        <div class="tag-featured tag">{{ Image('featured') | replace(replaceTags) }}</div>
+
+                    {% if product.free_shipping %}
+                        {% if product.free_shipping and Image('free_shipping') %}
+                            <div class="tag-freeShipping tag">{{ Image('free_shipping') | replace(replaceTags) }}</div>
+                            {% else %}
+                            <div class="tag-frete-gratis tag">FRETE GRATIS</div>
+                            {% endif %} 
                     {% endif %} 
-                    {% if product.free_shipping and Image('free_shipping') %}
-                        <div class="tag-freeShipping tag">{{ Image('free_shipping') | replace(replaceTags) }}</div>
-                    {% endif %} 
-                    {% if product.new and Image('new') %}
-                        <div class="tag-new tag">{{ Image('new') | replace(replaceTags) }}</div>
-                    {% endif %} 
+
+                    {% if product.new %}
+                        {% if product.new and Image('new') %}
+                            <div class="tag-new tag">{{ Image('new') | replace(replaceTags) }}</div>
+                            {% else %}
+                            <div class="tag-lancamento tag">LAN&CcedilAMENTO</div>
+                        {% endif %} 
+                    {% endif %}
+
                     {% if Image('additional_button') %}
                         <div class="tag-extra tag">{{ Image('additional_button') | replace(replaceTags) }}</div>
                     {% endif %}
@@ -103,6 +130,10 @@
 
             <div class="pageProduct-nameAndInformation {{ batch_promotion ? 'u-width' }}">
                 <h1 class="pageProduct-name">{{ product.name }}</h1>
+
+                {% if settings.show_product_review %} 
+                    {% element 'snippets/product-rating' { 'review': product.ranking, 'total' : true } %} 
+                {% endif %} 
 
                 {% if (product.reference and settings.show_reference) or (settings.show_product_brand and product.brand) %}
                     <div class="pageProduct-subtitle">
@@ -120,10 +151,6 @@
                         {% endif %}
                     </div>
                 {% endif %}
-
-                {% if settings.show_product_review %} 
-                    {% element 'snippets/product-rating' { 'review': product.ranking, 'total' : true } %} 
-                {% endif %} 
 
                 {% if product.available and (product.stock > 0 or settings.without_stock_sale) and not product.upon_request %} 
                     {% set form_classes = [] %}
@@ -164,24 +191,7 @@
                         {% if productHelper.bonus() and 'idBonusVariacao' in productHelper.bonus() %}
                             <div class="pageProduct-bonusScore">{{ productHelper.bonus() }}</div>
                         {% endif %} 
-                        {% if ProgressiveDiscounts %}
-                            <div class="pageProduct-progressiveDiscount">
-                                <p class="progressiveDiscount-text">Produto com desconto progressivo</p>
-                                <ul class="progressiveDiscount-list">
-                                    {% for discount in ProgressiveDiscounts %}
-                                        <li class="progressiveDiscount-item" data-name="{{ discount.name }}">
-                                            {{ discount.description }}
-                                        </li>
-                                    {% endfor %}
-                                </ul>
-                            {% if ProgressiveDiscounts|length > 1 %}
-                                <p class="progressiveDiscount-alert">
-                                    <b>Atenção!</b> Somente o maior desconto ser&aacute; aplicado na finaliza&ccedil;&atilde;o do
-                                    pedido.
-                                </p>
-                            {% endif %}
-                            </div>
-                        {% endif %} 
+
 
                         {% if product.variants %}
                             <div class="pageProduct-variants" data-has-variations>
@@ -228,6 +238,26 @@
                             <p class="pageProduct-additionalMessage">{{ product.additional_message }}</p>
                         {% endif %}
 
+                        {# DESCONTO PROGRESSIVO #}
+                        {% if ProgressiveDiscounts %}
+                        <div class="pageProduct-progressiveDiscount">
+                            <p class="progressiveDiscount-text">Produto com desconto progressivo</p>
+                            <ul class="progressiveDiscount-list">
+                                {% for discount in ProgressiveDiscounts %}
+                                    <li class="progressiveDiscount-item" data-name="{{ discount.name }}">
+                                        {{ discount.description }}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% if ProgressiveDiscounts|length > 1 %}
+                            <p class="progressiveDiscount-alert">
+                                <b>Atenção!</b> Somente o maior desconto ser&aacute; aplicado na finaliza&ccedil;&atilde;o do
+                                pedido.
+                            </p>
+                        {% endif %}
+                        </div>
+                    {% endif %} 
+
                         <div class="pageProduct-buy serverTray-content" data-buy-product="box">
                             <input class="buy-quantityTop" type="button" id="more" value="+" data-quantity />
                             <input class="buy-quantityDown" type="button" id="less" value="-" data-quantity /> {{
@@ -273,8 +303,11 @@
                         <div class="socialMedia">{{ productHelper.social() }}</div>
                     </div>
                 {% endif %}
+                {% element 'snippets/product-tabs' { 'product' : product } %}
         </section>
+
     </div>
+
 
     {% if productHelper.bundle() %}
         <div class="pageProduct-buyTogether">
@@ -284,7 +317,7 @@
 
     <div class="pageProduct-tabs">
         {% element 'snippets/product-tabs' { 'product' : product } %}
-    </div>
+    </div> 
 </div>
 
 {% if product.related_products and settings.enable_related_products %}
@@ -320,3 +353,40 @@
         </div>
     </section>
 {% endif %}
+
+<script type="text/javascript">  
+    const productId = "289";
+    //fetch("https://demoeffect.commercesuite.com.br/web_api/products/" + productId)
+
+
+    async function fetchData() {
+        try {
+            const response = await fetch("https://demoeffect.commercesuite.com.br/web_api/search/?category_id=29")
+            if (!response){
+                throw response
+            }
+
+            const data = await response.json();
+            objeto = data;
+            console.log("Deu certo")
+            
+        } catch(error) {
+            // O erro pode ser devido a uma falha na rede ou a uma resposta não bem-sucedida.
+            // Aqui tratamos ambos os casos.
+            if (error.json) {
+                const dataError = await error.json();
+                console.log("Erro no dado", dataError)
+
+                } else {
+                console.log("Erro na requisição:", error);
+            }
+        };
+  
+    }
+
+    let objeto;
+    fetchData().then(data =>  {
+        //logica aqui
+        console.log(objeto)
+})
+</script>

@@ -781,17 +781,32 @@
             $.each(newVariationImages, function (index, item) {
                 let slideIndex = index + 1;
 
+                // htmlImages += `
+                //     <div class="swiper-slide gallery-image" data-gallery="image">
+                //         <img class="gallery-img${slideIndex === 1 ? ' swiper-lazy' : ' lazyload'}" data-src="${
+                //     item.https
+                // }" alt="${productName}" width="1000px" height="1000px">
+                //     </div>
+                // `;
                 htmlImages += `
                     <div class="swiper-slide gallery-image" data-gallery="image">
-                        <img class="gallery-img${slideIndex === 1 ? ' swiper-lazy' : ' lazyload'}" data-src="${
+                        <img class="gallery-img${slideIndex === 1 ? ' swiper-lazy' : ' lazyload'}" src="${
                     item.https
                 }" alt="${productName}" width="1000px" height="1000px">
                     </div>
                 `;
 
+                // htmlThumbs += `
+                //     <div class="swiper-slide gallery-thumb" data-gallery="image">
+                //         <img class="gallery-img${slideIndex === 1 ? ' swiper-lazy' : ' lazyload'}" data-src="${
+                //     item.thumbs[90].https
+                // }" alt="${productName}" width="90px" height="90px">
+                //     </div>
+                // `;
+
                 htmlThumbs += `
                     <div class="swiper-slide gallery-thumb" data-gallery="image">
-                        <img class="gallery-img${slideIndex === 1 ? ' swiper-lazy' : ' lazyload'}" data-src="${
+                        <img class="gallery-img${slideIndex === 1 ? ' swiper-lazy' : ' lazyload'}" src="${
                     item.thumbs[90].https
                 }" alt="${productName}" width="90px" height="90px">
                     </div>
