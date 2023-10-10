@@ -789,8 +789,8 @@
                 //     </div>
                 // `;
                 htmlImages += `
-                    <div class="swiper-slide gallery-image" data-gallery="image">
-                        <img class="gallery-img${slideIndex === 1 ? ' swiper-lazy' : ' lazyload'}" src="${
+                    <div class="gallery-image" data-gallery="image">
+                        <img class="gallery-img" src="${
                     item.https
                 }" alt="${productName}" width="1000px" height="1000px">
                     </div>
@@ -805,8 +805,8 @@
                 // `;
 
                 htmlThumbs += `
-                    <div class="swiper-slide gallery-thumb" data-gallery="image">
-                        <img class="gallery-img${slideIndex === 1 ? ' swiper-lazy' : ' lazyload'}" src="${
+                    <div class="gallery-thumb" data-gallery="image">
+                        <img class="gallery-img" src="${
                     item.thumbs[90].https
                 }" alt="${productName}" width="90px" height="90px">
                     </div>
@@ -825,7 +825,7 @@
             boxImages.html(htmlImages);
             boxThumbs.html(htmlThumbs);
 
-            theme.gallerySlidesOnProductPage();
+            //theme.gallerySlidesOnProductPage();
         },
 
         loadProductVariantImage: function (id) {
@@ -1164,7 +1164,7 @@
             theme.customerReviewsSlidesOnHome();
             theme.brandsSlides();
         } else if ($('html').hasClass('page-product')) {
-            theme.gallerySlidesOnProductPage();
+            //theme.gallerySlidesOnProductPage();
             theme.openProductVideoModal();
             theme.getQuantityChangeOnProductPage();
             theme.initProductVariationImageChange();

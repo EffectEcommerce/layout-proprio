@@ -6769,9 +6769,18 @@ span.mensagensErro {
 .pageProduct-gallery .gallery-video:hover {
   opacity: 0.6;
 }
+.pageProduct-gallery .gallery-box-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
 .pageProduct-gallery .gallery-images {
   height: calc(100% - 5.624rem);
   width: 100%;
+}
+.pageProduct-gallery .gallery-image {
+  display: flex;
+  width: 46%;
 }
 .pageProduct-gallery .gallery-img {
   display: block;

@@ -62,10 +62,19 @@
                     opacity: 0.6;
                 }
             }
+            &-box-images {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
 
             &-images {
                 height: calc(100% - 5.624rem);
                 width: 100%;
+            }
+            &-image {
+                display: flex;
+                width: 46%;
             }
 
             &-img {
