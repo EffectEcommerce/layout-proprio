@@ -425,6 +425,8 @@
         font-size: 1.25rem;
         font-family: Besley;
         font-weight: 500;
+        border-bottom: 1px solid #D1D1D1;
+
         @include small {
             text-align: center;
         }
@@ -2529,4 +2531,11 @@
 .tabs-content span {
     font-size: .875rem !important;
     font-weight: 400;
+}
+#produto_preco > span:nth-child(1) {
+    display: none;
+}
+
+.page-product #quantidade #quant {
+    display: none;
 }
