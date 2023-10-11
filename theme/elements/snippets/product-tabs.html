@@ -75,6 +75,15 @@
 <div class="tabs">
     {% for key, tab in detailsTabs %}
 
+        {% if key == "payment_methods" %}
+            <h1>entrouu</h1>
+            {% for k, v in tab %}
+                {{ k }} => 
+                {{ v }}
+            {% endfor %}
+        {% endif %}
+
+
         {# Mobile tab links #}
         {% if tab.container_id %}
             <a class="tabs-navMobile u-mobile {{ tab.link_class }}" href="{{ tab.container_id }}">

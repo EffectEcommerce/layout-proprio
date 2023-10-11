@@ -8,6 +8,7 @@
     </div>
 {% endif %}
 
+
 {% element 'snippets/breadcrumb' %} 
 {% element 'schema' { 'product' : product } %}
 
@@ -205,7 +206,7 @@
                             
                         {% endif %}
 
-                        <button class="pageProduct-payment-modal" type="button" data-toggle="closed" data-target="#modals-video" data-button="video" data-content="{{ product.video }}" aria-label="Ver V&iacute;deo">
+                        <button class="pageProduct-payment-modal" type="button" data-toggle="closed" data-target="#modals-video" data-button="video" data-content="aaaaaaaaaaaa" aria-label="Ver V&iacute;deo">
                             <span>Ver formas de pagamento</span>
                         </button>
                         
@@ -273,6 +274,16 @@
                         <div class="socialMedia">{{ productHelper.social() }}</div>
                     </div>
                 {% endif %}
+                    <iframe 
+                    src="https://demoeffect.commercesuite.com.br/mvc/store/product/payment_options?loja=1143858&IdProd=289&IdVariacao=%s#" 
+                    frameborder="0"
+                    width="600" 
+                    height="900">
+                        
+                    </iframe>
+                <div class="pageProduct-tabs">
+                    {% element 'snippets/product-tabs' { 'product' : product } %}
+                </div>
         </section>
     </div>
     
@@ -283,9 +294,7 @@
         </div>
     {% endif %}
 
-    <div class="pageProduct-tabs">
-        {% element 'snippets/product-tabs' { 'product' : product } %}
-    </div>
+
 </div>
 
 {% if product.related_products and settings.enable_related_products %}

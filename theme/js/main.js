@@ -312,6 +312,8 @@
             });
         },
 
+        
+
         openProductVideoModal: function () {
             const video = $('[data-button="video"]');
             const modal = $('[data-modal="video"]');
@@ -702,12 +704,14 @@
             urlTabs.each(function () {
                 let tab = $(this);
                 let url = tab.data('url');
+                console.log("url =>", url)
 
                 $.ajax({
                     url: url,
                     method: 'get',
                     success: function (response) {
                         tab.html(response);
+                        console.log("response", tab.html(response))
                         $('#atualizaFormas li table').css('display', 'none');
                         openPaymentMethod();
                     },
