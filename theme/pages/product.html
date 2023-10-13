@@ -205,10 +205,23 @@
                             <p class="pageProduct-additionalMessage">{{ product.additional_message }}</p>
                             
                         {% endif %}
+                        <span class="payment-link" style="cursor: pointer;">Ver formas de pagamento</span>
+                            <dialog  id="confirmation-dialog">
 
-                        <button class="pageProduct-payment-modal" type="button" data-toggle="closed" data-target="#modals-video" data-button="video" data-content="aaaaaaaaaaaa" aria-label="Ver V&iacute;deo">
-                            <span>Ver formas de pagamento</span>
-                        </button>
+                                <div class="container-title-modal" style="display: flex; justify-content: space-between;">
+                                    <h1 id="title-modal-infos">Titulo</h1>
+                                    <svg class="close-modal-payment" style="cursor: pointer;" xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                                        <path d="M1.23077 16.8582L0 15.6318L6.76923 8.8866L0 2.14143L1.23077 0.915039L8 7.66021L14.7692 0.915039L16 2.14143L9.23077 8.8866L16 15.6318L14.7692 16.8582L8 10.113L1.23077 16.8582Z" fill="black"/>
+                                    </svg>
+                                </div>
+                                    <iframe 
+                                    width="600"
+                                    height="600"
+                                    src="https://demoeffect.commercesuite.com.br/mvc/store/product/payment_options?loja=1143858&IdProd=289&IdVariacao=%s#" frameborder="0"></iframe>
+                            </dialog>
+                            <!--<div class="overlay" ></div>-->
+
+
                         
                         {% if ProgressiveDiscounts %}
                             <div class="pageProduct-progressiveDiscount">
@@ -274,19 +287,26 @@
                         <div class="socialMedia">{{ productHelper.social() }}</div>
                     </div>
                 {% endif %}
+
+<!--
+
                     <iframe 
-                    src="https://demoeffect.commercesuite.com.br/mvc/store/product/payment_options?loja=1143858&IdProd=289&IdVariacao=%s#" 
-                    frameborder="0"
-                    width="600" 
-                    height="900">
-                        
+                        src="https://demoeffect.commercesuite.com.br/mvc/store/product/payment_options?loja=1143858&IdProd=289&IdVariacao=%s#" 
+                        frameborder="0"
+                        width="600" 
+                        height="900">
+                        aaaaaaaaaaaaaaaaa
                     </iframe>
-                <div class="pageProduct-tabs">
-                    {% element 'snippets/product-tabs' { 'product' : product } %}
-                </div>
-        </section>
-    </div>
-    
+-->
+                    
+                    
+
+           </section>
+        </div>
+        
+        <div class="pageProduct-tabs">
+            {% element 'snippets/product-tabs' { 'product' : product } %}
+        </div>
 
     {% if productHelper.bundle() %}
         <div class="pageProduct-buyTogether">
@@ -330,3 +350,17 @@
         </div>
     </section>
 {% endif %}
+
+<style>
+    .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Cor de fundo semi-transparente */
+    display: none; /* Inicialmente oculto */
+    z-index: 1000; /* Para garantir que esteja acima de outros elementos */
+}
+
+</style>

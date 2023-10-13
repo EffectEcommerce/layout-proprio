@@ -1,5 +1,18 @@
 .regua-container {
-    background-color: #1F2228;
+    background-color: var(--c_regua_superior_bg);
+    padding: 8px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+    font-size: 0.75rem;
+    
+    span:nth-child(1), span:nth-child(3) {
+       display: none;
+   }
+}
+.regua-container-inferior {
+    background-color: var(--c_regua_inferior_bg);
     padding: 8px;
     display: flex;
     justify-content: space-around;
@@ -18,9 +31,14 @@
             display: block;
         }    
     }
+    .regua-container-inferior {
+        span:nth-child(1) {
+            display: block;
+        }    
+    }
 }
 @media(min-width:720px) {
-    .regua-container {
+    .regua-container-inferior {
         span:nth-child(3) {
             display: block;
         }    

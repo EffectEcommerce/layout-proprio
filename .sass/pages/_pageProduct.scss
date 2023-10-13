@@ -2539,3 +2539,7 @@
 .page-product #quantidade #quant {
     display: none;
 }
+
+::backdrop {
+    background: rgba(0, 0, 0, 0.5) !important;
+}

@@ -711,7 +711,6 @@
                     method: 'get',
                     success: function (response) {
                         tab.html(response);
-                        console.log("response", tab.html(response))
                         $('#atualizaFormas li table').css('display', 'none');
                         openPaymentMethod();
                     },
