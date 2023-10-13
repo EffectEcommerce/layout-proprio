@@ -123,9 +123,7 @@
                     font-size: 0.8rem;
                 }
 
-                &:focus {
-                    box-shadow: inset 0 0 4px var(--c_header_text_secondary);
-                }
+
 
                 &::placeholder {
                     color: var(--c_header_text_secondary);

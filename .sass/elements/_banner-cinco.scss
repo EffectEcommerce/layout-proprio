@@ -1,0 +1,32 @@
+.banner-cinco {
+    display: flex;
+    width: 100%;
+    gap: 8px;
+    &-left {
+        width: 50%;
+        a {
+            display: flex;
+            height: 100%;
+        }
+        img {
+            width: 100%;
+        }
+    }
+    &-right {
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        a {
+            display: flex;
+            width: 50%;
+        }
+        img {
+            width: 100%;
+        }
+    }
+    &-wrapper {
+        display: flex;
+        gap: 8px;
+    }
+}
