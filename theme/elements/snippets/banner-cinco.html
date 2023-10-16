@@ -1,3 +1,4 @@
+{#  
 {% if banners.extra2 and banners.extra3 and banners.extra4 and banners.extra5%}
     <div class="banner-cinco section">
         <div class="banner-cinco-left">
@@ -11,14 +12,63 @@
         </div>
         <div class="banner-cinco-right">
             <div class="banner-cinco-wrapper">
-                {% if banners.extra2.link %}
+                {% if banners.extra3.link %}
+                    <a src="{{ banners.extra3.link }}" alt="">
+                        <img src="{{ banners.extra3.src }}" alt="">
+                    </a>
+                {% else %}
+                    <img src="{{ banners.extra3.src }}" alt="">
+                {% endif %}
+                {% if banners.extra4.link %}
+                    <a src="{{ banners.extra4.link }}" alt="">
+                        <img src="{{ banners.extra4.src }}" alt="">
+                    </a>
+                {% else %}
+                    <img src="{{ banners.extra4.src }}" alt="">
+                {% endif %}
+            </div>
+            <div class="banner-cinco-wrapper">
+                {% if banners.extra5.link %}
+                    <a src="{{ banners.extra5.link }}" alt="">
+                        <img src="{{ banners.extra5.src }}" alt="">
+                    </a>
+                {% else %}
+                    <img src="{{ banners.extra5.src }}" alt="">
+                {% endif %}
+                {% if banners.extra6.link %}
+                    <a src="{{ banners.extra5.link }}" alt="">
+                        <img src="{{ banners.extra6.src }}" alt="">
+                    </a>
+                {% else %}
+                    <img src="{{ banners.extra6.src }}" alt="">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endif %}
+#}
+
+{% if banners.extra2 and banners.extra3 and banners.extra4 and banners.extra5%}
+    <div class="banner-cinco section">
+        <div class="banner-cinco-left">
+            {% if banners.extra2.link %}
+                <a src="{{ banners.extra2.link }}" alt="">
+                    <img src="{{ banners.extra2.src }}" alt="">
+                </a>
+            {% else %}
+                <img src="{{ banners.extra2.src }}" alt="">
+            {% endif %}
+        </div>
+        <div class="banner-cinco-right">
+            <div class="banner-cinco-wrapper">
+                {% if banners.extra3.link %}
                     <a src="{{ banners.extra2.link }}" alt="">
                         <img src="{{ banners.extra2.src }}" alt="">
                     </a>
                 {% else %}
                     <img src="{{ banners.extra2.src }}" alt="">
                 {% endif %}
-                {% if banners.extra2.link %}
+                {% if banners.extra4.link %}
                     <a src="{{ banners.extra2.link }}" alt="">
                         <img src="{{ banners.extra2.src }}" alt="">
                     </a>
@@ -27,14 +77,14 @@
                 {% endif %}
             </div>
             <div class="banner-cinco-wrapper">
-                {% if banners.extra2.link %}
+                {% if banners.extra5.link %}
                     <a src="{{ banners.extra2.link }}" alt="">
                         <img src="{{ banners.extra2.src }}" alt="">
                     </a>
                 {% else %}
                     <img src="{{ banners.extra2.src }}" alt="">
                 {% endif %}
-                {% if banners.extra2.link %}
+                {% if banners.extra6.link %}
                     <a src="{{ banners.extra2.link }}" alt="">
                         <img src="{{ banners.extra2.src }}" alt="">
                     </a>

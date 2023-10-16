@@ -30,3 +30,17 @@
         gap: 8px;
     }
 }
+
+@media (max-width:680px) {
+    .banner-cinco {
+        flex-direction: column;
+        width: auto;
+        &-left {
+            width: auto;
+        }
+        &-right a {
+            width: 50%;
+            display: flex;
+        }
+    }   
+}

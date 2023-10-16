@@ -479,12 +479,12 @@
                 transform: translateY(40px);
                 transition: ease-out 0.2s;
                 max-height: 50vh;
-                min-width: 275px;
+                min-width: 216px;
                 width: auto;
 
                 .secondLevel-item {
                     border-bottom: $v_border_header;
-                    padding: 24px 0;
+                    padding: 12px 0;
 
                     &:first-child {
                         padding-top: 0px;
