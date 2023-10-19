@@ -78,8 +78,7 @@
         </section>
     {% endif %} 
 {% endfor %} 
-
-{% for page in pages.custom %} 
+{% for page in pages.custom %}
     {% if page.info == "noticias" %}
         <section class="section news slide-has-dots">
             <div class="section-header">
@@ -95,10 +94,11 @@
             </div>
         </section>
     {% endif %} 
-{% endfor %} 
+{% endfor %}
+
 
 {% element 'snippets/banner-line' { 'banner_id': 'bottom', 'banner_type': 'container' } %}
-{% element 'snippets/banner-unico' %} 
+{# {% element 'snippets/banner-unico' %} #} 
 {% element 'snippets/brands-list' %} 
 
 {# <section class="section tagCloud">
@@ -112,4 +112,22 @@
     </ul>
 </section> #}
 
+
+{#
+  # Noticias com imagem
+#}
+{# 
+{% for pages in pages.custom %}
+    {% if pages.info == "noticias" %}
+    <div class="section-notices">
+        <h2 class="title-section">
+            <a href="/loja/busca_noticias.php">
+                <span>Confira Nossas Notícias</span>
+            </a>
+        </h2>
+        <div class="noticias-content">
+        </div>
+    </div>
+    {% endif %}
+{% endfor %}  #}
 

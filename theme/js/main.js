@@ -240,7 +240,7 @@
         loadNewsPageOnHome: function () {
             if ($('.news').length) {
                 let dataFiles = $('html').data('files');
-
+                
                 $.ajax({
                     url: `/loja/busca_noticias.php?loja=${this.settings.storeId}&${dataFiles}`,
                     method: 'get',
@@ -259,10 +259,14 @@
                         pageNews.find('li:nth-child(n+4)').remove();
                         pageNews.find('li').wrapInner('<div class="news-item"></div>');
                         pageNews = pageNews.contents();
+                        console.log(pageNews)
+                        //e.find('p').after('<div class="button-show">Leia mais</div>'),
+                        pageNews.find('p').after('<div class="button-show">Leia mais</div>'),
 
-                        pageNews.each(function (index, pageNews) {
-                            const removeImage = $(pageNews).find('img').closest('div').remove();
-                        });
+
+                        // pageNews.each(function (index, pageNews) {
+                        //     const removeImage = $(pageNews).find('img').closest('div').remove();
+                        // });
 
                         target.append(pageNews);
                     },
@@ -885,6 +889,7 @@
         },
 
         insertBreadcrumbNavigationInPage: function (local = '', customName = false) {
+            alert()
             let items;
             let breadcrumb = '';
             let pageName = document.title.split(' - ')[0].split(' | ')[0];
