@@ -202,11 +202,10 @@
     width: 110px;
     align-items: center;
     border-radius: 4px;
-    background: #E91868;
+    background-color: var(--bg_button_news_blog);
     color: #fff;
     transition: filter 0.3s ease;
 }
-
-.button-show:hover {
-    filter: brightness(1.2); /* Aumenta o brilho ao passar o mouse sobre o botão */
+.button-show a {
+    color: #fff
 }
