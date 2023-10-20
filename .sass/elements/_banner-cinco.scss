@@ -4,7 +4,6 @@
         max-height: 520px;
     }
     display: flex;
-    width: 100%;
     gap: 8px;
     &-left {
         width: 50%;
@@ -40,6 +39,9 @@
         flex-direction: column;
         width: auto;
         &-left {
+            width: auto;
+        }
+        &-right {
             width: auto;
         }
         &-right a {

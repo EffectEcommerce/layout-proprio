@@ -180,6 +180,7 @@
 .news-item h3 a {
     font-weight: 500;
     font-size: 1.25rem;
+    color: var(--c_title_card_blog);
 
 }
 #noticia_dados h3 a::before {
@@ -191,4 +192,21 @@
     width: 100%;
     height: 100%;
     z-index: 2;
+}
+
+.button-show {
+    display: flex;
+    justify-content: center;
+    max-width: 135px;
+    height: 37px;
+    width: 110px;
+    align-items: center;
+    border-radius: 4px;
+    background: #E91868;
+    color: #fff;
+    transition: filter 0.3s ease;
+}
+
+.button-show:hover {
+    filter: brightness(1.2); /* Aumenta o brilho ao passar o mouse sobre o botão */
 }

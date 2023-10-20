@@ -1933,7 +1933,7 @@ body {
   padding: 0.5rem;
 }
 
-.page-listas_index h2, .page-depoimentos .container #comentario_cliente .review-form, .pageProduct-lastSeen .lastSeen-title, .pageProduct-related .related-title, .pageProduct .tabs-reviews h2, .pageProduct-buyTogether .buyTogether #ProdAbas a, .section-title {
+.page-listas_index h2, .page-depoimentos .container #comentario_cliente .review-form, .pageProduct-lastSeen .lastSeen-title, .pageProduct-related .related-title, .pageProduct .tabs-reviews h2, .pageProduct-buyTogether .buyTogether #ProdAbas a {
   color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.85rem;
@@ -3312,7 +3312,6 @@ ul.menu-thirdLevel {
 
 .banner-cinco {
   display: flex;
-  width: 100%;
   gap: 8px;
 }
 .banner-cinco img {
@@ -3353,6 +3352,9 @@ ul.menu-thirdLevel {
     width: auto;
   }
   .banner-cinco-left {
+    width: auto;
+  }
+  .banner-cinco-right {
     width: auto;
   }
   .banner-cinco-right a {
@@ -4533,7 +4535,14 @@ ul.menu-thirdLevel {
   }
 }
 .section-title {
-  margin-bottom: 2rem;
+  font-size: 1.375rem;
+  font-weight: 500;
+  color: var(--c_title_bottom_blog);
+}
+.section-subtitle {
+  font-size: 1rem;
+  font-weight: 0;
+  color: var(--c_title_top_blog);
 }
 
 /* reviews */
@@ -4672,6 +4681,12 @@ ul.menu-thirdLevel {
   .news-container {
     margin: 2rem;
   }
+}
+.news.section-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .news-content {
   display: flex;
@@ -4830,6 +4845,22 @@ ul.menu-thirdLevel {
   transition: 0.5s ease-out;
 }
 
+@media (max-width: 972px) {
+  .news-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .news-content li {
+    width: 100%;
+  }
+}
+@media (max-width: 620px) {
+  .news-content h3 {
+    max-height: 89px;
+    overflow: hidden;
+  }
+}
 .modal {
   position: fixed;
   top: 0;
@@ -9911,6 +9942,7 @@ span.mensagensErro {
 .news-item h3 a {
   font-weight: 500;
   font-size: 1.25rem;
+  color: var(--c_title_card_blog);
 }
 
 #noticia_dados h3 a::before {
@@ -9922,6 +9954,24 @@ span.mensagensErro {
   width: 100%;
   height: 100%;
   z-index: 2;
+}
+
+.button-show {
+  display: flex;
+  justify-content: center;
+  max-width: 135px;
+  height: 37px;
+  width: 110px;
+  align-items: center;
+  border-radius: 4px;
+  background: #E91868;
+  color: #fff;
+  transition: filter 0.3s ease;
+}
+
+.button-show:hover {
+  filter: brightness(1.2);
+  /* Aumenta o brilho ao passar o mouse sobre o botão */
 }
 
 .page-noticia .breadcrumb {
