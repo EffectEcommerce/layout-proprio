@@ -15,6 +15,7 @@
 
             .header-content {
                 height: calc(var(--v_height_header_top) - (var(--v_height_header_top) / 2.4));
+
                 //flex-wrap: nowrap;
                 display: flex;
                 align-items: center;
@@ -47,11 +48,13 @@
     &-top {
         background-color: var(--c_header_bg);
         padding-bottom: 12px;
+        padding: 17px 0;
 
     }
 
     &-content {
         @extend %flex-betw-center;
+        stroke: var(--c_header_icon);
         transition: $transit_slow;
         margin: 0 auto;
         padding: 0 0.938rem;
@@ -61,6 +64,20 @@
 
         @include small {
             flex-wrap: wrap;
+        }
+
+        & .acompanhar-pedido {
+            display: flex;
+            gap: 8px;
+            align-content: center;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            span {
+                font-size: 0.875rem;
+                font-weight: 500;
+            }
+        
         }
     }
 
@@ -293,6 +310,7 @@
 
     &-account {
         @extend %flex-center-center;
+        gap: 8px;
 
         &[data-logged-user='true']:not(.tray-hide) + [data-logged-user] {
             display: none;
@@ -305,7 +323,7 @@
         .icon-account {
             margin-right: 0.5rem;
         }
-        
+
 
         .account {
             &-access,
@@ -383,6 +401,7 @@
     }
     .wrapper-login-cart {
         display: flex;
+        gap: 23px
     }
 
     /// Menu:
@@ -746,6 +765,8 @@ ul.menu-thirdLevel {
 }
 
 .carrinho-compra {
-    fill: var(--c_header_cart);
+    fill: var(--c_header_icon);
+    stroke: none !important;
+
 
 }
