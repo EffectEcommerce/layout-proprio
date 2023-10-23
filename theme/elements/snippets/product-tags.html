@@ -41,7 +41,7 @@
     <div class="product-tag" data-tags-count="{{ tags_count }}">
         {% set replaceTags = {'src=': 'width="' ~ v_width ~ '" height="26" alt="Selo do produto" src='} %} 
         
-        {% if product.new %}
+        {% if product.new and settings.show_product_tag_new %}
             {% set position = position + 1 %} 
             {% if product.new and Image('new') %}
             <div class="tag-new tag{{ show_double_tag == 0 ? ' tag--full' }}{{show_double_tag == 1 and (odd_amount and position == tags_count) ? ' tag--center' }}">
@@ -51,7 +51,7 @@
                 <div class="tag-new tag{{ show_double_tag == 0 ? ' tag--full' }}{{show_double_tag == 1 and (odd_amount and position == tags_count) ? ' tag--center' }}">NOVIDADE</div>
             {% endif %}
         {% endif %} 
-        {% if product.featured %}
+        {% if product.featured and settings.show_product_tag_feature %}
             {% set position = position + 1 %}
             {% if product.featured and Image('featured') %}
                 <div class="tag-featured tag{{ show_double_tag == 0 ? ' tag--full' }}{{show_double_tag == 1 and (odd_amount and position == tags_count) ? ' tag--center' }}">
@@ -62,7 +62,7 @@
                         DESTAQUE</div>
                 {% endif %} 
         {% endif %}
-        {% if product.free_shipping %}
+        {% if product.free_shipping and settings.show_product_tag_free_shipping %}
         {% set position = position + 1 %}
             {% if product.free_shipping and Image('free_shipping') %}
                 <div class="tag-freeShipping tag{{ show_double_tag == 0 ? ' tag--full' }}{{show_double_tag == 1 and (odd_amount and position == tags_count) ? ' tag--center' }}">
@@ -74,13 +74,13 @@
                 </div>
             {% endif %} 
         {% endif %} 
-        {% if product.additional_button and Image('additional_button') %}
+        {% if product.additional_button and Image('additional_button') and settings.show_product_tag_additional %}
             {% set position = position + 1 %}
             <div class="tag-extra tag{{ show_double_tag == 0 ? ' tag--full' }}{{show_double_tag == 1 and (odd_amount and position == tags_count) ? ' tag--center' }}">
                 {{ Image('additional_button') | replace(replaceTags) }}
             </div>
         {% endif %} 
-        {% if product.ProgressiveDiscounts %} 
+        {% if product.ProgressiveDiscounts and settings.show_product_tag_progressive_discounts %} 
             {% set position = position + 1 %}
             {% set discount = product.ProgressiveDiscounts | last %}
             <div class="tag-progressiveDiscount tag{{ show_double_tag == 0 ? ' tag--full' }}{{show_double_tag == 1 and (odd_amount and position == tags_count) ? ' tag--center' }}" title="Produto com desconto progressivo">
