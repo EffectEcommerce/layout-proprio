@@ -2398,13 +2398,13 @@ body.overflowed {
 }
 
 .buttonCTA {
-  color: var(--c_general_main);
+  color: var(--c_botao_vitrine_sem_hover);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.92rem;
   font-weight: 400;
   font-variant: normal;
   text-transform: none;
-  background-color: #fff;
+  background-color: var(--bg_botao_vitrine_sem_hover);
   border-radius: 2px;
   display: block;
   padding: 8px 53px;
@@ -2412,8 +2412,8 @@ body.overflowed {
   transition: 0.2s ease-out;
 }
 .buttonCTA:hover, .buttonCTA:focus, .buttonCTA:active {
-  background-color: #1F2228;
-  color: #fff;
+  background-color: var(--bg_botao_vitrine_hover);
+  color: var(--c_botao_vitrine_com_hover);
 }
 
 .buttonSend {

@@ -718,8 +718,8 @@ body.overflowed {
 }
 
 .buttonCTA {
-    @include fontInsert($fs_button, 400, var(--c_general_main));
-    background-color:#fff;
+    @include fontInsert($fs_button, 400, var(--c_botao_vitrine_sem_hover));
+    background-color: var(--bg_botao_vitrine_sem_hover);
     border-radius: 2px;
     display: block;
     padding: 8px 53px;
@@ -729,8 +729,8 @@ body.overflowed {
     &:hover,
     &:focus,
     &:active {
-        background-color: #1F2228;
-        color: #fff;
+        background-color: var(--bg_botao_vitrine_hover);
+        color: var(--c_botao_vitrine_com_hover);
     }
 }
 
