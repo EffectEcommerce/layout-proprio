@@ -104,8 +104,11 @@
 
 
 {% element 'snippets/banner-line' { 'banner_id': 'bottom', 'banner_type': 'container' } %}
-{# {% element 'snippets/banner-unico' %} #} 
-{% element 'snippets/brands-list' %} 
+{# {% element 'snippets/banner-unico' %} #}
+{% if settings.show_carroussel_brands %}
+    {% element 'snippets/brands-list' %} 
+    
+{% endif %} 
 
 {# <section class="section tagCloud">
     <h2 class="section-title">{{ Translation('tags_mais_buscadas') }}</h2>
