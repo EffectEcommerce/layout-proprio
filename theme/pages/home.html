@@ -3,33 +3,33 @@
 } %} #}
 {% element 'snippets/banner-line' { 'banner_id': 'home', 'banner_type': 'slides' } %} 
 
-
-
-{% element 'snippets/filter-variant' %}
-<!--
-<div class="filter-by-variant {{ settings.show_variation_tamanho and settings.show_variation_cor ? "ambos" : "unico"}} section">
-    <div class="title-variant-search">
-        {% if settings.show_variation_tamanho %}
-            <span class="text-variant-tamanho">ESCOLHA POR TAMANHO</span>
-        {% endif %}
-        {% if settings.show_variation_cor %}
-            <span class="text-variant-cor {{ settings.show_variation_tamanho ? "not-active-variant" : "" }} ">ESCOLHA POR COR</span>
-        {% endif %}
-    </div>    
-        {% if settings.show_variation_tamanho %}
-        <div class="wrapper-variant-search tamanho-variant">
-                <div class="container-variant-tamanho-search"></div>
-        </div>
-        {% endif %}
-        
-        {% if settings.show_variation_cor %}
-            <div class="wrapper-variant-search cor-variant {{ settings.show_variation_tamanho ? "hidden" : "" }}">
-                <div class="container-variant-cor-search"></div>
+{% if settings.show_variation_busca_variant %}
+       {% element 'snippets/filter-variant' %}
+    <!--
+    <div class="filter-by-variant {{ settings.show_variation_tamanho and settings.show_variation_cor ? "ambos" : "unico"}} section">
+        <div class="title-variant-search">
+            {% if settings.show_variation_tamanho %}
+                <span class="text-variant-tamanho">ESCOLHA POR TAMANHO</span>
+            {% endif %}
+            {% if settings.show_variation_cor %}
+                <span class="text-variant-cor {{ settings.show_variation_tamanho ? "not-active-variant" : "" }} ">ESCOLHA POR COR</span>
+            {% endif %}
+        </div>    
+            {% if settings.show_variation_tamanho %}
+            <div class="wrapper-variant-search tamanho-variant">
+                    <div class="container-variant-tamanho-search"></div>
             </div>
-        {% endif %}
+            {% endif %}
+            
+            {% if settings.show_variation_cor %}
+                <div class="wrapper-variant-search cor-variant {{ settings.show_variation_tamanho ? "hidden" : "" }}">
+                    <div class="container-variant-cor-search"></div>
+                </div>
+            {% endif %}
 
-</div>
--->
+    </div>
+    -->
+{% endif %}
 
 
 
@@ -88,11 +88,13 @@
                     </div>
                     <div class="news-container">
                         <ul class="news-content"></ul>
-                        <button class="button-show">
-                            <a href="{{ page.url }}"  title="Ver mais notícias" rel="next" target="_self">
-                                Ver mais
-                            </a>
-                        </button>
+                        {% if settings.show_button_vermais_blog %}
+                            <button class="button-show">
+                                <a href="{{ page.url }}"  title="Ver mais notícias" rel="next" target="_self">
+                                    Ver mais
+                                </a>
+                            </button>
+                        {% endif %}
                     </div>
                 </section>
             {% endif %} 

@@ -1,8 +1,10 @@
 <header data-header="scroll" class="header">
-    {%  element 'snippets/regua' {
-        'regua_topo': true,
-        'text': "esse texto aqui"
-    }%}
+    {% if settings.show_regua %}
+        {%  element 'snippets/regua' {
+            'regua_topo': true,
+            'text': "esse texto aqui"
+        }%}
+    {% endif %}
     <div class="header-top">
         <div class="header-content">
             <button class="header-button mobile" data-toggle="closed" data-target="#menu-mobile" title="Abrir Menu" aria-label="Abrir o menu">
@@ -37,6 +39,10 @@
             {% element 'snippets/header-search' %}
             <div class="wrapper-login-cart">            
                 <div class="header-account">
+                    <div>
+                        <span>BEM VINDO(a)!</span>
+                        <span>ENTRAR</span>
+                    </div>
                     <a class="account-link" href="{{ links.central }}" title="Minha Conta">
                     {# <span class="icon-account" aria-hidden="true"></span> #}
                     <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" fill="none">
