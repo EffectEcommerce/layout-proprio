@@ -412,7 +412,8 @@
         background-color: var(--c_header_bg);
         opacity: 1;
         transition: transform 0.3s ease-out 0.3s, opacity 0.5s ease-out;
-        padding: 10px 0.938rem;
+        //padding: 10px 0.938rem;
+        padding: 4px 0.938rem;
         width: auto;
 
         @include small {
@@ -767,6 +768,13 @@ ul.menu-thirdLevel {
 .carrinho-compra {
     fill: var(--c_header_icon);
     stroke: none !important;
+}
 
-
+li.menu-firstLevel:last-child {
+    border-radius: 4px;
+    background-color: var(--bg_header_last_category);
+    padding: 15px 32px;
+}
+.menu-firstLevel:last-child .menu-link {
+    color: var(--c_header_last_category) !important;
 }

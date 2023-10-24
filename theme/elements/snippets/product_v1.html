@@ -33,7 +33,7 @@
                 width="450"
                 height="450"
             />
-            {# {% if settings.show_button_product %} 
+            {% if settings.show_button_product %} 
             <button
                 class="product-button {{ not product.available and not (product.stock > 0 or settings.without_stock_sale) and product.upon_request or product.stock
                 <= 0 or product.upon_request ? 'u-marginNone' }}"
@@ -43,7 +43,7 @@
                     <a class="buttonCTA" href="{{ product.link }}"> Ver produto </a>
                 {% endif %}
             </button>
-        {% endif %} #}
+        {% endif %}
         </a>
 
         {% element 'snippets/product-tags' { 'product': product } %}
@@ -55,11 +55,11 @@
         {% else %}
             <h4 class="product-name">{{ product.name }}</h4>
         {% endif %}
-        {#
-            {% if settings.show_star_rating %} 
-                {% element 'snippets/product-rating' { 'review': product.ranking } %}
-            {% endif %} 
-        #}
+
+        {% if settings.show_star_rating %} 
+            {% element 'snippets/product-rating' { 'review': product.ranking } %}
+        {% endif %} 
+
         <div class="product-price">
             {% if product.available and (product.stock > 0 or settings.without_stock_sale) and not product.upon_request %} 
                 {% element 'snippets/product-price' { 
@@ -79,22 +79,7 @@
                 } %}
             {% endif %}
         </div>
-        {# {% for p in product %}
-            {% if p == "Array" %}
-                {{ p }}
-            {% endif %}
-        {% endfor %} #}
-        {% if settings.show_button_product %} 
-            <button
-                class="product-button {{ not product.available and not (product.stock > 0 or settings.without_stock_sale) and product.upon_request or product.stock
-                <= 0 or product.upon_request ? 'u-marginNone' }}"
-                type="button" aria-label="Ver Produto"
-            >
-                {% if product.available and (product.stock > 0 or settings.without_stock_sale) and not product.upon_request %}
-                    <a class="buttonCTA" href="{{ product.link }}"> Ver produto </a>
-                {% endif %}
-            </button>
-        {% endif %}
+
     </a>
     {# <a class="product-info" href="{{ product.link }}">
         {% if pages.current == 'catalog' %}

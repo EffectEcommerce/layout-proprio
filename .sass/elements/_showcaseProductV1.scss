@@ -212,9 +212,6 @@
             // text-align: center;
             width: 100%;
 
-            font-size: 1.375rem;
-             font-weight: 600;
-
             @include small {
                 &-titleStarting {
                     @include fontInsert(0.9, 500, var(--c_vitrine));
@@ -257,8 +254,7 @@
                 }
 
                 &-current .value {
-                    //@include fontInsert(1, 500, var(--c_vitrine));
-                    @include fontInsert(1.375, 600, var(--c_vitrine));
+                    @include fontInsert(1, 500, var(--c_vitrine));
                 }
             }
 
@@ -441,9 +437,14 @@
     }
 
     &-button {
+        position: absolute;
+        top: 75%;
+        left: 0;
+        right: 0;
+        opacity: 0;
 
         @include small {
-            margin: 0em 0.5rem 1rem;
+            margin: 1.4rem 0.5rem 0.5rem;
             .button2 {
                 font-size: 0.75rem;
                 padding: 1rem 1.5rem;
@@ -451,10 +452,10 @@
         }
 
         @include medium {
-            margin: 0rem 1.25rem 1rem;
+            margin: 1.35rem 1.25rem 0.5rem;
         }
         @include large {
-            margin: 0rem 1.25rem 1rem;
+            margin: 1.35rem 1.25rem 0.5rem;
         }
 
         &.u-marginNone {

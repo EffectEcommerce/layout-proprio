@@ -6,9 +6,9 @@
 
 <div class="price display-cash">
     {% if old_price and settings.show_old_price %}
-        <p class="price-old">de: <s>{{ settings.currency }} {{ old_price | currency }}</s></p>
+        <p class="price-old"><s>{{ settings.currency }} {{ old_price | currency }}</s></p>
         <p class="price-current">
-            {{ old_price ? 'por:' }} <em class="value"> {{ settings.currency }} {{ current_price | currency }} </em>
+            <em class="value"> {{ settings.currency }} {{ current_price | currency }} </em>
         </p>
     {% else %}
             <p class="price-current">

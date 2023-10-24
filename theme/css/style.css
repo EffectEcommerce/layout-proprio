@@ -2855,7 +2855,7 @@ div.Seguro {
   background-color: var(--c_header_bg);
   opacity: 1;
   transition: transform 0.3s ease-out 0.3s, opacity 0.5s ease-out;
-  padding: 10px 0.938rem;
+  padding: 4px 0.938rem;
   width: auto;
 }
 @media (max-width: 768px) {
@@ -3173,6 +3173,16 @@ ul.menu-thirdLevel {
 .carrinho-compra {
   fill: var(--c_header_icon);
   stroke: none !important;
+}
+
+li.menu-firstLevel:last-child {
+  border-radius: 4px;
+  background-color: var(--bg_header_last_category);
+  padding: 15px 32px;
+}
+
+.menu-firstLevel:last-child .menu-link {
+  color: var(--c_header_last_category) !important;
 }
 
 .regua-container {
@@ -3904,6 +3914,8 @@ ul.menu-thirdLevel {
 }
 .product-price .price {
   width: 100%;
+  font-size: 1.375rem;
+  font-weight: 600;
 }
 @media (max-width: 768px) {
   .product-price .price-titleStarting {
@@ -3977,8 +3989,8 @@ ul.menu-thirdLevel {
   .product-price .price-current .value {
     color: var(--c_vitrine);
     font-family: "Source Sans Pro", sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 1.375rem;
+    font-weight: 600;
     font-variant: normal;
     text-transform: none;
   }
@@ -4155,16 +4167,9 @@ ul.menu-thirdLevel {
     left: 1.25rem;
   }
 }
-.product-button {
-  position: absolute;
-  top: 75%;
-  left: 0;
-  right: 0;
-  opacity: 0;
-}
 @media (max-width: 768px) {
   .product-button {
-    margin: 1.4rem 0.5rem 0.5rem;
+    margin: 0em 0.5rem 1rem;
   }
   .product-button .button2, .product-button .page-extra .container > table:not(form *) tr:only-child td:only-child a:last-child, .page-extra .container > table:not(form *) tr:only-child td:only-child .product-button a:last-child, .product-button .page-extra .container form tr:only-child td:last-child::before, .page-extra .container form tr:only-child .product-button td:last-child::before, .product-button .page-extra .container form .botao-commerce, .page-extra .container form .product-button .botao-commerce, .product-button .page-listas_busca .container3 .container3 + .board li .label:last-child a .bt-avancar:before, .page-listas_busca .container3 .container3 + .board li .label:last-child a .product-button .bt-avancar:before, .product-button .page-listas_busca .container3 .container3:first-of-type .board .label .bt-avancar:before, .page-listas_busca .container3 .container3:first-of-type .board .label .product-button .bt-avancar:before, .product-button .page-listas_evento .bt-avancar:before, .page-listas_evento .product-button .bt-avancar:before, .product-button .page-listas_evento .container3:last-of-type .board a[href^=listas_criar]:before, .page-listas_evento .container3:last-of-type .board .product-button a[href^=listas_criar]:before, .product-button .page-lista .lista-produtos form .lista-produto-quantidade a, .page-lista .lista-produtos form .lista-produto-quantidade .product-button a,
 .product-button .page-print_lista .lista-produtos form .lista-produto-quantidade a,
@@ -4187,12 +4192,12 @@ ul.menu-thirdLevel {
 }
 @media (min-width: 768.1px) and (max-width: 1280px) {
   .product-button {
-    margin: 1.35rem 1.25rem 0.5rem;
+    margin: 0rem 1.25rem 1rem;
   }
 }
 @media (min-width: 1280.1px) {
   .product-button {
-    margin: 1.35rem 1.25rem 0.5rem;
+    margin: 0rem 1.25rem 1rem;
   }
 }
 .product-button.u-marginNone {
@@ -4395,7 +4400,7 @@ ul.menu-thirdLevel {
 }
 
 .default {
-  padding-top: 140px;
+  padding-top: 162px;
 }
 
 .loader:not(img) {
