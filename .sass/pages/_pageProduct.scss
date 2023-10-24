@@ -197,7 +197,6 @@
         }
 
         .product-rating {
-            margin-bottom: 2rem;
 
             @include small {
                 justify-content: center;
@@ -330,7 +329,7 @@
                 }
             }
             &-percentageDiscount {
-                background-color: var(--c_general_secondary);
+                background-color: var(--bg_selos);
                 border-radius: 2px;
                 line-height: 1;
                 padding: 6px 10px;
@@ -389,6 +388,8 @@
 
     &-nameAndInformation {
         width: 100%;
+        border-bottom: 1px solid #D1D1D1;
+
 
         &.u-width {
             @include small {
@@ -425,7 +426,6 @@
         font-size: 1.25rem;
         font-family: Besley;
         font-weight: 500;
-        border-bottom: 1px solid #D1D1D1;
 
         @include small {
             text-align: center;

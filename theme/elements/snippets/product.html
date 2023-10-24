@@ -1,4 +1,5 @@
 <div class="product">
+
     {% if pages.current == 'catalog' and settings.compare %}
         <div class="product-compare">
             <a href="{{ links.compare_delete ~ product.id }}"
@@ -84,6 +85,8 @@
                 {{ p }}
             {% endif %}
         {% endfor %} #}
+        <p class="descript">{{ product.additional_message }}</p>
+
         {% if settings.show_button_product %} 
             <button
                 class="product-button {{ not product.available and not (product.stock > 0 or settings.without_stock_sale) and product.upon_request or product.stock
@@ -91,7 +94,7 @@
                 type="button" aria-label="Ver Produto"
             >
                 {% if product.available and (product.stock > 0 or settings.without_stock_sale) and not product.upon_request %}
-                    <a class="buttonCTA" href="{{ product.link }}"> Ver produto </a>
+                    <a class="buttonCTA" href="{{ product.link }}"> Comprar </a>
                 {% endif %}
             </button>
         {% endif %}
