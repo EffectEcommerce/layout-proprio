@@ -159,18 +159,6 @@
                         {% if productHelper.bonus() and 'idBonusVariacao' in productHelper.bonus() %}
                             <div class="pageProduct-bonusScore">{{ productHelper.bonus() }}</div>
                         {% endif %} 
-                        <p class="descript">{{ product.additional_message }} </p>
-
-                        aaaaaa
-                        {% for list in productTabs %}
-                        {# listdescription #}
-                                {# {% for chave, valor  in list %}
-                                    <strong>{{ chave }}:</strong>
-                                    <span>{{ valor }}</span>
-                                    <span>;</span>
-                                {% endfor %} #}
-                        {% endfor %}
-
 
 
                         {% if product.variants %}
@@ -203,7 +191,10 @@
                             </div>
                         </div>
                         {% endif %}
-
+                        {% if product.additional_message %}
+                            <p class="pageProduct-additionalMessage">{{ product.additional_message }}</p>
+                            
+                        {% endif %}
                         <div class="pageProduct-price serverTray-content">
                             {{ productHelper.pricing() }}
                         </div>
@@ -214,10 +205,7 @@
                             </button>
                         {% endif %} 
 
-                        {% if product.additional_message %}
-                            <p class="pageProduct-additionalMessage">{{ product.additional_message }}</p>
-                            
-                        {% endif %}
+
                         <span class="payment-link" style="cursor: pointer;">Ver formas de pagamento</span>
                             <dialog  id="confirmation-dialog">
 

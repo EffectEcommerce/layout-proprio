@@ -539,7 +539,7 @@
     }
 
     &-price {
-        border-top: $v_border_titles;
+        //border-top: $v_border_titles;
         margin-bottom: 1.5rem;
 
         .txt-por {
@@ -2533,10 +2533,6 @@
     font-weight: 400;
 }
 #produto_preco > span:nth-child(1) {
-    display: none;
-}
-
-.page-product #quantidade #quant {
     display: none;
 }
 

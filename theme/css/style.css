@@ -3817,7 +3817,7 @@ li.menu-firstLevel:last-child {
   font-size: 0.75rem;
   font-weight: 500;
   width: 100%;
-  margin: 10px 0;
+  margin: 16px 0;
 }
 .product-image {
   position: relative;
@@ -7362,7 +7362,6 @@ span.mensagensErro {
   padding: 0.5rem;
 }
 .pageProduct-price {
-  border-top: 2px solid var(--c_general_details);
   margin-bottom: 1.5rem;
 }
 .pageProduct-price .txt-por {
@@ -9336,10 +9335,6 @@ span.mensagensErro {
 }
 
 #produto_preco > span:nth-child(1) {
-  display: none;
-}
-
-.page-product #quantidade #quant {
   display: none;
 }
 
