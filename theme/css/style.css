@@ -7499,8 +7499,8 @@ span.mensagensErro {
 .pageProduct-additionalMessage {
   color: var(--c_general_text1);
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 0.875rem;
+  font-weight: 400;
   font-variant: normal;
   text-transform: none;
   margin-bottom: 1rem;

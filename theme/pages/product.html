@@ -67,6 +67,7 @@
             {% set lastProgressiveDiscount = ProgressiveDiscounts | last %} 
             {% if discount or product.featured or product.free_shipping or product.new or discount or extra_tag or lastProgressiveDiscount %}
                 <div class="pageProduct-tags">
+                    entrou
                     {% set replaceTags = {'src=': 'height="26px" alt="Selo" src='} %} 
                     {% if discount %}
                         <div class="tag-percentageDiscount tag">

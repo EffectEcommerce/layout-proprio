@@ -688,7 +688,7 @@
     }
 
     &-additionalMessage {
-        @include fontInsert(1, 600, var(--c_general_text1));
+        @include fontInsert(.875, 400, var(--c_general_text1));
         margin-bottom: 1rem;
     }
 
