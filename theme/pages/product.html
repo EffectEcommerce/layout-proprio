@@ -67,25 +67,60 @@
             {% set lastProgressiveDiscount = ProgressiveDiscounts | last %} 
             {% if discount or product.featured or product.free_shipping or product.new or discount or extra_tag or lastProgressiveDiscount %}
                 <div class="pageProduct-tags">
-                    entrou
                     {% set replaceTags = {'src=': 'height="26px" alt="Selo" src='} %} 
                     {% if discount %}
-                        <div class="tag-percentageDiscount tag">
+                        <div class="tag-featured tag tag--full">
                             {{ discount | number_format }}% OFF
                         </div>
                     {% endif %} 
-                    {% if product.featured and Image('featured') %}
+                    {# {% if product.featured and Image('featured') %}
                         <div class="tag-featured tag">{{ Image('featured') | replace(replaceTags) }}</div>
-                    {% endif %} 
-                    {% if product.free_shipping and Image('free_shipping') %}
+                    {% endif %}  #}
+                    {% if product.featured and settings.show_product_tag_feature %}
+                    {% set position = position + 1 %}
+                    {% if product.featured and Image('featured') %}
+                        <div class="tag-featured tag{{ show_double_tag == 0 ? ' tag--full' }}{{show_double_tag == 1 and (odd_amount and position == tags_count) ? ' tag--center' }}">
+                            {{ Image('featured') | replace(replaceTags) }}
+                        </div>
+                        {% else %}
+                            <div class="tag-featured tag{{ show_double_tag == 0 ? ' tag--full' }}{{show_double_tag == 1 and (odd_amount and position == tags_count) ? ' tag--center' }}">
+                                DESTAQUE</div>
+                        {% endif %} 
+                {% endif %}
+                    {# {% if product.free_shipping and Image('free_shipping') %}
                         <div class="tag-freeShipping tag">{{ Image('free_shipping') | replace(replaceTags) }}</div>
-                    {% endif %} 
-                    {% if product.new and Image('new') %}
+                    {% endif %}  #}
+                    {% if product.free_shipping and Image('free_shipping') %}
+                        <div class="tag-freeShipping tag{{ show_double_tag == 0 ? ' tag--full' }}{{show_double_tag == 1 and (odd_amount and position == tags_count) ? ' tag--center' }}">
+                            {{ Image('free_shipping') | replace(replaceTags) }}
+                        </div>
+                    {% else %}
+                        <div class="tag-featured tag{{ show_double_tag == 0 ? ' tag--full' }}{{show_double_tag == 1 and (odd_amount and position == tags_count) ? ' tag--center' }}">
+                            FRETE GR&#65;TIS
+                        </div>
+                {% endif %} 
+                    {# {% if product.new and Image('new') %}
                         <div class="tag-new tag">{{ Image('new') | replace(replaceTags) }}</div>
-                    {% endif %} 
-                    {% if Image('additional_button') %}
-                        <div class="tag-extra tag">{{ Image('additional_button') | replace(replaceTags) }}</div>
+                    {% endif %}  #}
+                    {% if product.new and settings.show_product_tag_new %}
+                    {% set position = position + 1 %} 
+                    {% if product.new and Image('new') %}
+                    <div class="tag-new tag{{ show_double_tag == 0 ? ' tag--full' }}{{show_double_tag == 1 and (odd_amount and position == tags_count) ? ' tag--center' }}">
+                        {{ Image('new') | replace(replaceTags) }}
+                    </div>
+                    {% else %}
+                        <div class="tag-new tag{{ show_double_tag == 0 ? ' tag--full' }}{{show_double_tag == 1 and (odd_amount and position == tags_count) ? ' tag--center' }}">NOVIDADE</div>
                     {% endif %}
+                {% endif %} 
+                    {# {% if Image('additional_button') %}
+                        <div class="tag-extra tag">{{ Image('additional_button') | replace(replaceTags) }}</div>
+                    {% endif %} #}
+                    {% if product.additional_button and Image('additional_button') and settings.show_product_tag_additional %}
+                    {% set position = position + 1 %}
+                    <div class="tag-extra tag{{ show_double_tag == 0 ? ' tag--full' }}{{show_double_tag == 1 and (odd_amount and position == tags_count) ? ' tag--center' }}">
+                        {{ Image('additional_button') | replace(replaceTags) }}
+                    </div>
+                {% endif %} 
                 </div>
             {% endif %} 
 
@@ -254,11 +289,11 @@
                     {% if productHelper.shipping() %}
                         <div class="pageProduct-shipping">
                             <span class="serverTray-content">{{ productHelper.shipping() }}</span>
-                            <p class="shipping-text">Consultar prazo e valor do frete</p>
+                            <p class="shipping-text">CALCULE SEU FRETE:</p>
                             <form class="shipping-form" data-shipping="form">
-                                <label for="cep" class="shipping-label">CEP</label>
+                                <label for="cep" class="shipping-label">00000-000</label>
                                 <input class="shipping-input mask-cep" id="cep" name="calcule o frete" type="text" minlength="9" maxlength="9" placeholder="Informe seu CEP" required />
-                                <button type="submit" class="shipping-submit button2">OK</button>
+                                <button type="submit" class="shipping-submit button2">CALCULAR</button>
                             </form>
                             <div class="shipping-result loaded" data-shipping="result">
                                 <p class="shipping-loading">Carregando fretes...</p>

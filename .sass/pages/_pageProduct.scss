@@ -239,7 +239,7 @@
         }
 
         .tag {
-            @include fontInsert(0.75, 500, var(--c_general_text_inverted));
+            @include fontInsert(0.75, 500, #fff);
             @extend %flex-center-center;
             margin-right: 0.19rem;
             //margin-bottom: 0.19rem;
@@ -273,7 +273,7 @@
                 justify-content: center;
                 align-items: center;
 
-                background-color: var(--bg_selo_destaque);
+                background-color: var(--bg_selos);
                 color: #fff;
                 border-radius: 2px;
                 padding: 6px 10px;
@@ -294,7 +294,7 @@
                 justify-content: center;
                 align-items: center;
 
-                background-color: var(--bg_selo_destaque);
+                background-color: var(--bg_selos);
                 color: #fff;
                 border-radius: 2px;
                 padding: 6px 10px;
@@ -314,7 +314,7 @@
                 justify-content: center;
                 align-items: center;
 
-                background-color: var(--bg_selo_destaque);
+                background-color: var(--bg_selos);
                 color: #fff;
                 border-radius: 2px;
                 padding: 6px 10px;

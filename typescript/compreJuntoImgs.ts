@@ -9,12 +9,12 @@ function removeDataSrcCompreJunto() {
             if (valueAtt !== null) {
                 element.setAttribute('src', valueAtt);
                 element.removeAttribute('data-src');
-            }
+            } else {
             console.error("O atributo 'data-src' não existe no elemento Compre Junto");
             return null;
-
+            }
             
         })
-    }, 1000)
+    }, 500)
 }
 removeDataSrcCompreJunto();

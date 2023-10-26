@@ -172,7 +172,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     
 });
 document.addEventListener('DOMContentLoaded', (event) => {
-    console.log('entrouuuu')
     const swiper = new Swiper('.swipper-variant-cor', {
         // Optional parameters
         slidesPerView: 4,
