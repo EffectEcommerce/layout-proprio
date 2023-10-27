@@ -54,6 +54,7 @@
 
     &-title {
         @include title-h1;
+        border: none !important
     }
 
     &-description {

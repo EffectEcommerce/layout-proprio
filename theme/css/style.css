@@ -3819,8 +3819,8 @@ li.menu-firstLevel:last-child {
 }
 .product-compare .compare-checkbox {
   background-color: #fff;
-  border: 0.15em solid rgba(0, 0, 0, 0.3411764706);
-  border-radius: 0.15em;
+  border: 1px solid #c1c1c1;
+  border-radius: 4px;
   color: currentColor;
   height: 1.21rem;
   width: 1.21rem;
@@ -5171,8 +5171,8 @@ li.menu-firstLevel:last-child {
 }
 .modal #concorda-termo input[type=checkbox] {
   background-color: #fff;
-  border: 0.15em solid rgba(0, 0, 0, 0.3411764706);
-  border-radius: 0.15em;
+  border: 1px solid #c1c1c1;
+  border-radius: 4px;
   color: currentColor;
   height: 1.21rem;
   width: 1.21rem;
@@ -5538,6 +5538,7 @@ body.modal-open {
 }
 .catalog-title {
   border-bottom: 2px solid var(--c_general_details);
+  border: none !important;
 }
 @media (max-width: 768px) {
   .catalog-title {
@@ -5761,8 +5762,7 @@ body.modal-open {
   padding-right: 1.5rem;
 }
 .filter-section {
-  border: 2px solid var(--c_general_details);
-  border-radius: 8px;
+  border-bottom: 2px solid var(--c_general_details);
   padding: 1.5rem 1rem;
   margin-bottom: 1rem;
 }
@@ -5782,8 +5782,8 @@ body.modal-open {
 }
 .filter-list .filter-checkbox input[type=checkbox] {
   background-color: #fff;
-  border: 0.15em solid rgba(0, 0, 0, 0.3411764706);
-  border-radius: 0.15em;
+  border: 1px solid #c1c1c1;
+  border-radius: 4px;
   color: currentColor;
   height: 1.21rem;
   width: 1.21rem;
@@ -6234,8 +6234,8 @@ body.modal-open {
 }
 .page-register .default-content input[type=checkbox] {
   background-color: #fff;
-  border: 0.15em solid var(--c_general_text2);
-  border-radius: 0.15em;
+  border: 1px solid #c1c1c1;
+  border-radius: 4px;
   color: currentColor;
   height: 1.21rem;
   width: 1.21rem;
@@ -7825,8 +7825,8 @@ span.mensagensErro {
 }
 .pageProduct .varCont ul li input[type=checkbox] {
   background-color: #fff;
-  border: 0.15em solid rgba(0, 0, 0, 0.3411764706);
-  border-radius: 0.15em;
+  border: 1px solid #c1c1c1;
+  border-radius: 4px;
   color: currentColor;
   height: 1.21rem;
   width: 1.21rem;
@@ -7928,8 +7928,8 @@ span.mensagensErro {
 }
 .pageProduct .varCont ul li ul li .labelMultiVariacao input[type=checkbox] {
   background-color: #fff;
-  border: 0.15em solid rgba(0, 0, 0, 0.3411764706);
-  border-radius: 0.15em;
+  border: 1px solid #c1c1c1;
+  border-radius: 4px;
   color: currentColor;
   height: 1.21rem;
   width: 1.21rem;
@@ -8924,8 +8924,8 @@ span.mensagensErro {
 }
 .pageProduct .tabs-reviews #comentario_cliente #form-comments input[type=checkbox] {
   background-color: #fff;
-  border: 0.15em solid rgba(0, 0, 0, 0.3411764706);
-  border-radius: 0.15em;
+  border: 1px solid #c1c1c1;
+  border-radius: 4px;
   color: currentColor;
   height: 1.21rem;
   width: 1.21rem;
@@ -9729,8 +9729,8 @@ span.mensagensErro {
 }
 .page-search #Vitrine form input[type=checkbox] {
   background-color: #fff;
-  border: 0.15em solid rgba(0, 0, 0, 0.3411764706);
-  border-radius: 0.15em;
+  border: 1px solid #c1c1c1;
+  border-radius: 4px;
   color: currentColor;
   height: 1.21rem;
   width: 1.21rem;
@@ -10939,8 +10939,8 @@ span.mensagensErro {
 }
 .page-listas_criar #lista_criar .container3 .container2 input[type=checkbox] {
   background-color: #fff;
-  border: 0.15em solid rgba(0, 0, 0, 0.3411764706);
-  border-radius: 0.15em;
+  border: 1px solid #c1c1c1;
+  border-radius: 4px;
   color: currentColor;
   height: 1.21rem;
   width: 1.21rem;

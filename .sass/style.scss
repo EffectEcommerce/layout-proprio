@@ -355,8 +355,10 @@ $transit_slow: 0.5s ease-out;
 // Components Checkboxes
 @mixin externStyle-checkboxSquare($color-border: #00000057) {
     background-color: #fff;
-    border: 0.15em solid $color-border;
-    border-radius: 0.15em;
+    // border: 0.15em solid $color-border;
+    // border-radius: 0.15em;
+    border: 1px solid #c1c1c1;
+    border-radius: 4px;
     color: currentColor;
     height: 1.21rem;
     width: 1.21rem;

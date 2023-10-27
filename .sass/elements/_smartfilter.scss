@@ -2,8 +2,9 @@
     padding-right: 1.5rem;
 
     &-section {
-        border: $v_border_filter;
-        border-radius: 8px;
+        //border: $v_border_filter;
+        border-bottom: 2px solid var(--c_general_details);
+        //border-radius: 8px;
         padding: 1.5rem 1rem;
         margin-bottom: 1rem;
     }
