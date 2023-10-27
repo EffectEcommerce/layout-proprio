@@ -2258,7 +2258,7 @@ body.overflowed {
 }
 
 .button1, .page-lista .lista-produtos form .lista-produto-comprar > input[type=image] + .lista-produto-check::before,
-.page-print_lista .lista-produtos form .lista-produto-comprar > input[type=image] + .lista-produto-check::before, .pageProduct-buyTogether .buyTogether .botao-compre-junto:not(.botao-sob-consulta), .pageProduct-outOfStock .produto-preco .botao_tire_duvidas, .pageProduct-buy #button-buy, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar],
+.page-print_lista .lista-produtos form .lista-produto-comprar > input[type=image] + .lista-produto-check::before, .pageProduct-buyTogether .buyTogether .botao-compre-junto:not(.botao-sob-consulta), .pageProduct-outOfStock .produto-preco .botao_tire_duvidas, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar],
 .page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher], .modal .botao-prosseguir-compra .botao-commerce-img, .modal .detalhesBrinde .botao {
   color: var(--c_general_text_inverted);
   font-family: "Source Sans Pro", sans-serif;
@@ -2273,11 +2273,11 @@ body.overflowed {
   transition: 0.2s ease-out;
 }
 .button1:hover, .page-lista .lista-produtos form .lista-produto-comprar > input[type=image] + .lista-produto-check:hover::before,
-.page-print_lista .lista-produtos form .lista-produto-comprar > input[type=image] + .lista-produto-check:hover::before, .pageProduct-buyTogether .buyTogether .botao-compre-junto:hover:not(.botao-sob-consulta), .pageProduct-outOfStock .produto-preco .botao_tire_duvidas:hover, .pageProduct-buy #button-buy:hover, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:hover,
+.page-print_lista .lista-produtos form .lista-produto-comprar > input[type=image] + .lista-produto-check:hover::before, .pageProduct-buyTogether .buyTogether .botao-compre-junto:hover:not(.botao-sob-consulta), .pageProduct-outOfStock .produto-preco .botao_tire_duvidas:hover, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:hover,
 .page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher]:hover, .modal .botao-prosseguir-compra .botao-commerce-img:hover, .modal .detalhesBrinde .botao:hover, .button1:focus, .page-lista .lista-produtos form .lista-produto-comprar > input[type=image] + .lista-produto-check:focus::before,
-.page-print_lista .lista-produtos form .lista-produto-comprar > input[type=image] + .lista-produto-check:focus::before, .pageProduct-buyTogether .buyTogether .botao-compre-junto:focus:not(.botao-sob-consulta), .pageProduct-outOfStock .produto-preco .botao_tire_duvidas:focus, .pageProduct-buy #button-buy:focus, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:focus,
+.page-print_lista .lista-produtos form .lista-produto-comprar > input[type=image] + .lista-produto-check:focus::before, .pageProduct-buyTogether .buyTogether .botao-compre-junto:focus:not(.botao-sob-consulta), .pageProduct-outOfStock .produto-preco .botao_tire_duvidas:focus, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:focus,
 .page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher]:focus, .modal .botao-prosseguir-compra .botao-commerce-img:focus, .modal .detalhesBrinde .botao:focus, .button1:active, .page-lista .lista-produtos form .lista-produto-comprar > input[type=image] + .lista-produto-check:active::before,
-.page-print_lista .lista-produtos form .lista-produto-comprar > input[type=image] + .lista-produto-check:active::before, .pageProduct-buyTogether .buyTogether .botao-compre-junto:active:not(.botao-sob-consulta), .pageProduct-outOfStock .produto-preco .botao_tire_duvidas:active, .pageProduct-buy #button-buy:active, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:active,
+.page-print_lista .lista-produtos form .lista-produto-comprar > input[type=image] + .lista-produto-check:active::before, .pageProduct-buyTogether .buyTogether .botao-compre-junto:active:not(.botao-sob-consulta), .pageProduct-outOfStock .produto-preco .botao_tire_duvidas:active, .page-comparador .comparator ul li ul .comparsionFoto div a[alt=Comprar]:active,
 .page-comparador .comparator ul li ul .comparsionFoto div a[title=Escolher]:active, .modal .botao-prosseguir-compra .botao-commerce-img:active, .modal .detalhesBrinde .botao:active {
   opacity: 0.6;
 }
@@ -2432,6 +2432,24 @@ body.overflowed {
 .buttonSend:hover, .buttonSend:focus, .buttonSend:active {
   background-color: #1F2228;
   color: #fff;
+}
+
+.buttonCalcutate, .pageProduct-buy #button-buy {
+  color: var(--c_general_text_inverted);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-variant: normal;
+  text-transform: uppercase;
+  background-color: var(--bg_button_calculate);
+  border-radius: 4px;
+  display: block;
+  padding: 16px 20px;
+  opacity: 1;
+  transition: 0.2s ease-out;
+}
+.buttonCalcutate:hover, .pageProduct-buy #button-buy:hover, .buttonCalcutate:focus, .pageProduct-buy #button-buy:focus, .buttonCalcutate:active, .pageProduct-buy #button-buy:active {
+  opacity: 0.6;
 }
 
 span.error-block {
@@ -6884,7 +6902,6 @@ span.mensagensErro {
 }
 .pageProduct-gallery .gallery-image {
   display: flex;
-  width: 46%;
 }
 .pageProduct-gallery .gallery-img {
   display: block;
@@ -7511,9 +7528,11 @@ span.mensagensErro {
 }
 .pageProduct-buy #product-form-box {
   width: 100%;
+  gap: 16px;
 }
 .pageProduct-buy #button-buy {
-  height: 3.125rem;
+  background-color: var(--c_contrast_and_button);
+  padding: 17px 150px;
 }
 .pageProduct-buy #button-buy span {
   font-size: 0;
@@ -7535,7 +7554,6 @@ span.mensagensErro {
   background-color: var(--c_general_details);
   border-radius: 2px;
   text-align: center;
-  margin-right: 0.5rem;
   height: 3.125rem;
   width: 3.5rem;
 }
@@ -7595,6 +7613,7 @@ span.mensagensErro {
 .pageProduct-shipping .shipping-input {
   background-color: var(--c_general_details);
   padding: 0.95rem 0.7rem;
+  margin-right: 16px;
 }
 .pageProduct-shipping .shipping-submit {
   display: inline;
@@ -8783,7 +8802,7 @@ span.mensagensErro {
   text-transform: uppercase;
   background-color: var(--c_general_details);
   cursor: pointer;
-  display: block;
+  display: none;
   padding: 1rem;
   position: relative;
   width: 100%;

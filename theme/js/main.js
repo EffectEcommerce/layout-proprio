@@ -715,7 +715,7 @@
                     method: 'get',
                     success: function (response) {
                         tab.html(response);
-                        $('#atualizaFormas li table').css('display', 'none');
+                        $('#atualizaFormas li table').css('display', 'block');
                         openPaymentMethod();
                     },
                 });
@@ -788,13 +788,13 @@
             $.each(newVariationImages, function (index, item) {
                 let slideIndex = index + 1;
 
-                // htmlImages += `
-                //     <div class="swiper-slide gallery-image" data-gallery="image">
-                //         <img class="gallery-img${slideIndex === 1 ? ' swiper-lazy' : ' lazyload'}" data-src="${
-                //     item.https
-                // }" alt="${productName}" width="1000px" height="1000px">
-                //     </div>
-                // `;
+                htmlImages += `
+                    <div class="swiper-slide gallery-image" data-gallery="image">
+                        <img class="gallery-img${slideIndex === 1 ? ' swiper-lazy' : ' lazyload'}" data-src="${
+                    item.https
+                }" alt="${productName}" width="1000px" height="1000px">
+                    </div>
+                `;
                 htmlImages += `
                     <div class="gallery-image" data-gallery="image">
                         <img class="gallery-img" src="${
@@ -803,13 +803,13 @@
                     </div>
                 `;
 
-                // htmlThumbs += `
-                //     <div class="swiper-slide gallery-thumb" data-gallery="image">
-                //         <img class="gallery-img${slideIndex === 1 ? ' swiper-lazy' : ' lazyload'}" data-src="${
-                //     item.thumbs[90].https
-                // }" alt="${productName}" width="90px" height="90px">
-                //     </div>
-                // `;
+                htmlThumbs += `
+                    <div class="swiper-slide gallery-thumb" data-gallery="image">
+                        <img class="gallery-img${slideIndex === 1 ? ' swiper-lazy' : ' lazyload'}" data-src="${
+                    item.thumbs[90].https
+                }" alt="${productName}" width="90px" height="90px">
+                    </div>
+                `;
 
                 htmlThumbs += `
                     <div class="gallery-thumb" data-gallery="image">
@@ -832,7 +832,7 @@
             boxImages.html(htmlImages);
             boxThumbs.html(htmlThumbs);
 
-            //theme.gallerySlidesOnProductPage();
+            theme.gallerySlidesOnProductPage();
         },
 
         loadProductVariantImage: function (id) {
@@ -1172,7 +1172,7 @@
             theme.customerReviewsSlidesOnHome();
             theme.brandsSlides();
         } else if ($('html').hasClass('page-product')) {
-            //theme.gallerySlidesOnProductPage();
+            theme.gallerySlidesOnProductPage();
             theme.openProductVideoModal();
             theme.getQuantityChangeOnProductPage();
             theme.initProductVariationImageChange();

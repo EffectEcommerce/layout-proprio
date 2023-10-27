@@ -15,6 +15,6 @@ function removeDataSrcCompreJunto() {
             }
             
         })
-    }, 500)
+    }, 700)
 }
 removeDataSrcCompreJunto();

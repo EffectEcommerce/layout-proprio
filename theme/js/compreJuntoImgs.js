@@ -16,6 +16,6 @@ function removeDataSrcCompreJunto() {
                 return null;
             }
         });
-    }, 500);
+    }, 700);
 }
 removeDataSrcCompreJunto();

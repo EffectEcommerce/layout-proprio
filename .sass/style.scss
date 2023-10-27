@@ -751,6 +751,22 @@ body.overflowed {
 
 }
 
+.buttonCalcutate {
+    @include fontInsert(.875, 600, var(--c_general_text_inverted), uppercase);
+    background-color: var(--bg_button_calculate);
+    border-radius: 4px;
+    display: block;
+    padding: 16px 20px;
+    opacity: 1;
+    transition: $transit_default;
+
+    &:hover,
+    &:focus,
+    &:active {
+        opacity: 0.6;
+    }
+}
+
 
 span.error-block {
     color: var(--c_alert_error);
