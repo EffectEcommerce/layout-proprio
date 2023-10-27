@@ -2417,17 +2417,15 @@ body.overflowed {
 }
 
 .buttonSend {
-  color: var(--c_general_main);
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 0.92rem;
-  font-weight: 400;
-  font-variant: normal;
-  text-transform: none;
-  background: #1F2228;
-  padding: 0 10px;
+  display: inline-flex;
+  height: 48px;
+  padding: 12px 32px;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: #0CCACB;
 }
 .buttonSend:hover, .buttonSend:focus, .buttonSend:active {
   background-color: #1F2228;
@@ -2493,6 +2491,40 @@ div.Seguro {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.new-newsletter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 290px;
+  background-color: #E91868;
+  color: #fff;
+  padding: 24px 0;
+}
+.new-newsletter-text {
+  display: flex;
+  flex-direction: column;
+}
+.new-newsletter-text .text {
+  gap: 8px;
+}
+.new-newsletter-text .text-emphasis {
+  color: #FFF;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.new-newsletter .newsletter-wrapper {
+  display: flex;
+  gap: 9px;
+}
+.new-newsletter .newsletter-wrapper-email {
+  width: 504px;
+  height: 48px;
+  padding: 12px 16px;
+  border-radius: 4px;
+  background: #FFF;
 }
 
 .header {

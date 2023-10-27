@@ -16,36 +16,7 @@
                     width="131" height="22"
                 />
             {% endif %}
-            {% if settings.newsletter_active %}
-            <div class="footer-newsletter">
-                <div class="newsletter-text">
-                    <div class="text">
-                        {# <p class="text-emphasis">
-                            Aproveite nossas promo&ccedil;&otilde;es!
-                        </p> #}
-                        <p class="text-paragraph">
-                            Cadastre-se e fique por dentro de nossas
-                            Novidades e Ofertas!                        </p>
-                    </div>
-                </div>
-    
-                <form class="newsletter-email" action="/mvc/store/newsletter/" method="post">
-                    <input type="hidden" name="loja" value="{{ store.id }}" />
-                    <input
-                        class="email-field"
-                        type="email"
-                        name="email"
-                        placeholder="{{ settings.newsletter_placeholder ? settings.newsletter_placeholder : 'Digite seu melhor e-mail' }}"
-                        required
-                        spellcheck="false"
-                        autocomplete="off"
-                    />
-                    <button type="submit" class="newsletter-button buttonSend" >
-                        &rarr;
-                    </button>
-                </form>
-            </div>
-        {% endif %}
+
        
             <div class="info-media">{% element 'snippets/media-icons' %}</div>
     </div>

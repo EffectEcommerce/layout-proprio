@@ -737,12 +737,15 @@ body.overflowed {
 }
 
 .buttonSend {
-    @include fontInsert($fs_button, 400, var(--c_general_main));
-    background: #1F2228;
-    padding: 0 10px;
+    display: inline-flex;
+    height: 48px;
+    padding: 12px 32px;
     justify-content: center;
     align-items: center;
-    color: #fff;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background: #0CCACB;
     
     &:hover,
     &:focus,
@@ -813,7 +816,7 @@ div.Seguro {
 
 
 ///Imports of SASS parts:
-@import 'elements/header', 'elements/regua','elements/banner-triplo','elements/banner-duplo','elements/banner-unico','elements/banner-cinco', 'elements/footer', 'elements/showcaseProduct', 'elements/banner', 'default',
+@import 'elements/newsletter', 'elements/header', 'elements/regua','elements/banner-triplo','elements/banner-duplo','elements/banner-unico','elements/banner-cinco', 'elements/footer', 'elements/showcaseProduct', 'elements/banner', 'default',
     'elements/alert-store', 'pages/home', 'pages/tray/modals-general', 'elements/brands-list', 'elements/pagination',
     'elements/breadcrumb', 'pages/catalog-search', 'elements/smartfilter', 'pages/tray/newsletter-confirmation',
     'pages/tray/login', 'pages/tray/page-register', 'pages/tray/compare', 'pages/tray/custom', 'pages/pageProduct',

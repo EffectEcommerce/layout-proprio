@@ -1,0 +1,31 @@
+{% if settings.newsletter_active %}
+    <div class="new-newsletter">
+        <div class="new-newsletter-text">
+            <div class="text">
+                <p class="text-emphasis">
+                    NEWSLETTER
+                </p>
+                <p class="text-paragraph">
+                    Cadastre-se e fique por dentro de nossas
+                    Novidades e Ofertas!                        </p>
+            </div>
+        </div>
+        <div class="newsletter-wrapper">
+            <form class="newsletter-wrapper-email" action="/mvc/store/newsletter/" method="post">
+                <input type="hidden" name="loja" value="{{ store.id }}" />
+                <input
+                    class="email-field"
+                    type="email"
+                    name="email"
+                    placeholder="{{ settings.newsletter_placeholder ? settings.newsletter_placeholder : 'Digite seu melhor e-mail' }}"
+                    required
+                    spellcheck="false"
+                    autocomplete="off"
+                />
+            </form>
+            <button type="submit" class="new-newsletter-button buttonSend" >
+                &rarr;
+            </button>
+        </div>
+    </div>
+{% endif %}
