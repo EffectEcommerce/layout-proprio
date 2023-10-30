@@ -1857,12 +1857,12 @@
 
     .tabs {
         &-nav {
-            border-bottom: 2px solid var(--c_general_main);
             margin-bottom: 12px;
             overflow-x: auto;
 
             @extend %style-scroll;
 
+            
             .nav {
                 &-list {
                     @extend %flex-betw;
@@ -1957,11 +1957,16 @@
                 }
 
                 #atualizaFormas {
+                    img {
+                        width: 48px;
+                    }
+                    
+                    
                     ul {
                         li {
                             border: $v_border_sections;
                             border-radius: 2px;
-                            margin-bottom: 2.5rem;
+                            margin-bottom: 12px;
 
                             a {
                                 @include fontInsert(0.875, 600, var(--c_general_text1), uppercase);
@@ -1994,10 +1999,10 @@
                                         padding: 0;
                                     }
                                     @include medium {
-                                        padding: 0.5rem 1rem;
+                                        padding: 0rem 1rem;
                                     }
                                     @include large {
-                                        padding: 0.5rem 1rem;
+                                        padding: 0rem 1rem;
                                     }
 
                                     &:first-child {
@@ -2545,12 +2550,14 @@
     background: rgba(0, 0, 0, 0.5) !important;
 }
 
+#atualizaFormas img {
+    width: 48px;
+}
 
 
-
-
-
-
+.nav-link.active {
+    border-bottom: 1px solid black;
+}
 
 
 

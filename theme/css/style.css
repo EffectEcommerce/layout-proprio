@@ -2425,11 +2425,12 @@ body.overflowed {
   gap: 10px;
   flex-shrink: 0;
   border-radius: 4px;
-  background: #0CCACB;
+  background: var(--bg_button_send_newsletter);
+  color: var(--c_button_send_newsletter);
+  transition: ease-in-out 0.2s;
 }
 .buttonSend:hover, .buttonSend:focus, .buttonSend:active {
-  background-color: #1F2228;
-  color: #fff;
+  filter: grayscale(0.2);
 }
 
 .buttonCalcutate, .pageProduct-buy #button-buy {
@@ -2498,8 +2499,8 @@ div.Seguro {
   justify-content: center;
   align-items: center;
   gap: 290px;
-  background-color: #E91868;
-  color: #fff;
+  background-color: var(--bg_newsletter);
+  color: var(--c_container_newsletter);
   padding: 24px 0;
 }
 .new-newsletter-text {
@@ -2510,7 +2511,7 @@ div.Seguro {
   gap: 8px;
 }
 .new-newsletter-text .text-emphasis {
-  color: #FFF;
+  color: var(--c_container_newsletter);
   text-align: center;
   font-size: 2rem;
   font-weight: 600;
@@ -2525,6 +2526,7 @@ div.Seguro {
   padding: 12px 16px;
   border-radius: 4px;
   background: #FFF;
+  color: var(--c_general_main);
 }
 
 .header {
@@ -4461,7 +4463,7 @@ li.menu-firstLevel:last-child {
 }
 
 .default {
-  padding-top: 162px;
+  padding-top: 180px;
 }
 
 .loader:not(img) {
@@ -8733,7 +8735,6 @@ span.mensagensErro {
   margin-bottom: 5rem;
 }
 .pageProduct .tabs-nav {
-  border-bottom: 2px solid var(--c_general_main);
   margin-bottom: 12px;
   overflow-x: auto;
 }
@@ -8820,10 +8821,13 @@ span.mensagensErro {
 .pageProduct .tabs-content.payment .board > br {
   display: none;
 }
+.pageProduct .tabs-content.payment #atualizaFormas img {
+  width: 48px;
+}
 .pageProduct .tabs-content.payment #atualizaFormas ul li {
   border: 1px solid var(--c_general_details);
   border-radius: 2px;
-  margin-bottom: 2.5rem;
+  margin-bottom: 12px;
 }
 .pageProduct .tabs-content.payment #atualizaFormas ul li a {
   color: var(--c_general_text1);
@@ -8860,12 +8864,12 @@ span.mensagensErro {
 }
 @media (min-width: 768.1px) and (max-width: 1280px) {
   .pageProduct .tabs-content.payment #atualizaFormas ul li table td {
-    padding: 0.5rem 1rem;
+    padding: 0rem 1rem;
   }
 }
 @media (min-width: 1280.1px) {
   .pageProduct .tabs-content.payment #atualizaFormas ul li table td {
-    padding: 0.5rem 1rem;
+    padding: 0rem 1rem;
   }
 }
 .pageProduct .tabs-content.payment #atualizaFormas ul li table td:first-child {
@@ -9395,6 +9399,14 @@ span.mensagensErro {
 
 ::backdrop {
   background: rgba(0, 0, 0, 0.5) !important;
+}
+
+#atualizaFormas img {
+  width: 48px;
+}
+
+.nav-link.active {
+  border-bottom: 1px solid black;
 }
 
 .modals {

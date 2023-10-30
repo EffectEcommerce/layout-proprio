@@ -3,8 +3,8 @@
     justify-content: center;
     align-items: center;
     gap: 290px;
-    background-color: #E91868;
-    color: #fff;
+    background-color: var(--bg_newsletter);
+    color: var(--c_container_newsletter);
     padding: 24px 0;
 
     &-text {
@@ -13,7 +13,7 @@
         & .text {
             gap: 8px;
             &-emphasis {
-                color: #FFF;
+                color: var(--c_container_newsletter);;
                 text-align: center;
                 font-size: 2rem;
                 font-weight: 600;
@@ -30,6 +30,7 @@
            padding: 12px 16px;
            border-radius: 4px;
            background: #FFF;
+           color: var(--c_general_main);
         }
      }
 }
