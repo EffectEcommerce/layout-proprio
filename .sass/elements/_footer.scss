@@ -165,7 +165,7 @@
             @include large {
                 margin: 4rem auto;
                 grid-template-areas: 'contact pages payment security';
-                grid-template-columns: calc(100% / 4) 1fr 1fr 1fr;
+                grid-template-columns: calc(100% / 4) 1fr 1fr 1fr 1fr;
                 grid-template-rows: auto;
                 grid-gap: 2.5rem;
             }
@@ -212,7 +212,7 @@
                 }
 
                 &-title {
-                    @include fontInsert(1, 700, var(--c_footer_title));
+                    @include fontInsert(1.125, 600, var(--c_footer_title));
                     margin-bottom: 0.92rem;
                 }
 
@@ -260,10 +260,10 @@
 
                     }
                     .info-link {
-                        font-size: 12px;
+                        font-size: 1rem;
                         font-weight: 400;
                         line-height: normal;
-                        padding-bottom: 0.6rem;
+                        padding-bottom: 16px;
                         display: block;
                         opacity: 1;
                         transition: $transit_default;
@@ -304,8 +304,7 @@
 
                 &-media {
                     display: flex;
-                    flex-wrap: wrap;
-
+                    flex-direction: column;
                     .media-link {
                         margin-right: 1rem;
                         margin-bottom: 0.5rem;
@@ -314,6 +313,16 @@
 
                         &:hover {
                             opacity: 0.7;
+                        }
+                        span {
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                            font-size: 1rem;
+                        }
+                        &.container-title {
+                            font-size: 1.125rem;
+                            font-weight: 600;
                         }
                     }
                 }

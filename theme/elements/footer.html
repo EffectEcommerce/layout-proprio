@@ -16,10 +16,9 @@
                     width="131" height="22"
                 />
             {% endif %}
+        </div>
 
-       
-            <div class="info-media">{% element 'snippets/media-icons' %}</div>
-    </div>
+        <div class="info-media">{% element 'snippets/media-icons' %}</div>
 
         <div class="info-pages">
             {# <div class="info-title title--border">Institucional {{ icon }}</div> #}
@@ -35,9 +34,10 @@
                 </li>
             </ul>
         </div>
+        
 
         <div class="contact-wrapper">
-            <div class="info-title">Atendimento {{ icon }}</div>
+            <div class="info-title">Fale com a gente {{ icon }}</div>
             <ul class="info-list">
                 {% if phone %} 
                     {% set link = phone | replace({'(': '', ')': '', '-': '', ' ': ''}) %}
