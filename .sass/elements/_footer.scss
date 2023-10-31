@@ -250,8 +250,8 @@
                         display: flex;
                         gap: 16px;
 
-                        svg {
-                            // margin-right: 16px;
+                        path {
+                            fill: var(--bg_footer_icons);
                         }
 
                         span {
@@ -408,7 +408,7 @@
 
 }
 
-img.lazyload.entered.loaded {
+.footer-info img.lazyload.entered.loaded {
     max-width: 42px;
     width: 100%;
 }

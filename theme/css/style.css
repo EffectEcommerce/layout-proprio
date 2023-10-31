@@ -1792,7 +1792,7 @@ template {
 .icon-pinterest::before,
 .icon-youtube::before,
 .icon-spotify::before {
-  color: var(--c_footer_icon);
+  color: var(--bg_footer_icons);
   font-size: 28px;
 }
 
@@ -3635,6 +3635,9 @@ li.menu-firstLevel:last-child {
   display: flex;
   gap: 16px;
 }
+.footer .footer-info .info-list .wrapper-atendimento path {
+  fill: var(--bg_footer_icons);
+}
 .footer .footer-info .info-list .wrapper-atendimento span {
   font-size: 12px;
   font-weight: 400;
@@ -3741,7 +3744,7 @@ li.menu-firstLevel:last-child {
   padding-bottom: 32px;
 }
 
-img.lazyload.entered.loaded {
+.footer-info img.lazyload.entered.loaded {
   max-width: 42px;
   width: 100%;
 }
@@ -10050,6 +10053,13 @@ span.mensagensErro {
   color: #fff;
 }
 
+@media (max-width: 768px) {
+  #noticia_imagem img {
+    max-width: 240px;
+    min-width: 136px;
+    width: 100%;
+  }
+}
 .page-noticia .breadcrumb {
   margin: 2rem 0 2.8rem 0;
 }

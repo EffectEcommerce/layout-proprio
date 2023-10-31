@@ -72,14 +72,9 @@
                 // @include small {
                 //     max-width: 80px;
                 // }
-                // @include medium {
-                //     max-width: 108px;
-                // }
-                // @include large {
-                //     max-width: 108px;
-                // }
             }
         }
+
 
         #noticia_dados {
             h3 {
@@ -208,4 +203,13 @@
 }
 .button-show a {
     color: #fff
+}
+
+@media(max-width:768px) {
+    #noticia_imagem img {
+
+        max-width: 240px;
+        min-width: 136px;
+        width: 100%;
+    }
 }
