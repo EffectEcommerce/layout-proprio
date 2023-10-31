@@ -2501,7 +2501,7 @@ div.Seguro {
   gap: 290px;
   background-color: var(--bg_newsletter);
   color: var(--c_container_newsletter);
-  padding: 24px 0;
+  padding: 24px 10px;
 }
 .new-newsletter-text {
   display: flex;
@@ -2509,6 +2509,9 @@ div.Seguro {
 }
 .new-newsletter-text .text {
   gap: 8px;
+}
+.new-newsletter-text .text-paragraph {
+  text-align: center;
 }
 .new-newsletter-text .text-emphasis {
   color: var(--c_container_newsletter);
@@ -2529,6 +2532,22 @@ div.Seguro {
   color: var(--c_general_main);
 }
 
+@media (max-width: 900px) {
+  .new-newsletter {
+    flex-direction: column;
+    gap: 24px !important;
+  }
+}
+@media (max-width: 1400px) {
+  .new-newsletter {
+    gap: 100px;
+  }
+
+  .new-newsletter .newsletter-wrapper-email {
+    width: 100%;
+    padding: 1rem;
+  }
+}
 .header {
   position: fixed;
   width: 100%;
