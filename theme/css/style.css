@@ -3596,9 +3596,9 @@ li.menu-firstLevel:last-child {
 }
 @media (min-width: 768.1px) and (max-width: 1280px) {
   .footer .footer-info {
-    margin: 4rem 2rem;
+    margin: 4rem 0rem;
     grid-template-areas: "contact pages payment" "contact pages security";
-    grid-template-columns: calc((100% - 7.5rem) / 3) calc((100% - 7.5rem) / 3) calc((100% - 7.5rem) / 3);
+    grid-template-columns: calc(30% - 7.5rem) calc(25% - 7.5rem) calc(30% - 7.5rem) calc(25% - 7.5rem) calc(25% - 7.5rem);
     grid-template-rows: auto;
     grid-gap: 2.5rem;
   }
@@ -3645,6 +3645,7 @@ li.menu-firstLevel:last-child {
   padding-bottom: 0.8rem;
   opacity: 1;
   transition: 0.2s ease-out;
+  word-break: break-all;
 }
 .footer .footer-info .info-list .contact-item:hover {
   color: var(--c_footer_title);
