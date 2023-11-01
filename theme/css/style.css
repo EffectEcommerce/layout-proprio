@@ -3598,7 +3598,7 @@ li.menu-firstLevel:last-child {
   .footer .footer-info {
     margin: 4rem 0rem;
     grid-template-areas: "contact pages payment" "contact pages security";
-    grid-template-columns: calc(30% - 7.5rem) calc(25% - 7.5rem) calc(30% - 7.5rem) calc(25% - 7.5rem) calc(25% - 7.5rem);
+    grid-template-columns: 20% 20% 20% 20%;
     grid-template-rows: auto;
     grid-gap: 2.5rem;
   }
@@ -3611,6 +3611,13 @@ li.menu-firstLevel:last-child {
     grid-template-rows: auto;
     grid-gap: 2.5rem;
   }
+}
+.footer .footer-info .info-wrapper-media {
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer .footer-info .info-wrapper-media a {
+  min-width: 100px;
 }
 .footer .footer-info .info-contact {
   gap: 16px;
@@ -3767,6 +3774,15 @@ li.menu-firstLevel:last-child {
 .footer-info img.lazyload.entered.loaded {
   max-width: 42px;
   width: 100%;
+}
+
+@media (max-width: 900px) {
+  .footer-info .info-contact {
+    display: none !important;
+  }
+}
+footer.footer.section {
+  margin: 4rem 0.5rem 0;
 }
 
 .showcase .wrapper-title {
