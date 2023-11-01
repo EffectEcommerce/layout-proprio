@@ -66,19 +66,7 @@
             flex-wrap: wrap;
         }
 
-        & .acompanhar-pedido {
-            display: flex;
-            gap: 8px;
-            align-content: center;
-            justify-content: center;
-            flex-wrap: wrap;
 
-            span {
-                font-size: 0.875rem;
-                font-weight: 500;
-            }
-        
-        }
     }
 
     &-logo {
@@ -87,6 +75,8 @@
         flex-shrink: 0;
         max-height: 4rem;
         width: auto;
+        padding: 6px 0;
+
 
         @include small {
             height: calc(100% - 6.5rem);
@@ -103,8 +93,8 @@
         .header-image {
             width: 100%;
             height: 100%;
-            max-height: 69px;
-            max-width: 189px;
+            max-height: 49px;
+            max-width: 169px;
             & + .header-title {
                 display: none;
             }
@@ -576,6 +566,7 @@
     @extend %flex-center-colun;
     @extend %modal-mobile-menus;
     padding: 2rem;
+    padding-bottom: 8rem;
     transform: translateX(calc(-100% - 10px));
     transition: ease-out 0.3s;
 
@@ -589,6 +580,12 @@
 
     &.u-show {
         transform: translateX(0);
+    }
+    & .wrapper-atendimento {
+        display: flex;
+        align-items: center;
+        margin-top: 4px;
+        margin-left: -3px;
     }
 
     &-title {
@@ -660,7 +657,7 @@
             }
 
             &-access {
-                display: none;
+                display: block;
                 padding-left: 1rem;
                 padding-top: 0.5rem;
                 .icon-account {
@@ -688,7 +685,7 @@
         &-firstLevel {
             @include fontInsert(1.1, 600, var(--c_general_text1));
             border-bottom: $v_border_header;
-            padding: 1.5rem 0 1rem 0;
+            padding: 1.5rem 29px 1rem;
         }
 
         &-secondLevel {
@@ -776,4 +773,20 @@ li.menu-firstLevel:last-child {
 }
 .menu-firstLevel:last-child .menu-link {
     color: var(--c_header_last_category) !important;
+}
+
+.acompanhar-pedido {
+    display: flex;
+    gap: 8px;
+    align-content: center;
+    flex-wrap: wrap;
+    svg {
+        stroke: #000;
+    }
+
+    span {
+        font-size: 0.875rem;
+        font-weight: 500;
+    }
+
 }

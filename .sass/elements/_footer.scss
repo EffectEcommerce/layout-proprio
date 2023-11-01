@@ -148,7 +148,7 @@
             padding-top: 16px;
 
             @include small {
-                margin: 4rem 1.2rem 2rem 1.2rem;
+                margin: 4rem 0 2rem;
                 grid-template-areas:
                     'contact'
                     'pages'
@@ -426,8 +426,4 @@
         display: none !important;
     }
 
-}
-
-footer.footer.section {
-    margin: 4rem 0.5rem 0;
 }
