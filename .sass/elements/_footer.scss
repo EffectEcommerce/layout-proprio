@@ -230,6 +230,7 @@
                     margin-bottom: 0.92rem;
                     display: flex;
                     justify-content: space-between;
+                    
                 }
 
                 &-list {
@@ -434,4 +435,9 @@
 }
 .info-title-disable:after {
     content: '-'
+}
+@media(max-width: 768px) {
+    .info-title .title-redes {
+        display: none;
+    }
 }

@@ -3802,6 +3802,11 @@ li.menu-firstLevel:last-child {
   content: "-";
 }
 
+@media (max-width: 768px) {
+  .info-title .title-redes {
+    display: none;
+  }
+}
 .showcase .wrapper-title {
   padding: 50px 0;
   display: flex;
