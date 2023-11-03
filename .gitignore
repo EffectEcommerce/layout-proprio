@@ -4,7 +4,6 @@ dist/
 
 # Files
 *.log
-config.yml
 
 # IDEs configurations
 .idea/
