@@ -2407,7 +2407,7 @@ body.overflowed {
   background-color: var(--bg_botao_vitrine_sem_hover);
   border-radius: 8px;
   display: block;
-  padding: 18px 53px;
+  padding: 18px 0px;
   opacity: 1;
   transition: 0.2s ease-out;
 }
@@ -4175,7 +4175,7 @@ li.menu-firstLevel:last-child {
   right: 0;
   flex-wrap: wrap;
   margin: 10px;
-  max-width: 80px;
+  max-width: 71px;
 }
 .product-tag .tag {
   color: var(--c_general_text_inverted);
@@ -4387,7 +4387,6 @@ li.menu-firstLevel:last-child {
   border-radius: 4px;
   line-height: 24px;
   padding: 0 6px;
-  min-width: 79px;
   font-size: 0.625rem;
   margin-bottom: 6px;
   background-color: var(--bg_selos);
@@ -7131,7 +7130,6 @@ span.mensagensErro {
 @media (max-width: 768px) {
   .pageProduct-info .product-rating {
     justify-content: center;
-    flex-wrap: wrap;
   }
 }
 @media (min-width: 768.1px) and (max-width: 1280px) {
@@ -7164,11 +7162,6 @@ span.mensagensErro {
 .pageProduct-tags {
   margin-bottom: 12px;
   flex-wrap: wrap;
-}
-@media (max-width: 768px) {
-  .pageProduct-tags {
-    justify-content: center;
-  }
 }
 .pageProduct-tags .tag {
   color: #fff;
@@ -7334,6 +7327,9 @@ span.mensagensErro {
 .pageProduct-nameAndInformation {
   width: 100%;
   border-bottom: 1px solid #D1D1D1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 @media (max-width: 768px) {
   .pageProduct-nameAndInformation.u-width {

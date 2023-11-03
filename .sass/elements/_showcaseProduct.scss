@@ -320,7 +320,7 @@
         @extend %flex-betw;
         flex-wrap: wrap;
         margin: 10px;
-        max-width: 80px;
+        max-width: 71px;
 
         // @include small {
         //     margin: 0.8rem 0 0;
@@ -525,7 +525,6 @@
     border-radius: 4px;
     line-height: 24px;
     padding: 0 6px;
-    min-width: 79px;
     font-size: .625rem;
     margin-bottom: 6px;
     background-color: var(--bg_selos);
