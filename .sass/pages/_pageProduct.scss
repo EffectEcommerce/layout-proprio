@@ -695,6 +695,10 @@
     &-buy {
         margin-bottom: 1.5rem;
         position: relative;
+        
+        & #bt_comprar {
+            width: 100%;
+        }
 
         #product-form-box {
             @extend %flex-start-center;
@@ -704,15 +708,15 @@
 
         #button-buy {
             @extend .buttonCalcutate;
+            width: 100%;
             background-color: var(--c_contrast_and_button);
-            padding: 17px 150px;
 
 
             span {
                 font-size: 0;
 
                 &::before {
-                    content: 'COMPRAR PRODUTO';
+                    content: 'COMPRAR';
                     font-size: 0.92rem;
                 }
             }
