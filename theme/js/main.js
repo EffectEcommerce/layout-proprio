@@ -283,6 +283,10 @@
                 lazy: {
                     loadPrevNext: true,
                 },
+                pagination: {
+                    el: '.swiper-pagination',
+                    type: 'bullets',
+                  },
                 breakpoints: {
                     0: {
                         slidesPerView: 2,

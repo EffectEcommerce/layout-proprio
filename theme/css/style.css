@@ -3602,7 +3602,7 @@ li.menu-firstLevel:last-child {
     grid-template-areas: "contact" "pages" "payment" "security";
     grid-template-columns: 100%;
     grid-template-rows: auto;
-    grid-gap: 2.5rem;
+    grid-gap: 0.5rem;
   }
 }
 @media (min-width: 768.1px) and (max-width: 1280px) {
@@ -3652,6 +3652,8 @@ li.menu-firstLevel:last-child {
   font-variant: normal;
   text-transform: none;
   margin-bottom: 0.92rem;
+  display: flex;
+  justify-content: space-between;
 }
 .footer .footer-info .info-list {
   padding-bottom: 1rem;
@@ -3792,6 +3794,14 @@ li.menu-firstLevel:last-child {
     display: none !important;
   }
 }
+.info-title-active:after {
+  content: "+";
+}
+
+.info-title-disable:after {
+  content: "-";
+}
+
 .showcase .wrapper-title {
   padding: 50px 0;
   display: flex;

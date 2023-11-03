@@ -156,7 +156,7 @@
                     'security';
                 grid-template-columns: 100%;
                 grid-template-rows: auto;
-                grid-gap: 2.5rem;
+                grid-gap: .5rem;
             }
 
             @include medium {
@@ -228,6 +228,8 @@
                 &-title {
                     @include fontInsert(1.125, 600, var(--c_footer_title));
                     margin-bottom: 0.92rem;
+                    display: flex;
+                    justify-content: space-between;
                 }
 
                 &-list {
@@ -426,4 +428,10 @@
         display: none !important;
     }
 
+}
+.info-title-active:after {
+    content: $meu-content
+}
+.info-title-disable:after {
+    content: '-'
 }
