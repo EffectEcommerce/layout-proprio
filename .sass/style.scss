@@ -756,6 +756,45 @@ body.overflowed {
     &:active {
         filter: grayscale(.2);
     }
+}
+.buttonLogin {
+    display: inline-flex;
+    height: 48px;
+    padding: 12px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background: var(--bg_button_news_blog);
+    color: #fff;
+    transition: ease-in-out .1s;
+    
+    &:hover,
+    &:focus,
+    &:active {
+        filter: grayscale(.2);
+    }
+}
+.buttonNegative {
+    display: inline-flex;
+    height: 48px;
+    padding: 12px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background: transparent;
+    color: #000;
+    border: 1px solid #1F2228;
+    transition: ease-in-out .1s;
+    
+    &:hover,
+    &:focus,
+    &:active {
+        filter: grayscale(.2);
+    }
 
 }
 

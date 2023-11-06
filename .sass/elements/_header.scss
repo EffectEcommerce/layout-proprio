@@ -298,8 +298,10 @@
     }
 
     &-account {
+        position: relative;
         @extend %flex-center-center;
         gap: 8px;
+        padding: 6px 6px 10px 6px;
 
         &[data-logged-user='true']:not(.tray-hide) + [data-logged-user] {
             display: none;
@@ -315,11 +317,30 @@
 
 
         .account {
+            &-dropdown {
+                position: absolute;
+                top: 31px;
+                z-index: 15;
+                display: flex;
+                flex-direction: column;
+                width: auto;
+                background-color: var(--c_header_bg);
+                padding: 16px;
+                border-radius: 4px;
+                box-shadow: 0 2px 8px 0 rgba(0,0,0,.25);
+                opacity: 0;
+                visibility: hidden;
+                transition: visibility 0s, opacity 0.2s ease-in-out;
+
+
+
+            }
             &-access,
             &-link,
             &-separator {
-                color: var(--c_header_text_secondary);
-                font-size: #{$fs_header}rem;
+                // color: var(--c_header_text_secondary);
+                // font-size: #{$fs_header}rem;
+                
                 transition: $transit_default;
                 line-height: 15px;
             }
@@ -332,6 +353,8 @@
 
             &-access {
                 display: flex;
+                flex-direction: column;
+                gap: 16px;
             }
 
             &-link {
@@ -638,6 +661,7 @@
         }
 
         .account {
+            
             &-item {
                 width: 100%;
             }
@@ -669,6 +693,7 @@
                 }
             }
         }
+
     }
 
     &-content {

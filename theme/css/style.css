@@ -2433,6 +2433,41 @@ body.overflowed {
   filter: grayscale(0.2);
 }
 
+.buttonLogin {
+  display: inline-flex;
+  height: 48px;
+  padding: 12px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: var(--bg_button_news_blog);
+  color: #fff;
+  transition: ease-in-out 0.1s;
+}
+.buttonLogin:hover, .buttonLogin:focus, .buttonLogin:active {
+  filter: grayscale(0.2);
+}
+
+.buttonNegative {
+  display: inline-flex;
+  height: 48px;
+  padding: 12px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: #000;
+  border: 1px solid #1F2228;
+  transition: ease-in-out 0.1s;
+}
+.buttonNegative:hover, .buttonNegative:focus, .buttonNegative:active {
+  filter: grayscale(0.2);
+}
+
 .buttonCalcutate, .pageProduct-buy #button-buy {
   color: var(--c_general_text_inverted);
   font-family: "Source Sans Pro", sans-serif;
@@ -2827,7 +2862,9 @@ div.Seguro {
   background-color: transparent !important;
 }
 .header-account {
+  position: relative;
   gap: 8px;
+  padding: 6px 6px 10px 6px;
 }
 .header-account[data-logged-user=true]:not(.tray-hide) + [data-logged-user] {
   display: none;
@@ -2840,9 +2877,22 @@ div.Seguro {
 .header-account .icon-account {
   margin-right: 0.5rem;
 }
+.header-account .account-dropdown {
+  position: absolute;
+  top: 31px;
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  background-color: var(--c_header_bg);
+  padding: 16px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0s, opacity 0.2s ease-in-out;
+}
 .header-account .account-access, .header-account .account-link, .header-account .account-separator {
-  color: var(--c_header_text_secondary);
-  font-size: 0.9rem;
   transition: 0.2s ease-out;
   line-height: 15px;
 }
@@ -2858,6 +2908,8 @@ div.Seguro {
 }
 .header-account .account-access {
   display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 .header-account .account-link {
   display: flex;
