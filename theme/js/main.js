@@ -327,7 +327,8 @@
             const modal = $('[data-modal="video"]');
 
             video.on('click', function () {
-                modal.find('iframe').addClass('lazyload').attr('data-src', $(this).data('url'));
+                // modal.find('iframe').addClass('lazyload').attr('data-src', $(this).data('url'));
+                modal.find('iframe').addClass('lazyload').attr('src', $(this).data('url'));
             });
         },
 
