@@ -766,8 +766,8 @@ body.overflowed {
     gap: 10px;
     flex-shrink: 0;
     border-radius: 4px;
-    background: var(--bg_button_news_blog);
-    color: #fff;
+    background-color: var(--bg_button_entrar);
+    color: var(--c_button_entrar);
     transition: ease-in-out .1s;
     
     &:hover,
@@ -785,9 +785,9 @@ body.overflowed {
     gap: 10px;
     flex-shrink: 0;
     border-radius: 4px;
-    background: transparent;
-    color: #000;
-    border: 1px solid #1F2228;
+    background-color: var(--bg_button_cadastrar);
+    color: var(--c_button_cadastrar);
+    border: 1px solid var(--c_button_cadastrar_border);
     transition: ease-in-out .1s;
     
     &:hover,

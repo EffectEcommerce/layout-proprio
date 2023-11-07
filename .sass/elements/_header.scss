@@ -319,7 +319,7 @@
         .account {
             &-dropdown {
                 position: absolute;
-                top: 31px;
+                top: 38px;
                 z-index: 15;
                 display: flex;
                 flex-direction: column;
@@ -340,15 +340,22 @@
             &-separator {
                 // color: var(--c_header_text_secondary);
                 // font-size: #{$fs_header}rem;
-                
+                gap: 8px;
                 transition: $transit_default;
                 line-height: 15px;
             }
 
             &-text {
-                @include fontInsert(0.92, 600, var(--c_header_text_main));
                 overflow: hidden;
                 text-overflow: ellipsis;
+                display: flex;
+                flex-direction: column;
+                & span:first-child {
+                    @include fontInsert(0.875, 500, var(--c_header_text_main));
+                }
+                & span:last-child {
+                    @include fontInsert(0.75, 400, var(--c_header_text_main));
+                }
             }
 
             &-access {
@@ -806,12 +813,13 @@ li.menu-firstLevel:last-child {
     align-content: center;
     flex-wrap: wrap;
     svg {
-        stroke: #000;
+        stroke: var(--c_header_icon);
     }
 
     span {
         font-size: 0.875rem;
         font-weight: 500;
+        color:  var(--c_header_text_main);
     }
 
 }

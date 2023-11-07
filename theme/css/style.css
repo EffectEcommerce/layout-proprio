@@ -2442,8 +2442,8 @@ body.overflowed {
   gap: 10px;
   flex-shrink: 0;
   border-radius: 4px;
-  background: var(--bg_button_news_blog);
-  color: #fff;
+  background-color: var(--bg_button_entrar);
+  color: var(--c_button_entrar);
   transition: ease-in-out 0.1s;
 }
 .buttonLogin:hover, .buttonLogin:focus, .buttonLogin:active {
@@ -2459,9 +2459,9 @@ body.overflowed {
   gap: 10px;
   flex-shrink: 0;
   border-radius: 4px;
-  background: transparent;
-  color: #000;
-  border: 1px solid #1F2228;
+  background-color: var(--bg_button_cadastrar);
+  color: var(--c_button_cadastrar);
+  border: 1px solid var(--c_button_cadastrar_border);
   transition: ease-in-out 0.1s;
 }
 .buttonNegative:hover, .buttonNegative:focus, .buttonNegative:active {
@@ -2879,7 +2879,7 @@ div.Seguro {
 }
 .header-account .account-dropdown {
   position: absolute;
-  top: 31px;
+  top: 38px;
   z-index: 15;
   display: flex;
   flex-direction: column;
@@ -2893,18 +2893,31 @@ div.Seguro {
   transition: visibility 0s, opacity 0.2s ease-in-out;
 }
 .header-account .account-access, .header-account .account-link, .header-account .account-separator {
+  gap: 8px;
   transition: 0.2s ease-out;
   line-height: 15px;
 }
 .header-account .account-text {
-  color: var(--c_header_text_main);
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 0.92rem;
-  font-weight: 600;
-  font-variant: normal;
-  text-transform: none;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: flex;
+  flex-direction: column;
+}
+.header-account .account-text span:first-child {
+  color: var(--c_header_text_main);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-variant: normal;
+  text-transform: none;
+}
+.header-account .account-text span:last-child {
+  color: var(--c_header_text_main);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
 }
 .header-account .account-access {
   display: flex;
@@ -3312,11 +3325,12 @@ li.menu-firstLevel:last-child {
   flex-wrap: wrap;
 }
 .acompanhar-pedido svg {
-  stroke: #000;
+  stroke: var(--c_header_icon);
 }
 .acompanhar-pedido span {
   font-size: 0.875rem;
   font-weight: 500;
+  color: var(--c_header_text_main);
 }
 
 .regua-container {
