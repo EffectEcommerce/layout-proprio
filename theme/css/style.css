@@ -4548,6 +4548,7 @@ li.menu-firstLevel:last-child {
   cursor: pointer;
   opacity: 1;
   transition: 0.2s ease-out;
+  display: none;
 }
 .swiper .slides-buttonNext:hover, .swiper .slides-buttonPrev:hover {
   opacity: 0.6;
