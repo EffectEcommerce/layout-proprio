@@ -2529,6 +2529,20 @@ div.Seguro {
   height: 100%;
 }
 
+.regua-icons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 10px;
+}
+.regua-icons-containers {
+  display: flex;
+}
+.regua-icons-texts {
+  display: flex;
+  flex-direction: column;
+}
+
 .new-newsletter {
   display: flex;
   justify-content: center;

@@ -1,0 +1,13 @@
+.regua-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 10px;
+    &-containers {
+        display: flex;
+    }
+    &-texts {
+        display: flex;
+        flex-direction: column;
+    }
+}

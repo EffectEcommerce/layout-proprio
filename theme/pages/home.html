@@ -31,7 +31,10 @@
     -->
 {% endif %}
 
-
+{% if settings.show_regua_icons %}
+    {% element 'snippets/regua-icons' %}
+    
+{% endif %}
 
 <div class="section">
     {% element 'snippets/top-categorias' %}
