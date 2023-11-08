@@ -3,8 +3,10 @@
     justify-content: center;
     gap: 40px;
     padding: 10px;
+    overflow: hidden;
+
     &-containers {
-        display: flex;
+        display: flex !important;
     }
     &-texts {
         display: flex;
