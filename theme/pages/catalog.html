@@ -19,10 +19,7 @@
         <header class="catalog-header">
             <h1 class="catalog-title">{{ category.name }}</h1>
 
-            
-            {% if category.small_description %}
-                <div class="catalog-description">{{ category.small_description }}</div>
-            {% endif %} 
+
             
             {% if products | length > 0 %}
                 <div class="catalog-listRefinement">
@@ -234,6 +231,10 @@
             </p>
         {% endif %}
     </section>
+                
+    {% if category.small_description %}
+    <div class="catalog-description">{{ category.small_description }}</div>
+{% endif %} 
 </div>
 <script>
     let toggleActive = false;

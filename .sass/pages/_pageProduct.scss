@@ -252,7 +252,7 @@
             }
 
             &:only-child {
-                width: 100%;
+                max-width: 100%;
             }
 
             &:last-child {
@@ -688,7 +688,7 @@
 
     &-additionalMessage {
         @include fontInsert(.875, 400, var(--c_general_text1));
-        margin-bottom: 1rem;
+        margin: 1rem 0;
     }
 
     &-buy {
@@ -708,6 +708,7 @@
         #button-buy {
             @extend .buttonCalcutate;
             width: 100%;
+            max-width: 424px;
             background-color: var(--c_contrast_and_button);
 
 
@@ -732,6 +733,7 @@
                 //margin-right: 0.5rem;
                 height: 3.125rem;
                 width: 3.5rem;
+                border: 1px solid #DADADA;
             }
         }
 
@@ -796,7 +798,7 @@
                 background-color: var(--c_general_details);
                 padding: 0.95rem 0.7rem;
                 margin-right: 16px;
-
+                border: 1px solid #DADADA;
             }
 
             &-submit {
