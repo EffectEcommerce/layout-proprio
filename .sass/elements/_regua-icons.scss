@@ -7,6 +7,7 @@
 
     &-containers {
         display: flex !important;
+        flex-direction: row !important;
     }
     &-texts {
         display: flex;
