@@ -796,6 +796,7 @@
 // }
 ul.menu-thirdLevel {
     display: flex;
+    flex-direction: column;
 }
 
 .carrinho-compra {

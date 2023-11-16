@@ -3313,6 +3313,7 @@ div.Seguro {
 
 ul.menu-thirdLevel {
   display: flex;
+  flex-direction: column;
 }
 
 .carrinho-compra {
@@ -3910,7 +3911,6 @@ li.menu-firstLevel:last-child {
   margin-top: 10px;
 }
 .showcase-listProduct {
-  flex-wrap: wrap;
   margin: 0 -0.625rem -2.5rem;
 }
 .showcase-listProduct .listProduct-item {
@@ -3945,6 +3945,8 @@ li.menu-firstLevel:last-child {
   height: 100%;
   transition: 0.5s ease-out;
   border-radius: 8px;
+  min-height: 691px;
+  margin-bottom: 12px;
 }
 .product:hover .product-button {
   transition: 0.3s ease-in-out;
@@ -4019,6 +4021,13 @@ li.menu-firstLevel:last-child {
   font-weight: 500;
   width: 100%;
   margin: 16px 0;
+  word-wrap: break-word;
+  max-height: 5.6em;
+  line-height: 1.8em;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .product-image {
   position: relative;
@@ -4474,6 +4483,11 @@ li.menu-firstLevel:last-child {
   text-transform: uppercase;
 }
 
+@media (max-width: 728px) {
+  .listProduct-item .product {
+    min-height: 617px;
+  }
+}
 .banner {
   margin: 0 auto;
 }

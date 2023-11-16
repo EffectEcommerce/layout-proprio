@@ -1,13 +1,23 @@
+{% if model == 1 %}
+    {% set title = settings.showcase_title1 %}
+    {% set subtitle = settings.showcase_subtitle1 %}
+{% elseif model == 2 %}
+    {% set title = settings.showcase_title2 %}
+    {% set subtitle = settings.showcase_subtitle2 %}
+{% else %}
+    {% set title = settings.showcase_title_esp %}
+    {% set subtitle = settings.showcase_subtitle_esp %}
+{% endif %}
 {% if type %}
     {% set quantity = quantity | default(8) %}
-    {% set title %}
+    
         {{ type == 'top_seller' ? 'Mais Vendidos' :
             type == 'new' ? 'Lançamentos' :
             type == 'featured' ? 'Destaques' : 
             type == 'free_shipping' ? 'Frete Grátis' : 
             type == 'promotion' ? 'Promoção'
         }}
-    {% endset %}
+    {# {% endset %} #}
 
     {% if type == 'top_seller' %}
         {% set products = Products({
@@ -33,18 +43,18 @@
     {% endif %}
 
     {% if products | length > 0 %}
-    <div class="{{ especial ? especial }}">
-        <section class="section showcase">
+    <div class="{{ especial ? especial }} ">
+        <section class="section showcase {{ settings.show_carousel_showcase  ? 'swiper-show' :  ''}}" style="overflow: hidden;">
             <div class="wrapper-title">
-                <span>Destaque em</span>
+                <span>{{ subtitle }}</span>
                 {# <h2 class="section-title">{{ title }}</h2> #}
                 <h2 class="title-showcase">{{ title }}</h2>
 
             </div>
 
-            <ul class="showcase-listProduct">
+            <ul class="showcase-listProduct swiper-wrapper" style="{{ settings.show_carousel_showcase  ? '' : 'flex-wrap: wrap' }}">
                 {% for item in products %}
-                    <li class="listProduct-item">
+                    <li class="listProduct-item swiper-slide">
                         {% element 'snippets/product' {
                             product : item,
                             slide   : false
@@ -57,3 +67,39 @@
     {% endif %}
 
 {% endif %}
+
+<script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+        const swiper = new Swiper('.swiper-show', {
+        slidesPerView: 2,
+        loop: true,
+        
+    
+        // If we need pagination
+        pagination: {
+        el: '.swiper-pagination',
+        },
+    
+        // Navigation arrows
+        navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+        },
+    
+        // And if we need scrollbar
+        scrollbar: {
+        el: '.swiper-scrollbar',
+        },
+
+        breakpoints: {
+            // when window width is >= 480px
+            720: {
+              slidesPerView: 3,
+            },
+            980: {
+              slidesPerView: 4,
+            }
+          }
+      });
+    })
+</script>
