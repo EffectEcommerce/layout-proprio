@@ -11,12 +11,7 @@
 {% if type %}
     {% set quantity = quantity | default(8) %}
     
-        {{ type == 'top_seller' ? 'Mais Vendidos' :
-            type == 'new' ? 'Lançamentos' :
-            type == 'featured' ? 'Destaques' : 
-            type == 'free_shipping' ? 'Frete Grátis' : 
-            type == 'promotion' ? 'Promoção'
-        }}
+
     {# {% endset %} #}
 
     {% if type == 'top_seller' %}

@@ -178,6 +178,8 @@
     }
 
     &-list.listProduct-item {
+        display: flex;
+        flex-wrap: wrap;
         @include small {
             width: calc(100% / 2);
         }
@@ -214,4 +216,8 @@
 }
 .svg-row-vis {
     display: block;
+}
+.page-catalog .showcase-listProduct {
+    display: flex;
+    flex-wrap: wrap;
 }

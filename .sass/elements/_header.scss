@@ -804,11 +804,11 @@ ul.menu-thirdLevel {
     stroke: none !important;
 }
 
-li.menu-firstLevel:last-child {
-    border-radius: 4px;
-    background-color: var(--bg_header_last_category);
-    padding: 15px 32px;
-}
+// li.menu-firstLevel:last-child {
+//     border-radius: 4px;
+//     background-color: var(--bg_header_last_category);
+//     padding: 15px 32px;
+// }
 .menu-firstLevel:last-child .menu-link {
     color: var(--c_header_last_category) !important;
 }
@@ -827,5 +827,16 @@ li.menu-firstLevel:last-child {
         font-weight: 500;
         color:  var(--c_header_text_main);
     }
+
+}
+
+.button-categ {
+    border-radius: 4px;
+    background-color: var(--bg_header_last_category);
+    color: #fff;
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 600;
+
 
 }
