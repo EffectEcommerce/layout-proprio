@@ -1,3 +1,5 @@
+
+
 {% if ProgressiveDiscounts %}
     <div class="pageProduct-bannerDiscount">
         {% for discount in ProgressiveDiscounts %}
@@ -247,10 +249,10 @@
 
 
                         <span class="payment-link" style="cursor: pointer;">Ver formas de pagamento</span>
-                            <dialog  id="confirmation-dialog">
+                            <dialog  id="confirmation-dialog" class="pagForms">
 
                                 <div class="container-title-modal" style="display: flex; justify-content: space-between;">
-                                    <h1 id="title-modal-infos">Titulo</h1>
+                                    <h1 id="title-modal-infos">INFORMAÇÕES SOBRE PAGAMENTO</h1>
                                     <svg class="close-modal-payment" style="cursor: pointer;" xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
                                         <path d="M1.23077 16.8582L0 15.6318L6.76923 8.8866L0 2.14143L1.23077 0.915039L8 7.66021L14.7692 0.915039L16 2.14143L9.23077 8.8866L16 15.6318L14.7692 16.8582L8 10.113L1.23077 16.8582Z" fill="black"/>
                                     </svg>
@@ -258,6 +260,7 @@
                                     <iframe 
                                     width="600"
                                     height="600"
+                                    id="pagmsFroms"
                                     src="https://demoeffect.commercesuite.com.br/mvc/store/product/payment_options?loja=1143858&IdProd=289&IdVariacao=%s#" frameborder="0"></iframe>
                             </dialog>
                             <!--<div class="overlay" ></div>-->
@@ -405,4 +408,5 @@
 }
 
 </style>
+
 

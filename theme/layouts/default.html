@@ -100,5 +100,66 @@
 
         {# default tray #} 
         {{ googleTagManager.bottom(pages.current, tagManagerData) }}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        var iframe = $('#pagmsFroms');
+
+        if (iframe.length) {
+            // Função para adicionar estilos ao iframe
+            function addStylesToIframe(doc) {
+                var style = `
+                    #atualizaFormas .tablePags tbody tr {
+                        display: flex;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                    }
+                    div#atualizaFormas img {
+                        max-width: 50px;
+                    }
+                    span.txt-forma-pagto {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    .txt-forma-pagto strong.color, .txt-forma-pagto span.item-parcela {
+                        font-size: 12px;
+                    }
+                    div#atualizaFormas ul li {
+                        margin-top: 10px;
+                    }
+                `;
+
+                // Adicionando o elemento de estilo ao cabeçalho do documento do iframe
+                $(doc.head).append('<style type="text/css">' + style + '</style>');
+            }
+
+            // Configura o evento onload para o iframe
+            iframe.on('load', function() {
+                addStylesToIframe(this.contentDocument || this.contentWindow.document);
+            });
+
+            // Caso o iframe já esteja carregado
+            if (iframe.get(0).contentWindow.document.readyState === 'complete') {
+                addStylesToIframe(iframe.get(0).contentDocument || iframe.get(0).contentWindow.document);
+            }
+        } else {
+            console.error('Iframe não encontrado!');
+        }
+    });
+</script>
+<style>
+    dialog#confirmation-dialog.pagForms {
+        border: 0;
+        border-radius: 20px;
+        overflow-y: hidden;
+    }
+    .pagForms #title-modal-infos{
+        font-size: 16px;
+        text-align: center;
+        width: 100%;
+    }
+</style>
+
     </body>
 </html>

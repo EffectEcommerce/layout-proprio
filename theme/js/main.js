@@ -541,7 +541,7 @@
             setTimeout(() => {
                 $('#form-comments .submit-review').on('click', function (e) {
                     if (!$('#form-comments .stars .starn.icon-star').length) {
-                        const textError = 'Avaliação do produto obrigatória, dê sua avaliação por favor';
+                        const textError = 'AvaliaÃ§Ã£o do produto obrigatÃ³ria, dÃª sua avaliaÃ§Ã£o por favor';
                         $('#div_erro .blocoAlerta').text(textError).show();
                         setTimeout(() => {
                             $('#div_erro .blocoAlerta').hide();
@@ -1138,7 +1138,7 @@
             login.attr('placeholder', 'Digite seu e-mail*');
             buttonReviewPage.html('Enviar Depoimento').addClass('button2 review-button');
             titleReviewPage.prepend(
-                '<button class="review-form" data-toggle="reviews">Deixei seu depoimento sobre nós <span class="icon-arrow-simple" aria-hidden="true"></span></button>'
+                '<button class="review-form" data-toggle="reviews">Deixei seu depoimento sobre nÃ³s <span class="icon-arrow-simple" aria-hidden="true"></span></button>'
             );
             buttonAdvancedSearch.after('<button type="submit" class="button2">BUSCAR</button>');
             buttonAdvancedSearch.remove();
@@ -1203,7 +1203,7 @@
         } else if ($('html').hasClass('page-noticia')) {
             theme.insertBreadcrumbNavigationInPage('news');
         } else if ($('html').hasClass('page-company')) {
-            theme.insertBreadcrumbNavigationInPage('Sobre nós', true);
+            theme.insertBreadcrumbNavigationInPage('Sobre nÃ³s', true);
         } else if (
             $('html').hasClass('page-listas_index') ||
             $('html').hasClass('page-listas_evento') ||
