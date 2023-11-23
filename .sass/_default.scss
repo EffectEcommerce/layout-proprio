@@ -11,11 +11,18 @@
     background: #a51111;
     text-align: center;
 }
-
+::-webkit-scrollbar {
+    width: 10px !important;
+  }
+  
+::-webkit-scrollbar-thumb {
+    background-color: var(--c_bg_scroll) !important;
+    border-radius: 6px;
+  }
 .default {
     //padding-top: var(--v_height_header_total);
     //padding-top: 99px; //ajusta o banner para o header com menor altura
-    padding-top: 190px; //ajusta o banner para o header com maior altura
+    padding-top: 172px; //ajusta o banner para o header com maior altura
 }
 
 .loader {

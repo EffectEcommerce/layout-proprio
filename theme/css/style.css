@@ -4629,8 +4629,17 @@ ul.menu-thirdLevel {
   text-align: center;
 }
 
+::-webkit-scrollbar {
+  width: 10px !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--c_bg_scroll) !important;
+  border-radius: 6px;
+}
+
 .default {
-  padding-top: 190px;
+  padding-top: 172px;
 }
 
 .loader:not(img) {
