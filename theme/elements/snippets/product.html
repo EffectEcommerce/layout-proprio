@@ -25,15 +25,18 @@
     <div class="product-image">
         
         <a href="{{ product.link }}" class="product-link">
-
-            <img
+            <img class="lazyload product-img" data-src="{{ product.images[0].large }}" alt="{{ product.name }}">
+            {% if product.images[1] and (not utils.is_mobile) %}
+                <img class="lazyload product-img product-img-second" data-src="{{ product.images[1].large }}" alt="{{ product.name }}" >
+            {% endif %}
+            {# <img
                 class="product-img lazyload"
                 src="{{ asset('img/empty.png') }}"
                 data-src="{{ product.images[0].large }}"
                 alt="{{ product.name }}"
                 width="450"
                 height="450"
-            />
+            /> #}
             {# {% if settings.show_button_product %} 
             <button
                 class="product-button {{ not product.available and not (product.stock > 0 or settings.without_stock_sale) and product.upon_request or product.stock

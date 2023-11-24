@@ -3956,6 +3956,10 @@ ul.menu-thirdLevel {
   transition: 0.3s ease-in-out;
   opacity: 1;
 }
+.product:hover .product-img-second {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
 .product:hover, .product:active, .product:focus {
   box-shadow: 0 0.05rem 0.5rem rgba(97, 97, 97, 0.2);
 }
@@ -4492,6 +4496,13 @@ ul.menu-thirdLevel {
     min-height: 617px;
   }
 }
+.product-img-second {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+}
+
 .banner {
   margin: 0 auto;
 }

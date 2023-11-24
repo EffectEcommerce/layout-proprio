@@ -71,6 +71,10 @@
             transition: .3s ease-in-out;
             opacity: 1;
         }
+        .product-img-second {
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+        }
     }
     &:hover,
     &:active,
@@ -171,6 +175,8 @@
         height: auto;
         width: inherit;
     }
+    
+    
 
     &-info {
         display: flex;
@@ -548,4 +554,9 @@
         min-height: 617px;
     }
 }
-
+.product-img-second {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+}
