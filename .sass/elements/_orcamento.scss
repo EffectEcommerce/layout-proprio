@@ -1,0 +1,104 @@
+.orcam {
+
+    padding-bottom: 4rem;
+    
+    display: flex;
+    flex-direction: column;
+    h1 {
+        font-size: 1.75rem;
+        font-weight: 700;
+    }
+    h2 {
+        font-size: 1.125rem;
+        font-weight: 500;
+    }
+    &-container-title {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    &-body {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        & .container-passos {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            &-title {
+                font-size: 1.375rem;
+                font-weight: 600;
+
+            }
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+                li {
+                    background-color: #ECF5F4;
+                    display: flex;
+                    border-radius: 8px;
+                    gap: 24px;
+                    padding: 16px;
+                    img {
+                        max-height: 48px;
+                        max-width: 48px;
+                    }
+                    & .container-passos-txts {
+                        display: flex;
+                        flex-direction: column;
+                        & span:first-child{
+                            font-size: 1rem;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            } 
+            
+        }
+        &-container-qr {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            & strong {
+                color: #E91868;
+                font-weight: 600;
+                padding-bottom: 15px;
+            }
+            & .container-qr-wrapper {
+                background-color: #F8F8F8;
+                padding: 2rem 5rem;   
+                & span {
+                    font-size: 1.25rem;
+                }     
+                & .orcam-btn-whats {
+                    display: flex;
+                    background-color: #498712;
+                    color: #fff;
+                    font-weight: 600;
+                    border-radius: 4px;
+                    width: 100%;
+                    max-width: 309px;
+                    justify-content:center;
+                    align-items: center;
+                    margin: 20px auto;
+                    padding: 8px;
+                }
+            }
+            & img {
+                max-height: 122px;
+                margin: 2rem;
+            }
+        }
+    }
+}
+@media(max-width: 728px) {
+    .orcam-body {
+        flex-direction: column;
+
+    }
+}
