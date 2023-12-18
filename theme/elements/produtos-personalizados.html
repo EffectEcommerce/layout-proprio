@@ -1,0 +1,124 @@
+<section class="orcam section">
+    {% if settings.prodPerso_title |length > 0 %}
+        <div class="orcam-container-title">
+            <h1>{{ settings.prodPerso_title }}</h1>
+            {% if settings.prodPerso_subtitle |length > 0 %}
+                <h2>{{ settings.prodPerso_subtitle }}</h2>
+            {% endif %}
+        </div>
+    {% endif %}
+    <div class="orcam-body">
+        <div class="container-passos">
+            <span class="container-passos-title">Veja como é fácil!</span>
+            {% if settings.prodPerso_passos %}
+                <ul>
+                    {% if settings.prodPerso_passos_1 %}
+                        <li>
+                            {% if settings.prodPerso_passos_img_1 %}
+                                <img src="{{ asset(settings.prodPerso_passos_img_1) }}" alt="Imagem passo 1">
+                            {% endif %}
+                            <div class="container-passos-txts">
+                                {% if settings.prodPerso_passos_title_1 %}
+                                    <span>{{ settings.prodPerso_passos_title_1 }}</span>
+                                    
+                                {% endif %}
+                                {% if settings.prodPerso_passos_subtitle_1 %}
+                                    <span>{{ settings.prodPerso_passos_subtitle_1 }}</span>
+                                {% endif %}
+                            </div>
+                        </li>    
+                    {% endif %}
+                    {% if settings.prodPerso_passos_2 %}
+                        <li>
+                            {% if settings.prodPerso_passos_img_2 %}
+                                <img src="{{ asset(settings.prodPerso_passos_img_2) }}" alt="Imagem passo 2">
+                            {% endif %}
+                            <div class="container-passos-txts">
+                                {% if settings.prodPerso_passos_title_2 %}
+                                    <span>{{ settings.prodPerso_passos_title_2 }}</span>
+                                    
+                                {% endif %}
+                                {% if settings.prodPerso_passos_subtitle_2 %}
+                                    <span>{{ settings.prodPerso_passos_subtitle_2 }}</span>
+                                {% endif %}
+                            </div>
+                        </li>    
+                    {% endif %}
+                    {% if settings.prodPerso_passos_3 %}
+                        <li>
+                            {% if settings.prodPerso_passos_img_3 %}
+                                <img src="{{ asset(settings.prodPerso_passos_img_3) }}" alt="Imagem passo 3">
+                            {% endif %}
+                            <div class="container-passos-txts">
+                                {% if settings.prodPerso_passos_title_3 %}
+                                    <span>{{ settings.prodPerso_passos_title_3 }}</span>
+                                    
+                                {% endif %}
+                                {% if settings.prodPerso_passos_subtitle_3 %}
+                                    <span>{{ settings.prodPerso_passos_subtitle_3 }}</span>
+                                {% endif %}
+                            </div>
+                        </li>    
+                    {% endif %}
+                    {% if settings.prodPerso_passos_4 %}
+                        <li>
+                            {% if settings.prodPerso_passos_img_4 %}
+                                <img src="{{ asset(settings.prodPerso_passos_img_4) }}" alt="Imagem passo 4">
+                            {% endif %}
+                            <div class="container-passos-txts">
+                                {% if settings.prodPerso_passos_title_4 %}
+                                    <span>{{ settings.prodPerso_passos_title_4 }}</span>
+                                    
+                                {% endif %}
+                                {% if settings.prodPerso_passos_subtitle_4 %}
+                                    <span>{{ settings.prodPerso_passos_subtitle_4 }}</span>
+                                {% endif %}
+                            </div>
+                        </li>    
+                    {% endif %}
+                    {% if settings.prodPerso_passos_5 %}
+                        <li>
+                            {% if settings.prodPerso_passos_img_5 %}
+                                <img src="{{ asset(settings.prodPerso_passos_img_5) }}" alt="Imagem passo 5">
+                            {% endif %}
+                            <div class="container-passos-txts">
+                                {% if settings.prodPerso_passos_title_5 %}
+                                    <span>{{ settings.prodPerso_passos_title_5 }}</span>
+                                    
+                                {% endif %}
+                                {% if settings.prodPerso_passos_subtitle_5 %}
+                                    <span>{{ settings.prodPerso_passos_subtitle_5 }}</span>
+                                {% endif %}
+                            </div>
+                        </li>    
+                    {% endif %}
+                </ul>
+            {% endif %}
+        </div>
+        {% if settings.show_qrcode_section %}
+            <div class="orcam-body-container-qr">
+                <strong>Envie por WhatsApp a sua Receita!</strong>
+                <div class="container-qr-wrapper">
+                    {% if settings.top_whatsapp_text %}
+                        <div>
+                            <span>Clique no botão abaixo para enviar sua receita via WhatsApp</span>
+                        </div>                
+                    {% endif %}
+                    <a class="orcam-btn-whats" href="{{ settings.bottom_whatsapp_link }}">{{ settings.whatsapp_text_msg }}</a>
+                    {% if settings.bottom_whatsapp_text %}
+                        <div>
+                            <span>Ou, se preferir, aponte a câmera do celular para o QR Code abaixo</span>
+                        </div>
+                    {% endif %}
+                    {% if settings.qr_code %}
+                        <div>
+                            <img src="{{asset(settings.qr_code)}}" alt="qr code">
+                        </div>
+                        
+                    {% endif %}
+
+                </div>
+            </div>    
+        {% endif %}
+    </div>
+</section>
