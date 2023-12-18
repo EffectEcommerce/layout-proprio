@@ -99,20 +99,20 @@
             <div class="orcam-body-container-qr">
                 <strong>Envie por WhatsApp a sua Receita!</strong>
                 <div class="container-qr-wrapper">
-                    {% if settings.top_whatsapp_text %}
+                    {% if settings.prodPerso_top_whatsapp_text %}
                         <div>
                             <span>Clique no botão abaixo para enviar sua receita via WhatsApp</span>
                         </div>                
                     {% endif %}
-                    <a class="orcam-btn-whats" href="{{ settings.bottom_whatsapp_link }}">{{ settings.whatsapp_text_msg }}</a>
-                    {% if settings.bottom_whatsapp_text %}
+                    <a class="orcam-btn-whats" href="{{ settings.prodPerso_bottom_whatsapp_link }}">{{ settings.prodPerso_whatsapp_text_msg }}</a>
+                    {% if settings.prodPerso_bottom_whatsapp_text %}
                         <div>
                             <span>Ou, se preferir, aponte a câmera do celular para o QR Code abaixo</span>
                         </div>
                     {% endif %}
-                    {% if settings.qr_code %}
+                    {% if settings.prodPerso_qr_code %}
                         <div>
-                            <img src="{{asset(settings.qr_code)}}" alt="qr code">
+                            <img src="{{asset(settings.prodPerso_qr_code)}}" alt="qr code">
                         </div>
                         
                     {% endif %}
