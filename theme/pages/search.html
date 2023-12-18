@@ -15,7 +15,7 @@
 
     <section class="catalog-section">
         <header class="catalog-header">
-            {% element 'snippets/banner-line' { 'banner_id': 'title', 'banner_type': 'container' } %} 
+            {# {% element 'snippets/banner-line' { 'banner_id': 'title', 'banner_type': 'container' } %} #} 
             
             {% if category.small_description %}
                 <div class="catalog-description">{{ category.small_description }}</div>
@@ -51,3 +51,9 @@
         {% endif %}
     </section>
 </div>
+
+<style>
+    .pageProduct-gifts .brinde_lista, .pageProduct-related .related-showcase, .showcase-listProduct {
+        flex-wrap: wrap;
+    }
+</style>

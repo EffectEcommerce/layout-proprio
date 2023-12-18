@@ -1,58 +1,57 @@
-{#  
 {% if banners.extra2 and banners.extra3 and banners.extra4 and banners.extra5%}
     <div class="banner-cinco section">
         <div class="banner-cinco-left">
             {% if banners.extra2.link %}
-                <a href="{{ banners.extra2.link }}" alt="">
-                    <img src="{{ banners.extra2.src }}" alt="">
+                <a href="{{ banners.extra2.link }}" target="{{ banners.extra2.target }}">
+                    <img src="{{ banners.extra2.src }}" alt="{{ banners.extra2.img_alt}}">
                 </a>
             {% else %}
-                <img src="{{ banners.extra2.src }}" alt="">
+                <img src="{{ banners.extra2.src }}" alt="{{ banners.extra2.img_alt}}">
             {% endif %}
         </div>
         <div class="banner-cinco-right">
             <div class="banner-cinco-wrapper">
                 {% if banners.extra3.link %}
-                    <a href="{{ banners.extra3.link }}" alt="">
-                        <img src="{{ banners.extra3.src }}" alt="">
+                    <a href="{{ banners.extra3.link }}" target="{{ banners.extra3.target }}">
+                        <img src="{{ banners.extra3.src }}" alt="{{ banners.extra3.img_alt}}" width="290">
                     </a>
                 {% else %}
-                    <img src="{{ banners.extra3.src }}" alt="">
+                    <img src="{{ banners.extra3.src }}" alt="{{ banners.extra3.img_alt}}"  width="290">
                 {% endif %}
                 {% if banners.extra4.link %}
-                    <a href="{{ banners.extra4.link }}" alt="">
-                        <img src="{{ banners.extra4.src }}" alt="">
+                    <a href="{{ banners.extra4.link }}" target="{{ banners.extra4.target }}">
+                        <img src="{{ banners.extra4.src }}" alt="{{ banners.extra4.img_alt}}">
                     </a>
                 {% else %}
-                    <img src="{{ banners.extra4.src }}" alt="">
+                    <img src="{{ banners.extra4.src }}" alt="{{ banners.extra4.img_alt}}">
                 {% endif %}
             </div>
             <div class="banner-cinco-wrapper">
                 {% if banners.extra5.link %}
-                    <a href="{{ banners.extra5.link }}" alt="">
-                        <img src="{{ banners.extra5.src }}" alt="">
+                    <a href="{{ banners.extra5.link }}" target="{{ banners.extra5.target }}">
+                        <img src="{{ banners.extra5.src }}" alt="{{ banners.extra5.img_alt}}">
                     </a>
                 {% else %}
-                    <img src="{{ banners.extra5.src }}" alt="">
+                    <img src="{{ banners.extra5.src }}" alt="{{ banners.extra5.img_alt}}">
                 {% endif %}
                 {% if banners.extra6.link %}
-                    <a href="{{ banners.extra5.link }}" alt="">
-                        <img src="{{ banners.extra6.src }}" alt="">
+                    <a href="{{ banners.extra6.link }}" target="{{ banners.extra6.target }}">
+                        <img src="{{ banners.extra6.src }}" alt="{{ banners.extra6.img_alt}}">
                     </a>
                 {% else %}
-                    <img src="{{ banners.extra6.src }}" alt="">
+                    <img src="{{ banners.extra6.src }}" alt="{{ banners.extra6.img_alt}}">
                 {% endif %}
             </div>
         </div>
     </div>
 {% endif %}
-#}
+{#
 
 {% if banners.extra2 and banners.extra3 and banners.extra4 and banners.extra5%}
     <div class="banner-cinco section">
         <div class="banner-cinco-left">
             {% if banners.extra2.link %}
-                <a href="{{ banners.extra2.link }}" alt="">
+                <a src="{{ banners.extra2.link }}" alt="">
                     <img src="{{ banners.extra2.src }}" alt="">
                 </a>
             {% else %}
@@ -62,14 +61,14 @@
         <div class="banner-cinco-right">
             <div class="banner-cinco-wrapper">
                 {% if banners.extra3.link %}
-                    <a href="{{ banners.extra2.link }}" alt="">
+                    <a src="{{ banners.extra2.link }}" alt="">
                         <img src="{{ banners.extra2.src }}" alt="">
                     </a>
                 {% else %}
                     <img src="{{ banners.extra2.src }}" alt="">
                 {% endif %}
                 {% if banners.extra4.link %}
-                    <a href="{{ banners.extra2.link }}" alt="">
+                    <a src="{{ banners.extra2.link }}" alt="">
                         <img src="{{ banners.extra2.src }}" alt="">
                     </a>
                 {% else %}
@@ -78,14 +77,14 @@
             </div>
             <div class="banner-cinco-wrapper">
                 {% if banners.extra5.link %}
-                    <a href="{{ banners.extra2.link }}" alt="">
+                    <a src="{{ banners.extra2.link }}" alt="">
                         <img src="{{ banners.extra2.src }}" alt="">
                     </a>
                 {% else %}
                     <img src="{{ banners.extra2.src }}" alt="">
                 {% endif %}
                 {% if banners.extra6.link %}
-                    <a href="{{ banners.extra2.link }}" alt="">
+                    <a src="{{ banners.extra2.link }}" alt="">
                         <img src="{{ banners.extra2.src }}" alt="">
                     </a>
                 {% else %}
@@ -94,4 +93,4 @@
             </div>
         </div>
     </div>
-{% endif %}
+{% endif %} #}

@@ -2,27 +2,27 @@
     <div class="banner-triplo">
         <div class="container-top">
             {% if banners.extra2.link %}
-                <a src="{{ banners.extra2.link }}" alt="">
-                    <img src="{{ banners.extra2.src }}" alt="">
+                <a src="{{ banners.extra2.link }}" target="{{ banners.extra2.target }}">
+                    <img src="{{ banners.extra2.src }}" alt="{{ banners.extra2.img_alt}}">
                 </a>
             {% else %}
-                <img src="{{ banners.extra2.src }}" alt="">
+                <img src="{{ banners.extra2.src }}" alt="{{ banners.extra2.img_alt}}">
             {% endif %}
             {% if banners.extra3.link %}
-                <a src="{{ banners.extra3.link }}" alt="">
-                    <img src="{{ banners.extra3.src }}" alt="">
+                <a src="{{ banners.extra3.link }}" target="{{ banners.extra3.target }}">
+                    <img src="{{ banners.extra3.src }}" alt="{{ banners.extra2.img_alt}}">
                 </a>
             {% else %}
-                <img src="{{ banners.extra3.src }}" alt="">
+                <img src="{{ banners.extra3.src }}" alt="{{ banners.extra3.img_alt}}">
             {% endif %}
         </div>
         <div class="container-bottom">
             {% if banners.extra4.link %}
-                <a src="{{ banners.extra4.link }}" alt="">
-                    <img src="{{ banners.extra4.src }}" alt="">
+                <a src="{{ banners.extra4.link }}" target="{{ banners.extra4.target }}">
+                    <img src="{{ banners.extra4.src }}" alt="{{ banners.extra4.img_alt}}">
                 </a>
             {% else %}
-                <img src="{{ banners.extra4.src }}" alt="">
+                <img src="{{ banners.extra4.src }}" target="{{ banners.extra4.target }}">
             {% endif %}
 
         </div>

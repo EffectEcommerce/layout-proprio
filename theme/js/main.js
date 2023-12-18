@@ -256,7 +256,7 @@
                         target = $('.section.news .news-content');
                         pageNews = $($(response).find('.noticias'));
 
-                        pageNews.find('li:nth-child(n+4)').remove();
+                        pageNews.find('li:nth-child(n+5)').remove();
                         pageNews.find('li').wrapInner('<div class="news-item"></div>');
                         pageNews = pageNews.contents();
                         console.log(pageNews)
@@ -541,7 +541,7 @@
             setTimeout(() => {
                 $('#form-comments .submit-review').on('click', function (e) {
                     if (!$('#form-comments .stars .starn.icon-star').length) {
-                        const textError = 'AvaliaÃ§Ã£o do produto obrigatÃ³ria, dÃª sua avaliaÃ§Ã£o por favor';
+                        const textError = 'AvaliaÃÂ§ÃÂ£o do produto obrigatÃÂ³ria, dÃÂª sua avaliaÃÂ§ÃÂ£o por favor';
                         $('#div_erro .blocoAlerta').text(textError).show();
                         setTimeout(() => {
                             $('#div_erro .blocoAlerta').hide();
@@ -783,61 +783,61 @@
         },
 
         recreateGalleryProductVariationImage: function (newVariationImages) {
-            const allImages = $('[data-gallery="image"]');
-            const boxImages = $('[data-gallery="box-images"]');
-            const boxThumbs = $('[data-gallery="box-thumbs"]');
-            const productName = $('.pageProduct .pageProduct-name').text();
-            let htmlThumbs = ``;
-            let htmlImages = ``;
+            // const allImages = $('[data-gallery="image"]');
+            // const boxImages = $('[data-gallery="box-images"]');
+            // const boxThumbs = $('[data-gallery="box-thumbs"]');
+            // const productName = $('.pageProduct .pageProduct-name').text();
+            // let htmlThumbs = ``;
+            // let htmlImages = ``;
 
-            $.each(newVariationImages, function (index, item) {
-                let slideIndex = index + 1;
+            // $.each(newVariationImages, function (index, item) {
+            //     let slideIndex = index + 1;
 
-                htmlImages += `
-                    <div class="swiper-slide gallery-image" data-gallery="image">
-                        <img class="gallery-img${slideIndex === 1 ? ' swiper-lazy' : ' lazyload'}" data-src="${
-                    item.https
-                }" alt="${productName}" width="1000px" height="1000px">
-                    </div>
-                `;
-                htmlImages += `
-                    <div class="gallery-image" data-gallery="image">
-                        <img class="gallery-img" src="${
-                    item.https
-                }" alt="${productName}" width="1000px" height="1000px">
-                    </div>
-                `;
+            //     htmlImages += `
+            //         <div class="swiper-slide gallery-image" data-gallery="image">
+            //             <img class="gallery-img${slideIndex === 1 ? ' swiper-lazy' : ' lazyload'}" data-src="${
+            //         item.https
+            //     }" alt="${productName}" width="1000px" height="1000px">
+            //         </div>
+            //     `;
+            //     htmlImages += `
+            //         <div class="gallery-image" data-gallery="image">
+            //             <img class="gallery-img" src="${
+            //         item.https
+            //     }" alt="${productName}" width="1000px" height="1000px">
+            //         </div>
+            //     `;
 
-                htmlThumbs += `
-                    <div class="swiper-slide gallery-thumb" data-gallery="image">
-                        <img class="gallery-img${slideIndex === 1 ? ' swiper-lazy' : ' lazyload'}" data-src="${
-                    item.thumbs[90].https
-                }" alt="${productName}" width="90px" height="90px">
-                    </div>
-                `;
+            //     htmlThumbs += `
+            //         <div class="swiper-slide gallery-thumb" data-gallery="image">
+            //             <img class="gallery-img${slideIndex === 1 ? ' swiper-lazy' : ' lazyload'}" data-src="${
+            //         item.thumbs[90].https
+            //     }" alt="${productName}" width="90px" height="90px">
+            //         </div>
+            //     `;
 
-                htmlThumbs += `
-                    <div class="gallery-thumb" data-gallery="image">
-                        <img class="gallery-img" src="${
-                    item.thumbs[90].https
-                }" alt="${productName}" width="90px" height="90px">
-                    </div>
-                `;
-            });
+            //     htmlThumbs += `
+            //         <div class="gallery-thumb" data-gallery="image">
+            //             <img class="gallery-img" src="${
+            //         item.thumbs[90].https
+            //     }" alt="${productName}" width="90px" height="90px">
+            //         </div>
+            //     `;
+            // });
 
-            if (theme.settings.productThumbs) {
-                theme.settings.productThumbs.destroy();
-            }
+            // if (theme.settings.productThumbs) {
+            //     theme.settings.productThumbs.destroy();
+            // }
 
-            if (theme.settings.productGallery) {
-                theme.settings.productGallery.destroy();
-            }
+            // if (theme.settings.productGallery) {
+            //     theme.settings.productGallery.destroy();
+            // }
 
-            allImages.remove();
-            boxImages.html(htmlImages);
-            boxThumbs.html(htmlThumbs);
+            // allImages.remove();
+            // boxImages.html(htmlImages);
+            // boxThumbs.html(htmlThumbs);
 
-            theme.gallerySlidesOnProductPage();
+            // theme.gallerySlidesOnProductPage();
         },
 
         loadProductVariantImage: function (id) {
@@ -894,7 +894,6 @@
         },
 
         insertBreadcrumbNavigationInPage: function (local = '', customName = false) {
-            alert()
             let items;
             let breadcrumb = '';
             let pageName = document.title.split(' - ')[0].split(' | ')[0];
@@ -1138,7 +1137,7 @@
             login.attr('placeholder', 'Digite seu e-mail*');
             buttonReviewPage.html('Enviar Depoimento').addClass('button2 review-button');
             titleReviewPage.prepend(
-                '<button class="review-form" data-toggle="reviews">Deixei seu depoimento sobre nÃ³s <span class="icon-arrow-simple" aria-hidden="true"></span></button>'
+                '<button class="review-form" data-toggle="reviews">Deixei seu depoimento sobre nÃÂ³s <span class="icon-arrow-simple" aria-hidden="true"></span></button>'
             );
             buttonAdvancedSearch.after('<button type="submit" class="button2">BUSCAR</button>');
             buttonAdvancedSearch.remove();
@@ -1203,7 +1202,7 @@
         } else if ($('html').hasClass('page-noticia')) {
             theme.insertBreadcrumbNavigationInPage('news');
         } else if ($('html').hasClass('page-company')) {
-            theme.insertBreadcrumbNavigationInPage('Sobre nÃ³s', true);
+            theme.insertBreadcrumbNavigationInPage('Sobre nÃÂ³s', true);
         } else if (
             $('html').hasClass('page-listas_index') ||
             $('html').hasClass('page-listas_evento') ||

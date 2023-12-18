@@ -88,7 +88,9 @@
                 {{ p }}
             {% endif %}
         {% endfor %} #}
-        <p class="descript">{{ product.additional_message }}</p>
+
+        <p id="descript" class="descript">{{ product.additional_message }}</p>
+
 
         {% if settings.show_button_product %} 
             <button
@@ -129,4 +131,5 @@
             {% endif %}
         </div>
     </a> #}
+
 </div>

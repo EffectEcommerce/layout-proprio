@@ -24,6 +24,7 @@
         
         {{ tray.analytics }} 
         {{ googleTagManager.header(pages.current, tagManagerData) }}
+        <meta name="google-site-verification" content="5soPqbSbXA9TYbdGMH73ZM21Lgc5oh8T4gyNhbrDpQg" />
     </head>
     <body>
 
@@ -62,11 +63,19 @@
 
                         <div class="container {% if title != '' %} is-custom-page {% endif %}">
                             {% if title != '' %}
-                                <div class="default-title">
-                                    <span class="text"> {{ title }} </span>
-                                </div>
+                                {% if pages.current != 'envie-sua-receita' %}
+                                    <div class="default-title">
+                                        <span class="text"> {{ title }} </span>
+                                        dffgdfgdgfdfg
+                                    </div>
+                                {% endif %}
                             {% endif %} 
-                            {{ content_for_layout }}
+            				{% if pages.current == 'envie-sua-receita' %}
+            				    {% element 'envie-sua-receita' %}
+                                
+            				{% else %}
+            				    {{ content_for_layout }}
+            				{% endif %}
                         </div>
                     {% endif %} 
                     
@@ -74,7 +83,7 @@
                         </div>
                     {% endif %}
             </main>
-
+            {% element 'snippets/newsletter' %}
             {% element 'footer' %}
         </div>
         <div>{% element 'snippets/alert-store' %}</div>

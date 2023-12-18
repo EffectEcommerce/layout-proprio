@@ -1,29 +1,29 @@
-{% if banners.extra5 and banners.extra6 %}
+{% if banners.extra9 and banners.extra10 %}
 <div class="banner-duplo">
     <div class="container-txt-img">
         <div class="content-txt">
-            <span>Lançamento de Nova Coleção</span>
-            <strong>Vestuário de Treino</strong>
-            <span>Confira novos estilos e cores, legging, top, sapato e muito mais os para seus treinos!</span>
-            <button>Comprar Agora</button>
+            <strong>{{ settings.title_banner_txt }}</strong>
+            <span>{{ settings.subtitle_banner_txt }}</span>
+            <span>{{ settings.desc_banner_txt}}</span>
+            <a href="{{ settings.link_banner_txt }}"><button>Confira!</button></a>
         </div>
         <div class="content-img">
-            {% if banners.extra5.link %}
-                <a href="{{ banners.extra5.link }}">
-                    <img loading="lazy" src="{{ banners.extra5.src }}" alt="{{ banners.extra5.img_alt }}">
+            {% if banners.extra9.link %}
+                <a href="{{ banners.extra9.link }}" target="{{ banners.extra9.target }}">
+                    <img loading="lazy" src="{{ banners.extra9.src }}" alt="{{ banners.extra9.img_alt }}">
                 </a>
             {% else %}
-                <img loading="lazy" src="{{ banners.extra5.src }}" alt="{{ banners.extra5.img_alt }}">
+                <img loading="lazy" src="{{ banners.extra9.src }}" alt="{{ banners.extra9.img_alt }}">
             {% endif %}
         </div>
     </div>
     <div class="container-img">
-        {% if banners.extra6.link %}
-            <a href="{{ banners.extra6.link }}">
-                <img loading="lazy" src="{{ banners.extra6.src }}" alt="{{ banners.extra6.img_alt }}">
+        {% if banners.extra10.link %}
+            <a href="{{ banners.extra10.link }}" target="{{ banners.extra10.target }}">
+                <img loading="lazy" src="{{ banners.extra10.src }}" alt="{{ banners.extra10.img_alt }}">
             </a>
         {% else %}
-            <img loading="lazy" src="{{ banners.extra6.src }}" alt="{{ banners.extra6.img_alt }}">
+            <img loading="lazy" src="{{ banners.extra10.src }}" alt="{{ banners.extra10.img_alt }}">
         {% endif %}
     </div>
 </div>

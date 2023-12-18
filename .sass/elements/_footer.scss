@@ -1,7 +1,7 @@
 .footer {
     background: transparent;
     color: var(--c_footer_text);
-    margin-top: 3rem;
+    margin-top: 3rem !important;
     padding: 0px 0 28px;
 
     &-logo-image {
@@ -242,7 +242,7 @@
                     // word-break: break-word;
 
                     .contact-item {
-                        font-size: 12px;
+                        font-size: 1rem;
                         font-weight: 400;
                         line-height: normal;
                         padding-bottom: 0.8rem;
@@ -271,7 +271,7 @@
                         }
 
                         span {
-                            font-size: 12px;
+                            font-size: 1rem;
                             font-weight: 400;
                             line-height: normal;
                         }
@@ -444,4 +444,7 @@
     .info-title .title-redes {
         display: none;
     }
+}
+.fix-font{
+    font-family: Source Sans Pro,sans-serif;
 }

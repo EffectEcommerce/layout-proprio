@@ -36,9 +36,8 @@
     
 {% endif %}
 
-<div class="section">
-    {% element 'snippets/top-categorias' %}
-</div>
+
+{% element 'snippets/top-categorias' %}
 {# {% element 'snippets/banner-triplo' %} #}
 {% element 'snippets/banner-cinco' %}
 
@@ -89,29 +88,28 @@
         </section>
     {% endif %} 
 {% endfor %} 
-    {% if settings.show_blog %}
-        {% for page in pages.custom %}
-            {% if page.info == "noticias" %}
-                <section class="section news slide-has-dots">
-                    <div class="news section-header">
-                        <span class="section-subtitle">{{ settings.title_top_blog }}</span>
-                        <h2 class="section-title">{{ settings.title_bottom_blog }}</h2>
-                    </div>
-                    <div class="news-container">
-                        <ul class="news-content"></ul>
-                        {% if settings.show_button_vermais_blog %}
-                            <button class="button-show">
-                                <a href="{{ page.url }}"  title="Ver mais notícias" rel="next" target="_self">
-                                    Ver mais
-                                </a>
-                            </button>
-                        {% endif %}
-                    </div>
-                </section>
-            {% endif %} 
-        {% endfor %}
-               
-    {% endif %}
+{% if settings.show_blog %}
+    {% for page in pages.custom %}
+        {% if page.info == "noticias" %}
+            <section class="section news slide-has-dots">
+                <div class="news section-header">
+                    <span class="section-subtitle">{{ settings.title_top_blog }}</span>
+                    <h2 class="section-title">{{ settings.title_bottom_blog }}</h2>
+                </div>
+                <div class="news-container">
+                    <ul class="news-content"></ul>
+                    {% if settings.show_button_vermais_blog %}
+                        <button class="button-show">
+                            <a href="{{ page.url }}"  title="Ver mais notícias" rel="next" target="_self">
+                                Ver mais
+                            </a>
+                        </button>
+                    {% endif %}
+                </div>
+            </section>
+        {% endif %} 
+    {% endfor %}
+{% endif %}
 
 
 {# {% element 'snippets/banner-line' { 'banner_id': 'bottom', 'banner_type': 'container' } %} #}
@@ -122,8 +120,7 @@
 {% endif %} 
 
 
-
-        {% element 'snippets/newsletter' %}
+        
 
 {# <section class="section tagCloud">
     <h2 class="section-title">{{ Translation('tags_mais_buscadas') }}</h2>
