@@ -61,21 +61,41 @@
                             {% endif %} 
                         {% endfor %}
 
-                        <div class="container {% if title != '' %} is-custom-page {% endif %}">
-                            {% if title != '' %}
-                                {% if pages.current != 'envie-sua-receita' %}
-                                    <div class="default-title">
-                                        <span class="text"> {{ title }} </span>
-                                    </div>
+                        {% if pages.current == 'envie-sua-receita' %}
+                            <div class="container {% if title != '' %} is-custom-page {% endif %}">
+                                {# {% if title != '' %}
+                                    {% if pages.current != 'envie-sua-receita' %}
+                                        <div class="default-title">
+                                            <span class="text"> {{ title }} </span>
+                                        </div>
+                                    {% endif %}
+                                {% endif %}  #}
+                                {% if pages.current == 'envie-sua-receita' %}
+                                    {% element 'envie-sua-receita' %}
+                                    
+                                {% else %}
+                                    {{ content_for_layout }}
                                 {% endif %}
-                            {% endif %} 
-            				{% if pages.current == 'envie-sua-receita' %}
-            				    {% element 'envie-sua-receita' %}
-                                
-            				{% else %}
-            				    {{ content_for_layout }}
-            				{% endif %}
-                        </div>
+                            </div>
+                        {% endif %}
+
+                        {% if pages.current == 'produtos-personalizados' %}
+                            <div class="container {% if title != '' %} is-custom-page {% endif %}">
+                                {# {% if title != '' %}
+                                    {% if pages.current != 'produtos-personalizados' %}
+                                        <div class="default-title">
+                                            <span class="text"> {{ title }} </span>
+                                        </div>
+                                    {% endif %}
+                                {% endif %}  #}
+                                {% if pages.current == 'produtos-personalizados' %}
+                                    {% element 'produtos-personalizados' %}
+                                    
+                                {% else %}
+                                    {{ content_for_layout }}
+                                {% endif %}
+                            </div>
+                        {% endif %} 
                     {% endif %} 
                     
                     {% if not pages.current == 'home' %}
