@@ -453,6 +453,7 @@
 
                                 let shippingRates = $(response.replace(/Prazo de entrega: /gi, ''));
                                 insertShippingInTable(shippingRates);
+                                console.log(shippingRates)
 
                                 resultBox.removeClass('loading').addClass('loaded').html('').append(shippingRates);
                             },
