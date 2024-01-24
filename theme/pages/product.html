@@ -1,5 +1,3 @@
-
-
 {% if ProgressiveDiscounts %}
     <div class="pageProduct-bannerDiscount">
         {% for discount in ProgressiveDiscounts %}
@@ -32,7 +30,7 @@
                     {% for images in product.images %} 
                         {% set lazyIndex = loop.index == 1 ? false : true %}
                         <div class="swiper-slide gallery-image" data-gallery="image">
-                            <div class="swiper-pagination"></div>
+                            
 
                             <img class="gallery-img{{ lazyIndex ? ' swiper-lazy' : ' lazyload'}}" data-src="{{ images.full }}" alt="{{ product.name }}"/>
                         </div>
@@ -40,20 +38,25 @@
                 </div>
             </div>
             {% set quantityImages = product.images | length %}
+            
             <div class="gallery-thumbs{{ quantityImages > 4 ? ' u-show' }} swiper" data-slides="gallery-thumbs" data-qtd="{{ quantityImages }}">
+                {% if product.images | length > 1 %} 
                 <div class="swiper-wrapper" data-gallery="box-thumbs">
-                    {% if product.images | length > 1 %} 
+                    
                         {% for images in product.images %}
                             <div class="swiper-slide gallery-thumb" data-gallery="image">
 
                                 <img class="gallery-img swiper-lazy" data-src="{{ images.medium }}" alt="{{ product.name }}" width="90px" height="90px" />
                             </div>
                         {% endfor %} 
-                    {% endif %}
+                       
                 </div>
+               
                 <div class="slides-buttonPrev--gallery icon-arrow-simple{{ quantityImages > 4 ? ' u-show' }}"></div>
                 <div class="slides-buttonNext--gallery icon-arrow-simple{{ quantityImages > 4 ? ' u-show' }}"></div>
+                {% endif %}
             </div>
+            
             {% if productHelper.social() and settings.social_position == 0 and (product.stock > 0 or
             settings.without_stock_sale) %}
                 <div class="pageProduct-socialMedia">
@@ -75,7 +78,7 @@
                 <div class="pageProduct-tags">
                     {% set replaceTags = {'src=': 'height="26px" alt="Selo" src='} %} 
                     {% if discount %}
-                        <div class="tag-featured tag tag--full">
+                        <div id="descontoSelo" class="tag-featured tag tag--full">
                             {{ discount | number_format }}% OFF
                         </div>
                     {% endif %} 
@@ -96,6 +99,7 @@
                     {# {% if product.free_shipping and Image('free_shipping') %}
                         <div class="tag-freeShipping tag">{{ Image('free_shipping') | replace(replaceTags) }}</div>
                     {% endif %}  #}
+                  
                     {% if product.free_shipping and Image('free_shipping') %}
                         <div class="tag-freeShipping tag{{ show_double_tag == 0 ? ' tag--full' }}{{show_double_tag == 1 and (odd_amount and position == tags_count) ? ' tag--center' }}">
                             {{ Image('free_shipping') | replace(replaceTags) }}
@@ -104,7 +108,8 @@
                         <div class="tag-featured tag{{ show_double_tag == 0 ? ' tag--full' }}{{show_double_tag == 1 and (odd_amount and position == tags_count) ? ' tag--center' }}">
                             FRETE GR&#65;TIS
                         </div>
-                {% endif %} 
+                
+                {% endif %}
                     {# {% if product.new and Image('new') %}
                         <div class="tag-new tag">{{ Image('new') | replace(replaceTags) }}</div>
                     {% endif %}  #}
@@ -115,7 +120,7 @@
                         {{ Image('new') | replace(replaceTags) }}
                     </div>
                     {% else %}
-                        <div class="tag-new tag{{ show_double_tag == 0 ? ' tag--full' }}{{show_double_tag == 1 and (odd_amount and position == tags_count) ? ' tag--center' }}">NOVIDADE</div>
+                        <div id="lacamentoSelo" class="tag-new tag{{ show_double_tag == 0 ? ' tag--full' }}{{show_double_tag == 1 and (odd_amount and position == tags_count) ? ' tag--center' }}">LANÇAMENTO</div>
                     {% endif %}
                 {% endif %} 
                     {# {% if Image('additional_button') %}
@@ -197,17 +202,13 @@
                         {% endif %}
                     </div>
             </div>
-                    <form id="form_comprar" class=" pageProduct-form {{ form_classes | length > 0 ? form_classes | join (' ') }}" method="post" data-app="product.buy-form" data-id="{{ product.id }}" action="{{ links.cart_add ~ product.id }}">
-                        {% if productHelper.bonus() and 'idBonusVariacao' in productHelper.bonus() %}
+                    <form id="formPagar" class=" pageProduct-form {{ form_classes | length > 0 ? form_classes | join (' ') }}" method="post" data-app="product.buy-form" data-id="{{ product.id }}" action="{{ links.cart_add ~ product.id }}">
+                        {% if productHelper.bonus() and 'idBonusVariacao' in productHelper.bonus() and settings.show_product_tag_pontos %}
                             <div class="pageProduct-bonusScore">{{ productHelper.bonus() }}</div>
                         {% endif %} 
 
 
-                        {% if product.variants %}
-                            <div class="pageProduct-variants" data-has-variations>
-                                <div class="variants-choice serverTray-content">{{ productHelper.variants() }}</div>
-                            </div>
-                        {% endif %} 
+                       
 
                         {% if productHelper.gifts() %}
                             <div class="pageProduct-gifts serverTray-content">
@@ -246,13 +247,17 @@
                                 {{ productHelper.wishlist() }}
                             </button>
                         {% endif %} 
+                        {% if product.variants %}
+                        <div class="pageProduct-variants" data-has-variations>
+                            <div class="variants-choice serverTray-content">{{ productHelper.variants() }}</div>
+                        </div>
+                    {% endif %} 
 
-
-                        <span class="payment-link" style="cursor: pointer;">Ver formas de pagamento</span>
-                            <dialog  id="confirmation-dialog" class="pagForms">
+                        {# <span class="payment-link" style="cursor: pointer;">Ver formas de pagamento</span>
+                            <dialog  id="confirmation-dialog">
 
                                 <div class="container-title-modal" style="display: flex; justify-content: space-between;">
-                                    <h1 id="title-modal-infos">INFORMAÇÕES SOBRE PAGAMENTO</h1>
+                                    <h1 id="title-modal-infos">Titulo</h1>
                                     <svg class="close-modal-payment" style="cursor: pointer;" xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
                                         <path d="M1.23077 16.8582L0 15.6318L6.76923 8.8866L0 2.14143L1.23077 0.915039L8 7.66021L14.7692 0.915039L16 2.14143L9.23077 8.8866L16 15.6318L14.7692 16.8582L8 10.113L1.23077 16.8582Z" fill="black"/>
                                     </svg>
@@ -260,9 +265,8 @@
                                     <iframe 
                                     width="600"
                                     height="600"
-                                    id="pagmsFroms"
                                     src="https://demoeffect.commercesuite.com.br/mvc/store/product/payment_options?loja=1143858&IdProd=289&IdVariacao=%s#" frameborder="0"></iframe>
-                            </dialog>
+                            </dialog> #}
                             <!--<div class="overlay" ></div>-->
 
 
@@ -287,8 +291,8 @@
                         {% endif %} 
 
                         <div class="pageProduct-buy serverTray-content" data-buy-product="box">
-                            <input class="buy-quantityTop" type="button" id="more" value="+" data-quantity />
-                            <input class="buy-quantityDown" type="button" id="less" value="-" data-quantity /> {{
+                            <!--<input class="buy-quantityTop" type="button" id="more" value="+" data-quantity />
+                            <input class="buy-quantityDown" type="button" id="less" value="-" data-quantity />--> {{
                             productHelper.form() }}
                         </div>
                     </form>
@@ -299,7 +303,7 @@
                             <p class="shipping-text">CALCULE SEU FRETE:</p>
                             <form class="shipping-form" data-shipping="form">
                                 <label for="cep" class="shipping-label">00000-000</label>
-                                <input class="shipping-input mask-cep" id="cep" name="calcule o frete" type="text" minlength="9" maxlength="9" placeholder="Informe seu CEP" required />
+                                <input class="shipping-input mask-cep" id="cep" name="calcule o frete" type="text" minlength="9" maxlength="9" placeholder="Informe seu CEP" onkeyup="handleCepMask(event)" required />
                                 <button type="submit" class="shipping-submit buttonCalcutate">CALCULAR</button>
                             </form>
                             <div class="shipping-result loaded" data-shipping="result">
@@ -356,9 +360,17 @@
         <div class="pageProduct-buyTogether">
             <div class="buyTogether serverTray-content">{{ productHelper.bundle() }}</div>
         </div>
-    {% endif %}
+    {% endif %} 
 
+    {% element 'home-showcase' { 
+        'rand' : settings.showcase_rand_products, 
+        'type' : settings.showcase_type_1, 
+        'title' : settings.showcase_title_2, 
+        'quantity' : settings.showcase_quantity_1 
+    } %} 
 
+    
+    
 </div>
 
 {% if product.related_products and settings.enable_related_products %}
@@ -409,4 +421,16 @@
 
 </style>
 
-
+<script>
+    const handleCepMask = (event) => {
+        let input = event.target
+        input.value = CepMask(input.value)
+      }
+      
+      const CepMask = (value) => {
+        if (!value) return ""
+        value = value.replace(/\D/g,'')
+        value = value.replace(/(\d{5})(\d)/,'$1-$2')
+        return value
+      }
+</script>

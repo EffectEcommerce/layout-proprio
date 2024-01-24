@@ -1215,3 +1215,171 @@
         }
     });
 })(jQuery);
+
+var tema = {
+    productVariant: function(){
+        this.tabs();
+
+        jQuery('.compreJunto form .fotosCompreJunto').append('<div class="plus color to">=</div>');
+
+
+        jQuery('.box-variants').on('click','.lista_cor_variacao li[data-id]', function(){
+            var url = "/web_api/variants/" + jQuery(this).data('id');
+            theme.variantImage(url);
+        });
+
+        jQuery('.box-variants').on('click','.lista-radios-input', function(){
+            var url = "/web_api/variants/" + jQuery(this).find('input').val();
+            theme.variantImage(url);
+        });
+
+        jQuery('.box-variants').on('change', 'select', function(){
+            var url = "/web_api/variants/" + jQuery(this).val();
+            theme.variantImage(url);
+        });
+        jQuery('.produto img').each(function(){
+            jQuery(this).attr('src', jQuery(this).attr('src').replace('/90_', '/'));
+            
+            var href = '';
+            if(jQuery(this).parent().attr('href') !== ''){
+                href = 'href="'+jQuery(this).parent().attr('href') + '"';
+            } 
+            
+            jQuery(this).parents('span').after('<a '+href+' class="product-name">'+jQuery(this).attr('alt')+'</a>');
+        });
+
+        jQuery('.page-product').on('click','#detalhes_formas',function(){
+            var productId = jQuery('#formPagar').data('id');
+            var price = jQuery('#preco_atual').val();
+
+            var link = '/mvc/store/product/payment_options_details?loja='+theme.storeId()+'&IdProd='+productId+'&preco='+price;
+            jQuery('.payment-modal').addClass('active');
+
+            jQuery('.payment-modal .append').html('<div class="load-css"><div class="icon"></div></div>');
+
+            theme.getAjax('get',link,{},function(response){
+                jQuery('.payment-modal .append').html(response).find('.tablePage').wrap('<div class="overflow-payment"></div>');
+            });
+        });
+
+        jQuery('#formPagar').on('submit', function(){
+
+            if (!jQuery('.labelMultiVariacao').length) {
+
+                if(jQuery('#selectedVariant').length && !jQuery('#selectedVariant').val()){
+                    jQuery("#span_erro_carrinho").css("display","block");
+                    return false;
+                }
+            }
+
+            jQuery('#loading-product-container').show();    
+            
+            jQuery('body').removeClass('modal-open').removeAttr('style');
+            jQuery('body').find('.modal-backdrop').remove();
+            var interval = setInterval(function(){
+                jQuery('body').find('.modal-backdrop').remove();
+                if(jQuery('.cart-preview-loading-modal').hasClass('tray-hide')){
+                    cart.showCart();
+                    jQuery('#loading-product-container').hide();
+                    jQuery('body').find('.botao-continuar-comprando .botao-commerce-img').trigger('click');
+                    clearInterval(interval);
+                }
+            },50);                
+        });
+
+        jQuery('#button-buy').on('click', function(){
+
+            if(jQuery('#selectedVariant').length && !jQuery('#selectedVariant').val() && !jQuery('.labelMultiVariacao').length){
+                jQuery("#span_erro_carrinho").css("display","block");
+                return false;                
+            }
+
+        });
+
+        jQuery('.compreJunto').on('submit', function() {
+
+            var form = jQuery(this);
+
+            if(!form.find('.blocoAlerta').is(':visible')){
+                jQuery('#loading-product-comprejunto').show();
+                jQuery('body').removeClass('modal-open').removeAttr('style');
+                jQuery('body').find('.modal-backdrop').remove();
+
+                var interval = setInterval(function(){
+                    if(jQuery('.cart-preview-loading-modal').hasClass('tray-hide')){
+                        cart.showCart();
+                        jQuery('#loading-product-comprejunto').hide();
+                        jQuery('body').find('.botao-continuar-comprando .botao-commerce-img').trigger('click');
+                        clearInterval(interval);
+                    }
+                },50);        
+            }        
+        });
+
+        jQuery('.productAdditionalInformation').parent().on('change', 'select option[rel]', function(){
+           
+            var url = jQuery(this).find('option[value="'+jQuery(this).val()+'"]').attr('rel');
+            if(url) {
+                var images = [{"https": url, "thumbs": {'90' : {'https': url }} }];
+                if(images.length){
+                    theme.variantImage(url);
+                    //theme.removeZoom(images);
+                }
+            }
+        });
+        
+    },
+    storeId: function(){
+        return jQuery('html').attr('data-store');
+    },
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const maisInfo = document.querySelector('#detalhes_formas');
+    const modalPayment = document.querySelector('.payment-modal');
+    const iconClose = document.querySelector('.close-icon');
+    const modalContent = modalPayment.querySelector('.append');
+
+    iconClose.addEventListener('click', () => {
+        modalPayment.classList.remove('active');
+    });
+
+    maisInfo.addEventListener('click', () => {
+        modalPayment.classList.add('active');
+        fetchPaymentMethods();
+    });
+
+    function fetchPaymentMethods() {
+        const productId = document.querySelector('#formPagar').getAttribute('data-id');
+        const price = document.querySelector('#preco_atual').value;
+        const url = `/mvc/store/product/payment_options_details?loja=${tema.storeId()}&IdProd=${productId}&IdVariacao=${price}`;
+
+        console.log("Minha URL: ", url)
+
+        fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Falha na resposta da rede');
+            }
+            return response.arrayBuffer();
+        })
+        .then(arrayBuffer => {
+            const decoder = new TextDecoder('iso-8859-1'); 
+            const text = decoder.decode(new Uint8Array(arrayBuffer));
+            modalContent.innerHTML = text;
+            wrapTable();
+        })
+        .catch(error => console.error('Erro ao buscar mÃ©todos de pagamento:', error));
+    }
+
+    function wrapTable() {
+        const table = modalContent.querySelector('.tablePage');
+        if (table) {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'overflow-payment';
+            table.parentNode.insertBefore(wrapper, table);
+            wrapper.appendChild(table);
+        }
+    }
+});
