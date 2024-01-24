@@ -2,6 +2,7 @@
 {% set whatsappNumber = Translation('ag_telefone_3') %} 
 {% set phone = Translation('ag_telefone_1') %} 
 {% set phone2 = Translation('ag_telefone_2') %}
+{% set endereco = Translation('ag_mensagem_rodape') %} 
 
 <footer class="footer section">
     {% element 'snippets/banner-line' { 'banner_id': 'footer', 'banner_type': 'full' } %}
@@ -199,7 +200,7 @@
                 <center> <img src="https://images.tcdn.com.br/files/761336/themes/173/img/logo-effect-black.svg?dbac56306b003f34cbb4dcaaa40a8944" alt="Effect E-Commerce"></center><br>
             </a> #}
             <span>© 2021 Dermax Farmácia de Manipulação Eireli.
-CNPJ: 31.137.999/0001-49.
+CNPJ: 31.137.999/0001-49. {{ endereco }}
 Farmacêutica Responsável: Ana Rita Rocha de Azevedo CRF 7901.
 Todos os direitos reservados.</span>
 
